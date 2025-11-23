@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber compiler_out/compiler_aux/main"] 1763927993.76257 "compiler_out/compiler_aux/main.bcf" "compiler_out/compiler_aux/main.bbl" "compiler_out/compiler_aux/main" 1763933341.92075 0
-  "bibliography.bib" 1763927983 5031 89f8e13b3fc68e6a7ed246343594a993 ""
-  "compiler_out/compiler_aux/main.bcf" 1763933341 108897 eee486f32b0399849dd6d8ddb14dcea5 "pdflatex"
+["biber compiler_out/compiler_aux/main"] 1763940712.99899 "compiler_out/compiler_aux/main.bcf" "compiler_out/compiler_aux/main.bbl" "compiler_out/compiler_aux/main" 1763941542.03624 0
+  "bibliography.bib" 1763940702 5518 4cebef63faafe042f3b7836ca78b0013 ""
+  "compiler_out/compiler_aux/main.bcf" 1763941541 108974 43d299aa9b66ba773406d3d1b5544de3 "pdflatex"
   (generated)
   "compiler_out/compiler_aux/main.bbl"
   "compiler_out/compiler_aux/main.blg"
   (rewritten before read)
-["pdflatex"] 1763933336.67112 "c:/Users/chris/OneDrive/Dokumenter/Visual Studio Code/LaTeX/Active/Specialization-Project-Report-LaTeX-/main.tex" "compiler_out/main.pdf" "main" 1763933341.92239 0
+["pdflatex"] 1763941536.66452 "c:/Users/chris/OneDrive/Dokumenter/Visual Studio Code/LaTeX/Active/Specialization-Project-Report-LaTeX-/main.tex" "compiler_out/main.pdf" "main" 1763941542.03763 0
   "C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1763567838 220619 33264171550da5e99621436db6b754ea ""
   "C:/Users/chris/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1759323031 31952 925b5a98cc6dc137fd728c0e58a85398 ""
   "C:/Users/chris/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1759323028 40136 4d02eccbc47a772f5229dcd71da75205 ""
@@ -182,7 +182,7 @@
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty" 1233849756 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Chapters/01Introduction.tex" 1763933335 11900 37d3b1e7dcac6506a409ef3f0baef8bf ""
+  "Chapters/01Introduction.tex" 1763941530 14525 3b82e6e509d02024d9fba53bfbdf5dab ""
   "Chapters/02LitteratureReview.tex" 1763896742 26255 d510e7621374a494d4a6f1a9bdc9a619 ""
   "Chapters/03Theory.tex" 1763896744 8697 954198bd8f8ff5ab38206fb660134060 ""
   "Chapters/04Method.tex" 1763680946 4994 2ee3852e5df2fce797a8d702edda75d0 ""
@@ -194,16 +194,16 @@
   "Chapters/0bPreface.tex" 1763567808 190 d221f4cb211fdbf6e65c8a338b848e03 ""
   "Figures/01introduction/decreasing launch cost.png" 1763895479 62001 08df686dc7acac43a5cb39a1d1df37bb ""
   "Figures/misc/ntnu_basic.png" 1759322916 40081 1ff59453bfab65650f2efd5ba6b11adc ""
-  "acronyms.tex" 1763907449 637 52c9f3088d609956d3a340ad3b05708d ""
+  "acronyms.tex" 1763936664 690 d17d872041596e650c90fee018c1e80f ""
   "c:/Users/chris/OneDrive/Dokumenter/Visual Studio Code/LaTeX/Active/Specialization-Project-Report-LaTeX-/main.tex" 1763897003 4482 fac5a9e55379f58201d52a6150a20af9 ""
   "compiler_out/compiler_aux/main.acr" 0 -1 0 ""
-  "compiler_out/compiler_aux/main.aux" 1763933341 16320 bdcd6c5874d1e40c68424f8d30a48395 "pdflatex"
-  "compiler_out/compiler_aux/main.bbl" 1763927997 22490 0c4f4544614cb8fdb05f07236b3d4da4 "biber compiler_out/compiler_aux/main"
-  "compiler_out/compiler_aux/main.lof" 1763933341 343 ba55f691c2df194db06d0c13a911ac62 "pdflatex"
-  "compiler_out/compiler_aux/main.lot" 1763933341 745 f8df19b5bc27ad3e5da0459236fc624d "pdflatex"
-  "compiler_out/compiler_aux/main.out" 1763933341 10680 dae399f8178e22f4a5b0d2ac8898c305 "pdflatex"
-  "compiler_out/compiler_aux/main.run.xml" 1763933341 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
-  "compiler_out/compiler_aux/main.toc" 1763933341 5668 ab16338027c8349532547efff605357c "pdflatex"
+  "compiler_out/compiler_aux/main.aux" 1763941541 16436 524af0614731d57b9cc2398102ec4856 "pdflatex"
+  "compiler_out/compiler_aux/main.bbl" 1763940717 24212 37864d84c3728fe097285c328962e2f4 "biber compiler_out/compiler_aux/main"
+  "compiler_out/compiler_aux/main.lof" 1763941541 343 f3916134556ab168336750f493708629 "pdflatex"
+  "compiler_out/compiler_aux/main.lot" 1763941541 746 c2c689a8488c3002c5a45567a265835f "pdflatex"
+  "compiler_out/compiler_aux/main.out" 1763941541 10722 00d7a64c68d967d2da5585cef2725561 "pdflatex"
+  "compiler_out/compiler_aux/main.run.xml" 1763941541 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "compiler_out/compiler_aux/main.toc" 1763941541 5685 584f18da4a7de424a5a27ffd8a395b34 "pdflatex"
   "main.acr" 0 -1 0 ""
   "main.tex" 1763897003 4482 fac5a9e55379f58201d52a6150a20af9 ""
   "packages.sty" 1763909821 2828 6590e898a2c980f0bdde047018ec8331 ""

@@ -1,16 +1,3 @@
-\section{Prelim intro}
-\label{sec:research_questions}
-The project: ''GNSS-R: Formation flying of small satellites'' is a comparative study that investigates the accuracy of orbital propagation methods used within NTNU SmallSatLab's GNSS-R mission studies over longer time horizons. The analysis focuses on translational dynamics and compares two distinct simulation frameworks: the baseline SGP4 propagator implemented through the Skyfield library, and an extended high-fidelity propagator implemented in Basilisk. The latter enables the inclusion of additional perturbation models, such as Earth's gravity gradient, atmospheric drag, solar radiation pressure, and third-body pull, whose impact on long-term orbit prediction is assessed relative to the SGP4 baseline. To guide this investigation, the project addresses three key research questions:
-\begin{itemize}
-    \item What is the intrinsic numerical difference between the Skyfield-SGP4 and the Basilisk frameworks when configured identically?
-    \item How does the introduction of extended perturbation models influence the divergence between the frameworks over time? 
-    \item How do differences in simulated translational states affect formation-keeping delta-V analyses?
- \end{itemize}
-Answering these questions will support the project's goal of guaranteeing the reliability and accuracy of orbital propagation tools used for GNSS-R small-satellite formation studies in future mission design.
-
-
-
-
 \section{Background \& Motivation}
 
 % gnss as a signal of oppertunity due to the global GNSS coverage
@@ -73,10 +60,28 @@ In real missions, the satellite orbit and relative geometry within satellite for
 
 \section{Problem Definition}
 
+% Insert Github Cite instead of '???', maybe
+A system simulator has already been developed to support the development of SmallSat Lab's \gls{gnss-r} project (cite???). The tool currently allows area coverage estimation and a detection probability analysis of a stationary maritime target, and is intended to be extended for ocean surveillance and \gls{gnss} \gls{rfi} detection in the future. As explored in the previous section, these analyses rely on accurately propagating both \gls{gnss} and \gls{gnss-r} satellites to minimize their uncertainties. Currently, the simulator uses the \gls{sgp4} propagator through the Skyfield Python library for this purpose.  
+
+The \gls{sgp4} propagator has long been the industry standard for orbit prediction, and has subsequently been the subject of thorough evaluation. Several studies document that the propagator can exhibit decreasing accuracy over longer time-horizons, particularly for formation-flight or precision geometry applications \cite{aida2013sgp4_accuracy}. This raises concerns about whether the current SGP4-based implementation is sufficiently accurate for GNSS-R studies, which are highly sensitive to orbital state errors.
+
+\subsection{Project Formulation}
+
+This motivates a systematic verification of the Skyfield-\gls{sgp4} implementation by comparing its long-term predictions against a propagator with higher modeling fidelity. Therefore, this specialization project will support the SmallSat Lab \gls{gnss-r} mission by developing such a propagator within the Basilisk simulation framework, which natively supports detailed perturbation models and allows for controlled comparisons with Skyfield-\gls{sgp4}. The study uses this capability to evaluate the differences between the propagators and evaluate their implications for \gls{gnss-r} mission analysis. As a result, the project is guided by three research questions:
+\begin{itemize}
+    \item What is the intrinsic numerical difference between the Skyfield-\gls{sgp4} and the Basilisk frameworks when configured identically?
+    \item How does the introduction of extended perturbation models influence the divergence between the propagators over time? 
+    \item How do differences in simulated translational states affect formation-keeping delta-V analyses?
+ \end{itemize}
+ Answering these questions will support the project's goal of guaranteeing the reliability and accuracy of orbital propagation tools used for \gls{gnss-r} small-satellite formation studies in future mission design.
 
 \begin{comment}
+    * Describe the already implemented propagator for gnss-r analyses
+
     * Define the core problem: How do different orbital propagation methods and perturbation effects influence satellite formations over time? 
 
+    * Problem statement
+    
     * Research question
         - Numerical precision of same-configuration simulations:   
             What is the numerical difference between the two simulation frameworks with the exact same simulation configuration? (same disturbances modelled, same integration time, same everything.)
@@ -143,3 +148,12 @@ In real missions, the satellite orbit and relative geometry within satellite for
 \end{comment}
 
 
+%\section{Prelim intro}
+% \label{sec:research_questions}
+% The project: ''GNSS-R: Formation flying of small satellites'' is a comparative study that investigates the accuracy of orbital propagation methods used within NTNU SmallSatLab's GNSS-R mission studies over longer time horizons. The analysis focuses on translational dynamics and compares two distinct simulation frameworks: the baseline SGP4 propagator implemented through the Skyfield library, and an extended high-fidelity propagator implemented in Basilisk. The latter enables the inclusion of additional perturbation models, such as Earth's gravity gradient, atmospheric drag, solar radiation pressure, and third-body pull, whose impact on long-term orbit prediction is assessed relative to the SGP4 baseline. To guide this investigation, the project addresses three key research questions:
+% \begin{itemize}
+%     \item What is the intrinsic numerical difference between the Skyfield-SGP4 and the Basilisk frameworks when configured identically?
+%     \item How does the introduction of extended perturbation models influence the divergence between the frameworks over time? 
+%     \item How do differences in simulated translational states affect formation-keeping delta-V analyses?
+%  \end{itemize}
+% Answering these questions will support the project's goal of guaranteeing the reliability and accuracy of orbital propagation tools used for GNSS-R small-satellite formation studies in future mission design.

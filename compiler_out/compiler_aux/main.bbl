@@ -310,6 +310,47 @@
       \verb https://www.mdpi.com/2072-4292/12/8/1317
       \endverb
     \endentry
+    \entry{aida2013sgp4_accuracy}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=8f82757fdd9745fa90d44a7a875f0248}{%
+           family={Aida},
+           familyi={A\bibinitperiod},
+           given={Saika},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0930289d440ac1f1f7d144119f96ccf7}{%
+           family={Kirschner},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {ESOC, Darmstadt, Germany}%
+      }
+      \strng{namehash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{fullhash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{fullhashraw}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{bibnamehash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{authorbibnamehash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{authornamehash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{authorfullhash}{ea74c74f2de2a1db2e146394f36a65dc}
+      \strng{authorfullhashraw}{ea74c74f2de2a1db2e146394f36a65dc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{6th International Conference on Astrodynamics Tools and Techniques (ICATT)}
+      \field{note}{Retrieved from user-provided document}
+      \field{title}{Accuracy Assessment of {SGP4} Orbit Information Conversion into Osculating Elements}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://elib.dlr.de/87081
+      \endverb
+      \verb{url}
+      \verb https://elib.dlr.de/87081
+      \endverb
+    \endentry
     \entry{szebehely1989history}{article}{}{}
       \name{author}{1}{}{%
         {{hash=66ae89359084503ae23d1e8b2b2f6e4e}{%

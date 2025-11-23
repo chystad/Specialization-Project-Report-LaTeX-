@@ -2382,12 +2382,13 @@
     <bcf:citekey order="9" intorder="1">jin2010gnss-R</bcf:citekey>
     <bcf:citekey order="10" intorder="1">hall_cordey_1988</bcf:citekey>
     <bcf:citekey order="11" intorder="1">ntnu_smallsat_gnssr_2025</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">szebehely1989history</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Newton1687</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">vallado2001</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">liu2021</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">conkey2022</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">acciarini2024</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">gleason2020cygnss</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">szebehely1989history</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Newton1687</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">vallado2001</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">liu2021</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">conkey2022</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">acciarini2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

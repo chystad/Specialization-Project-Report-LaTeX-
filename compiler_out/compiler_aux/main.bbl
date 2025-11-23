@@ -250,6 +250,66 @@
       \field{title}{CubeSat Concept Using GNSS-R}
       \field{year}{2025}
     \endentry
+    \entry{gleason2020cygnss}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=3f98c545ca386a0a8f669c8ba228a47d}{%
+           family={Gleason},
+           familyi={G\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4076c60c3c5b25848c76d06dfe513aa6}{%
+           family={O'Brien},
+           familyi={O\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e3a71f5e24f133a85857476df6120908}{%
+           family={Russel},
+           familyi={R\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dfab1a7752469453abc9d88ea62e6763}{%
+           family={Al-Khaldi},
+           familyi={A\bibinithyphendelim K\bibinitperiod},
+           given={Mohammad\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=737161bf4868fd3320546d803d653409}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Joel\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{f66bc87d304e9248c2a925041d0794df}
+      \strng{fullhash}{efe864c3116dc1368917e9b141c8a5c7}
+      \strng{fullhashraw}{efe864c3116dc1368917e9b141c8a5c7}
+      \strng{bibnamehash}{f66bc87d304e9248c2a925041d0794df}
+      \strng{authorbibnamehash}{f66bc87d304e9248c2a925041d0794df}
+      \strng{authornamehash}{f66bc87d304e9248c2a925041d0794df}
+      \strng{authorfullhash}{efe864c3116dc1368917e9b141c8a5c7}
+      \strng{authorfullhashraw}{efe864c3116dc1368917e9b141c8a5c7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing}
+      \field{number}{8}
+      \field{title}{Geolocation, Calibration and Surface Resolution of {CYGNSS} {GNSS-R} Land Observations}
+      \field{volume}{12}
+      \field{year}{2020}
+      \field{pages}{1317}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/rs12081317
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2072-4292/12/8/1317
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2072-4292/12/8/1317
+      \endverb
+    \endentry
     \entry{szebehely1989history}{article}{}{}
       \name{author}{1}{}{%
         {{hash=66ae89359084503ae23d1e8b2b2f6e4e}{%

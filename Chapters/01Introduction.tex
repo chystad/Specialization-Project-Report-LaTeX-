@@ -12,23 +12,8 @@ Answering these questions will support the project's goal of guaranteeing the re
 
 
 \section{Background \& Motivation}
-\begin{comment}
-    Present the narrative:
-        * There are a lot of GNSS satellites/constellations providing worldwide coverage
-        * This makes GNSS a signal of opportunity
-        * Meanwhile, the bar for implementing space-based systems to monitor these signals has been lowered in recent years due the decreased launch cost (cite jones2018launch_cost. Might even include their graph)
-        * The world has become more destabilized, and has been subject to more jamming and spoofing (find sources to back this claim. I know Norway has raised complaints to Russia about their increasing jamming, affecting aviation)
-        * GNSS-R is a surveillance technology that can detect these cases, and hold those causing them responsible (find sources to back this claim). 
-        * Introduce NTNU SmallSatLab's GNSS-R project, and the specialization project's relation to it 
 
-
-        * More GNSS -> one of the most powerful signals of opportunity
-        * Reduction of launch costs -> Enable universities and research groups to deploy small-satellite missions that leverage GNSS signals for observation/survaillance
-        * More jamming/spoofing cases recently -> Increased strategic value for systems that can detect these phenomena
-        * GNSS-R has been demonstrated for remote sensing environmental monitoring of 
-
-\end{comment}
-
+% gnss as a signal of oppertunity due to the global GNSS coverage
 \gls{gnss} have become deeply embedded into our modern infrastructure with multiple constellations, such as GPS, GLONASS, Galileo and BeiDou, ensuring that four satellites are observable from the surface at any given time, thus providing worldwide coverage \cite{nasa_earthdata_gnss}. The sheer number of operational satellites that broadcast \gls{gnss} signals makes it one of the most powerful signals of opportunity for remote sensing, enabling monitoring without the need for onboard transmitters.
 % Provide source for the final claim
 
@@ -39,20 +24,20 @@ Answering these questions will support the project's goal of guaranteeing the re
     \label{fig:launch_cost} 
 \end{figure}
  
+% Launches has become cheaper, making it possible for smaller research gropus to implement space-based systems
 At the same time, the space sector has recently undergone rapid changes. Launch costs have fallen significantly due to government outsourcing of launch providers to private companies, and the competitive environment it produced. This is clearly shown in figure \ref{fig:launch_cost}, where the per-kilogram launch cost has hit an all-time low with the deployment of SpaceX rockets \textit{Falcon9} and \textit{Falcon Heavy} \cite{jones2018launch_cost}. As a result, it has become increasingly feasible for universities, research groups and smaller nations to deploy space-based systems dedicated to leveraging \gls{gnss} signals for remote sensing applications. 
 
-In parallel with this growth, there has also been an increase in the frequency of reported intentional \gls{gnss} interference to disrupt aviation operations. The interference can be divided into separate categories characterized by their difference in method and effect: \textit{Jamming} refers to the relative high-power emission of \gls{rf} noise to block \gls{gnss} signals, while \textit{spoofing} is the transmission of signals that resemble those from real satellites, misleading the \gls{gnss} receiver to think it is in a different position \cite{ffi_factsheet_2024}. The \gls{ffi} states that: "In Norway's northernmost county of Finnmark, close to the Russian border, loss of GNSS signals due to jamming occurs nearly daily. [\dots] The number of disruptions has increased significantly since Russia's invasion of Ukraine in 2022." \cite{ffi_jamming_2024}. Data from \textit{gpsjam.org} suggest that similar disruptions have been reported across Eastern Europe, the Middle East, and the Arctic \cite{gpsjam_2025}. These events highlight a broader geopolitical trend: \gls{gnss} interference is becoming more common. This places increased strategic value on systems that can detect and localize jamming/spoofing events.
+% Jamming and spoofing has increased recently, making it more valuable to locate the sources
+In parallel with this growth, there has also been an increase in the frequency of reported intentional \gls{gnss} interference to disrupt aviation operations. The interference can be divided into separate categories characterized by their difference in method and effect: \textit{Jamming} refers to the relative high-power emission of \gls{rf} noise to block \gls{gnss} signals, while \textit{spoofing} is the transmission of signals that resemble those from real satellites, misleading the \gls{gnss} receiver to think it has a different position \cite{ffi_factsheet_2024}. The \gls{ffi} states that: "In Norway's northernmost county of Finnmark, close to the Russian border, loss of \gls{gnss} signals due to jamming occurs nearly daily. [\dots] The number of disruptions has increased significantly since Russia's invasion of Ukraine in 2022." \cite{ffi_jamming_2024}. Data from \textit{gpsjam.org} suggest that similar disruptions have been reported across Eastern Europe, the Middle East, and the Arctic \cite{gpsjam_2025}. These events highlight a broader geopolitical trend: \gls{gnss} interference is becoming more common. This places increased strategic value on systems that can detect and localize jamming and spoofing events.
 
+% gnss-r as a promising technique for jamming/spoofing detection, and connection to SmallSat Lab
 \gls{gnss-r} offers a promising technique for addressing these challenges. According to Jin and Komjathy \cite{jin2010gnss-R}, Hall and Cordey \cite{hall_cordey_1988} were the first to propose that GNSS L-band reflections could be exploited in a bistatic radar configuration to retrieve ocean surface properties, laying the foundation for modern \gls{gnss-r} techniques. Recent theory suggest that the same bistatic configuration can be used for surveillance of the \gls{gnss} spectrum, where multiple \gls{gnss-r} satellites in formation can detect and localize sources of jamming and spoofing. This emerging use-case is one of the central research goals of NTNU SmallSat Lab's \gls{gnss-r} project, which aim to develop methods for this process \cite{ntnu_smallsat_gnssr_2025}. The project currently investigates this concept through its \gls{gnss-r} satellite mission study, exploring formations geometries, orbit configurations and system designs that would enable robust detection of \gls{gnss} interference sources and ships. 
+% Might move the mentioning of SmallSat Lab to after the motication
 
-The specialization project supports the \gls{gnss-r} mission study by examining and improving the accuracy of the orbital simulations used 
-% Orbital configuration lead that maximizes coverage
-% Check Corrado's publication
+% why gnss-r is dependent on accurate orbital propagation
+Accurate knowledge of spacecraft position and velocity is essential for the performance of any \gls{gnss-r} system. In such systems, regardless of application, the reflected \gls{gnss} signal is interpreted by comparing its time delay and Doppler shift relative to the direct signal. This process is highly sensitive to the specular reflection point's geolocation, which is given by the geometric relationship between the \gls{gnss} transmitter, the reflecting surface and the receiver. Even small errors in the satellite's propagated state shifts the estimated specular point by kilometers. Such errors can lead to misinterpretations of the delay-Doppler maps, for instance if the predicted specular point is over ocean when the true specular point occurs over land \cite{gleason2020cygnss}. 
 
-% Should add that the project also (maybe even mainly judging from the official mission statement)
-
-  
- I am 
+In real missions, the satellite orbit and relative geometry within satellite formations will naturally drift over time due to orbital perturbations. During mission design, simulation tools are used to predict the satellites motion. If the simulation does not accurately model the relevant perturbations, its predicted state evolution will diverge from physically realistic behavior, eventually yielding incorrect specular point locations and misleading conclusions about the performance of the GNSS-R system. Furthermore, inaccuracies in position and velocity directly translates to uncertainty in later analyses, like coverage analysis, or formation-keeping delta-V estimation. For these reasons, a high-fidelity propagator is necessary to ensure realistic and reliable evaluations of the \gls{gnss-r} system performance.
 
 \begin{comment}
     * The wider context of why GNSS-R has become an attractive technology
@@ -87,6 +72,8 @@ The specialization project supports the \gls{gnss-r} mission study by examining 
 
 
 \section{Problem Definition}
+
+
 \begin{comment}
     * Define the core problem: How do different orbital propagation methods and perturbation effects influence satellite formations over time? 
 

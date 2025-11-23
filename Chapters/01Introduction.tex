@@ -1,0 +1,146 @@
+\section{Prelim intro}
+\label{sec:research_questions}
+The project: ''GNSS-R: Formation flying of small satellites'' is a comparative study that investigates the accuracy of orbital propagation methods used within NTNU SmallSatLab's GNSS-R mission studies over longer time horizons. The analysis focuses on translational dynamics and compares two distinct simulation frameworks: the baseline SGP4 propagator implemented through the Skyfield library, and an extended high-fidelity propagator implemented in Basilisk. The latter enables the inclusion of additional perturbation models, such as Earth's gravity gradient, atmospheric drag, solar radiation pressure, and third-body pull, whose impact on long-term orbit prediction is assessed relative to the SGP4 baseline. To guide this investigation, the project addresses three key research questions:
+\begin{itemize}
+    \item What is the intrinsic numerical difference between the Skyfield-SGP4 and the Basilisk frameworks when configured identically?
+    \item How does the introduction of extended perturbation models influence the divergence between the frameworks over time? 
+    \item How do differences in simulated translational states affect formation-keeping delta-V analyses?
+ \end{itemize}
+Answering these questions will support the project's goal of guaranteeing the reliability and accuracy of orbital propagation tools used for GNSS-R small-satellite formation studies in future mission design.
+
+
+
+
+\section{Background \& Motivation}
+\begin{comment}
+    Present the narrative:
+        * There are a lot of GNSS satellites/constellations providing worldwide coverage
+        * This makes GNSS a signal of opportunity
+        * Meanwhile, the bar for implementing space-based systems to monitor these signals has been lowered in recent years due the decreased launch cost (cite jones2018launch_cost. Might even include their graph)
+        * The world has become more destabilized, and has been subject to more jamming and spoofing (find sources to back this claim. I know Norway has raised complaints to Russia about their increasing jamming, affecting aviation)
+        * GNSS-R is a surveillance technology that can detect these cases, and hold those causing them responsible (find sources to back this claim). 
+        * Introduce NTNU SmallSatLab's GNSS-R project, and the specialization project's relation to it 
+
+
+        * More GNSS -> one of the most powerful signals of opportunity
+        * Reduction of launch costs -> Enable universities and research groups to deploy small-satellite missions that leverage GNSS signals for observation/survaillance
+        * More jamming/spoofing cases recently -> Increased strategic value for systems that can detect these phenomena
+        * GNSS-R has been demonstrated for remote sensing environmental monitoring of 
+
+\end{comment}
+
+\gls{gnss} have become deeply embedded into our modern infrastructure with multiple constellations, such as GPS, GLONASS, Galileo and BeiDou, ensuring that four satellites are observable from the surface at any given time, thus providing worldwide coverage \cite{nasa_earthdata_gnss}. The sheer number of operational satellites that broadcast \gls{gnss} signals makes it one of the most powerful signals of opportunity for remote sensing, enabling monitoring without the need for onboard transmitters.
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{Figures/01introduction/decreasing launch cost.png}
+%     \caption{Launch cost per kg to LEO versus first launch date}
+%     \label{fig:launch_cost} 
+% \end{figure}
+ 
+
+ 
+
+
+\begin{comment}
+    * The wider context of why GNSS-R has become an attractive technology
+        - The increasing use of satellite constellations in earth observation and RF sensing
+        - Trends in small satellites and CubeSats
+        - (Consider expanding on why high-fidelity simulations are important for these missions)
+        - Why GNSS-R is emerging as a technique with significant potential
+    
+    * Narrow down to NTNU SmallSatLab's GNSS-R project. The specialization project's relation to it
+
+    * Why formation geometry is important for GNSS-R performance
+        - Especially important for expected ISL bitrate and the GNSS-R measurement resolution 
+
+    * An explanation of why simulation accuracy matters:
+        - More accurate estimations of energy required to maintain formations
+        - Higher accuracy GNSS-R coverage, pointing and constellation estimations
+
+    * Describe the currently used GNSS-R orbital simulation framework, and state explicitly that its accuracy is unverified for satellite formation-drift studies
+        - Specify propagation method, what it models, what it lacks and why that is problematic for GNSS-R mission planning
+
+    * Tie to the need for a more in-depth comparison
+        - Expand on the potential consequences of unverified accuracy. 
+
+[Note to self]
+- Make sure the formation geometry importance leads into the simulation accuracy importance. The flow should be:
+    1. GNSS-R performance depends on specific formation geometry
+    2. Formation geometry evolves due to orbital perturbations
+    3. Therefore, high-fidelity simulation is required to estimate drift and formation control needs. 
+
+- Don't slam the current implementation too hard. Use claims from Skyfield to back up its SGP4 accuracy
+\end{comment}
+
+
+\section{Problem Definition}
+\begin{comment}
+    * Define the core problem: How do different orbital propagation methods and perturbation effects influence satellite formations over time? 
+
+    * Research question
+        - Numerical precision of same-configuration simulations:   
+            What is the numerical difference between the two simulation frameworks with the exact same simulation configuration? (same disturbances modelled, same integration time, same everything.)
+        - Extended perturbation effects:   
+            How does including additional orbital perturbations effect the numerical difference between the two simulation frameworks over time?
+        - Computational performance:   
+            How does the computational time differ between the simulation frameworks?
+
+    * Sub-tasks (I don't feel like this section is really necessary)
+        - Model orbital disturbance effects
+
+        - Implement the two simulation frameworks 
+\end{comment}
+
+
+\section{Overall Method}
+\begin{comment}
+    * This needs to be filled out when I have more information, but from chat:
+
+        * Introduce methodological approach: deterministic numerical simulation, model-by-model isolation, etc. Examples that COULD fit:
+            - "comparative simulation study"
+            - "Controlled scenario with fixed ICs"
+            - "Pairwise comparison under identical perturbation models"
+
+        * State clearly that both simulators will be initialized identically
+
+        * Describe the experiment design
+
+    * Describe the tools used for simulator design, and result verification
+\end{comment}
+
+
+\section{Project Scope \& Limitations}
+\begin{comment}
+    * Scope definition in terms of simulation parameters/configuration
+        - Time horizon
+        - Number of satellites
+        - Formation type / orbital configuration
+        - Orbital perturbations included
+        - Propagation models chosen with corresponding python astrodynamics tool
+
+    * Clarify limitations:
+        - No attitude modelling
+        - No GNSS-R modeling of any kind
+        - No formation control 
+        - Orbital perturbations excluded 
+        - Assumptions and perturbation model simplifications
+        - Conclusions are limited to the tested scenarios and may not generalize into all LEO missions
+
+    * Connect limitations to the Master's thesis
+
+[Notes for myself in this section:]
+- Be specific in listing all above parameters. Avoid general terms, and use their concrete names
+- Specify what the project does not attempt to solve 
+
+\end{comment}
+
+
+\section{Report Structure}
+\begin{comment}
+    * Brief overview of what each chapter contains
+
+    * This will be populated thoroughly when the sections are written...
+\end{comment}
+
+

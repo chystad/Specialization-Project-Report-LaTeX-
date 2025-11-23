@@ -1,0 +1,99 @@
+\section{Simulation Design}
+
+\section{Literature Search Methodology}
+\begin{comment}
+Should contain the following:
+    * How you preformed the search
+        - Which databases you used (Scopus, Google Scholar, IEEE, etc.)
+        - How you constructed search strings (AND, OR, NOT)
+        - What time ranges you set
+        - How you filtered results
+        - How many articles you ended up with
+        - How you grouped them
+\end{comment}
+
+
+\section{Software Development} \label{sec:Software_Development}
+
+\subsection{Software Architecture} \label{sec:Software_Architecture}
+This section is just for me to organize my thoughts while I work on developing the software architrecture. 
+
+\subsubsection{Main Pipeline}
+Sequential steps executed by the main program. 
+\begin{enumerate}
+    \item Initialize the simulation environment with global satellite instances and simulation parameters from config.
+    \item Call a function to run the SGP4 propagator from ''GNSS\_R\_System\_Simulator''.
+    \begin{enumerate}
+        \item Its initial conditions are the TLEs and the initial epoch, fetched from the satellite instances (from config).
+        \item This function call also extracts the states ($\vec{r}$ and $\vec{v}$) at the initial epoch in the SGP4 output frame (TEME, I believe).
+        \item The function call then transforms the states to the Basilisk inertial frame (TEME(?) $\rightarrow$ ECI(?)) and adds it to the satellite instances.
+        \item Log the output trajectories in an external file or standardized data structure for later use.
+    \end{enumerate}
+    \item Call a function to run the dynamical Basilisk simulation. \begin{enumerate} 
+        \item Its initial conditions are the states from the SGP4 output at the initial epoch, fetched from the satellite instances.
+        \item Log the output trajectories in an external file or standardized data structure for later use.
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Config}
+This subsection describes all the fields included in the config file
+\begin{itemize}
+    \item SIMULATION (This will contain all the high-level simulation parameters that are global for all simulation frameworks) \begin{itemize}
+        \item \texttt{startTime} (Real-world date and time of the simulation start. Is this different from ''inital epoch''?)
+        \item \texttt{simulationDuration} (How long period into the future the simulation will simulate)
+    \end{itemize} 
+    \item SATELLITE (This will contain all the satellite-specific parameters, and there will be one such section for each satellite in the simulation) \begin{itemize}
+        \item \texttt{satelliteName} (A string identifier for the satellite)
+        \item \texttt{TLELine1} (The first line of the TLE data for the satellite)
+        \item \texttt{TLELine2} (The second line of the TLE data for the satellite)
+        \item \texttt{initialEpoch} (The epoch time corresponding to the TLE data, in a standardized format. Should always be the same as \texttt{startTime}???)
+        \item physical attributes like size, mass, drag coefficient, inertia, etc. (TBD!)
+        \end{itemize}
+    \item PLOTTING (This will contain all the parameters related to how the simulation results should be visualized) \begin{itemize}
+        \item \texttt{savePath} (Path to save the generated plots)
+        \item Other plotting parameters (TBD!)
+    \end{itemize}
+    \item SKYFIELD (This will contain all the parameters specific to the Skyfield simulation) \begin{itemize}
+        \item \texttt{timeStep} (The time step for the Skyfield simulation)
+        \item Skyfield-specific parameters (TBD!)
+    \end{itemize}
+    \item BASILISK (This will contain all the parameters specific to the Basilisk simulation framework) \begin{itemize}
+        \item \texttt{timeStep} (The time step for the Basilisk simulation)
+        \item \texttt{solver} (The numerical solver to be used in the Basilisk simulation)
+        \item \texttt{gravityModel} (The gravity model to be used in the Basilisk simulation)
+        \item \texttt{radiationPressureModel} (The radiation pressure model to be used in the Basilisk simulation)
+        \item Other Basilisk-specific parameters (TBD!)
+    \end{itemize}
+\end{itemize}
+
+
+
+The below list shows additional capabilities in Basilisk that have yet to be implemented, but could serve to increase the fidelity of the simulation.
+\begin{itemize}
+    \item Track a point relative to the satellite's COM
+\end{itemize}
+
+
+
+
+
+
+
+\begin{comment}
+Include the complete description of the methods used in your research here. \\
+
+\noindent Below is an example of how subsectioning works. The sections and subsections will be included in the table of contents, while subsubsections will not be in the table of contents but still have their own title in the text.
+
+\section{Section one}
+
+\subsection{Subsection one}
+
+\subsubsection{Subsubsection one}
+
+\subsubsection{Subsubsection Two}
+
+\subsection{Subsection Two}
+
+\section{Section two}
+
+\end{comment}

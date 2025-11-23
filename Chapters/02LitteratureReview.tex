@@ -1,0 +1,550 @@
+\begin{comment}
+    Introduce what fields of study are necessary to explore in order to adequately grasp prior solutions and find knowledge gaps.
+
+    Each section in this chapter is its own theme 
+\end{comment}
+
+
+Although astrodynamics is rooted in centuries of celestial mechanics, it only recently emerged as a distinct scientific discipline. As outlined by Szebehely's historical account of the field \cite{szebehely1989history}, the development of astrodynamics may be divided into four broad periods: the pre-Newtonian era, the classical or Newtonian period, the contributors from the nineteenth century and finally the rapid expansion that took place in the twentieth century. Although its conceptual roots stretch back to ancient astronomers such as Aristotle and Hipparchus, and its mathematical foundations were laid by Newton's \textit{Principia} \cite{Newton1687}, Szebehely emphasizes that the practical astrodynamics discipline concerned with applying celestial and ballistic mechanics to artificial bodies, was only formed in the early 1930s. Following the second world war, the field saw rapid growth due to Soviet launch of the \textit{Sputnik} satellite in 1957, and the ensuing space race. With the introduction of more powerful digital computers in the 1960s, Brouwer, Herrick and others led research teams that laid the foundation for analytical and numerical orbit propagation. 
+
+% Insert graph that shows the number of articles published over the years containing different keywords/search terms. Plot all the different searches in the same plot with different colors
+
+% Should reference that the choice of literature to review is specified in the Method chapter
+
+Building on this historical foundation, the field has continued to evolve through substantial research effort aimed at increasing predictive accuracy. This trend is indicated by the sharp increase in published work since the early 1990s proposing improved numerical integration methods, orbital propagation schemes and disturbance models. This chapter therefore provides an overview of the theoretical foundations and prior research relevant to this project that have been published after 1960. To provide structure while keeping the scope focused, the review is divided into four themes, each covering aspects of astrodynamics whose understanding is essential for addressing the research questions presented in Section \ref{sec:research_questions}. The first theme covers analytical and numerical orbital propagation methods and studies assessing their intrinsic accuracy. The second theme examines orbital perturbation models, specifically gravity-field perturbations, atmospheric drag and \gls{srp}. These two themes together provide the methodological background for understanding the differences between the Skyfield SGP4 baseline and the relatively high-fidelity Basilisk implementations. 
+
+The third theme envelops the error growth and propagation stability of propagators with a focus on long-term orbit prediction accuracy, sensitivity to perturbation-model fidelity and numerical integration error. Finally, the forth theme covers satellite formation-keeping, and reviewing how absolute propagation error translate into inaccuracies in relative-state predictions and, consequently, into differences in delta-V estimates for formation maintenance. The last two themes is directly related to the project's investigation of how simulator differences evolve over time, and will provide the theory necessary to understand discrepancies between propagations.
+
+The purpose of this literature review is to map the existing knowledge that supports the analysis carried out in this project. The aim is not to identify research gaps or propose new theoretical developments, but rather provide the theoretical background needed to understand the propagation methods, orbital perturbations and mechanisms causing prediction error over longer time-horizons, which are covered in depth in chapter \ref{chap:theory}. This mapping of established models and methods also serves to contextualize their relative accuracies, forming the foundation for the simulation-based comparison presented in later chapters.
+
+
+
+
+
+%----------------------------------------
+\section{Orbital Propagation}
+\label{sec:lit:orbital_propagation}
+
+\subsection{Analytical Propagation (\gls{sgp4})}
+\label{subsec:lit:sgp4}
+% Conceptual description of SGP4:
+% - Mean elements, analytical perturbation series
+% - Strengths: simple, fast, TLE-based
+% - Limitations: simplified perturbations, long-term drift
+%
+% Key literature to discuss:
+%   Vallado (2021)  – SGP4 theory and implementation
+%   Liu et al. (2021)   – empirical SGP4 accuracy, ML correction
+%   Conkey & Zielinski (2022) – SGP4 vs SGP4-XP, improved model
+%   Acciarini et al. (2024) – SGP4 vs high precision propagation
+%
+% Mention that Skyfield uses SGP4 and forms the baseline in this project.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Analytical orbit propagation methods rely on closed-form or series-based approximations of the perturbing forces acting on an artificial satellite. Among these, the \gls{sgp4} algorithm is the most widely used and has become the de facto standard for propagating publicly distributed Two-Line Element (TLE) sets. As described in detail by Vallado \cite{vallado2001}, \gls{sgp4} operates on mean orbital elements rather than osculating elements, and applies a sequence of analytical corrections to account for dominant perturbations. These corrections include secular and periodic contributions from the Earth's oblateness, simplified treatments of atmospheric drag, and, in some cases, resonance effects. Because the dynamics are expressed through closed-form perturbation series, \gls{sgp4} achieves exceptional computational speed and remains efficient even when used to propagate thousands of objects, which has contributed significantly to its long-standing operational use.
+
+Despite these advantages, the analytical nature of \gls{sgp4} introduces several well-known limitations. Since the algorithm uses simplified perturbation models and a low-fidelity representation of atmospheric drag, its accuracy deteriorates over longer time horizons, especially in low Earth orbit where drag and solar radiation pressure can drive significant deviations from the mean-element trajectory. Liu \textit{et al.} \cite{liu2021} demonstrate this behaviour empirically, showing that the difference between \gls{sgp4} predictions and high-fidelity numerical ephemerides grows noticeably with propagation time. Their work further illustrates how machine-learning techniques can be used to correct these long-term deviations, highlighting the underlying structural limitations of the analytical model. Similarly, Conkey and Zielinski \cite{conkey2022} compare classical \gls{sgp4} with the extended-precision SGP4-XP variant, showing that improved analytical treatments of atmospheric drag, resonance terms and solar radiation pressure can offer measurable accuracy gains, particularly outside low Earth orbit. 
+
+More broadly, studies comparing \glossary{sgp4} with high-precision numerical propagators provide valuable insight into the intrinsic accuracy of analytical propagation. Acciarini \textit{et al.} \cite{acciarini2024} analyse the divergence between \gls{sgp4} and a high-fidelity numerical integrator that models detailed perturbations, demonstrating that the differences become increasingly significant over multi-day time spans. Their findings reinforce a key conclusion from the broader literature: while \gls{sgp4} is sufficiently accurate for short-term prediction and catalog maintenance, its underlying modelling assumptions impose fundamental limits on long-term orbit fidelity.
+
+In this project, the \texttt{Skyfield} Python library is used to provide a baseline trajectory representation, and its implementation relies directly on \gls{sgp4} for propagating TLE-based initial conditions. As a result, the \gls{sgp4} model serves as the analytical benchmark against which the extended high-fidelity \texttt{Basilisk} simulations are compared in later chapters.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Numerical Orbit Propagation}
+\label{subsec:lit:numerical_prop}
+% Explain Cowell's method and numerical integrators (RK4, RKF45, RK78, etc.)
+% - State propagation in Cartesian coordinates
+% - Integration of full force model
+% - Relation to Basilisk configuration in this project
+%
+% Key literature:
+%   Brouwer & Clemence (1961)
+%   Bate, Mueller & White (1971)
+%   Battin (1999)
+%   Montenbruck & Gill (2000)
+%   Vallado (2025) – long-term numerical propagation study
+
+\subsection{Semianalytical and Hybrid Propagators}
+\label{subsec:lit:semianalytical}
+% Briefly describe DSST and hybrid approaches (not used in the project
+% but important context between pure analytical and full numerical methods).
+%
+% Key literature:
+%   Kaula (1966) – foundational semianalytical gravity theory
+%   Conkey & Zielinski (2022) – SGP4-XP as an extended analytical model
+%   Wang et al. (2024) – improved J2^2 model for DSST
+%
+% Explicitly state why the project focuses on SGP4 vs numerical instead.
+
+\subsection{Propagator Comparison and Validation}
+\label{subsec:lit:prop_comparison}
+% Summarise how previous work has compared propagators:
+% - Divergence between SGP4 and high-fidelity propagation
+% - Typical error magnitudes and time horizons for reliable prediction
+%
+% Key literature:
+%   Acciarini et al. (2024)
+%   Vallado (2025)
+%   Liu et al. (2021)
+%   Conkey & Zielinski (2022)
+%   Roscoe et al. (2014) – force-model comparison for chief–deputy
+%
+% Optionally insert your "Orbital propagation" literature table:
+% \input{tables/tbl_lit_orbital_propagation}
+
+%----------------------------------------
+\section{Orbital Perturbation Modelling}
+\label{sec:lit:perturbations}
+% State that this section provides the mathematical foundations for the
+% force models used in the high-fidelity propagator (Basilisk) and 
+% clarifies which effects are simplified or absent in SGP4.
+
+\subsection{Gravity-Field Perturbations}
+\label{subsec:lit:gravity}
+% Present the gravitational potential expansion and J2/J3/J4 terms.
+% Discuss secular effects on RAAN and argument of perigee.
+%
+% Key literature:
+%   Kaula (1966)
+%   Battin (1999)
+%   Montenbruck & Gill (2000)
+%   Wakker (2015)
+%   Vallado (2021)
+%   Wang et al. (2024) – advanced J2^2 modelling
+
+\subsection{Atmospheric Drag}
+\label{subsec:lit:drag}
+% Present the drag acceleration model and density modelling concepts.
+% Explain why drag dominates in LEO and how it affects semi-major axis.
+%
+% Key literature:
+%   Montenbruck & Gill (2000)
+%   Vallado (2021)
+%   Roscoe et al. (2014) – drag modelling for CubeSats
+
+\subsection{Solar Radiation Pressure}
+\label{subsec:lit:srp}
+% Present the SRP cannonball model:
+%   – flux at 1 AU, reflectivity, area-to-mass ratio
+%   – absorbed vs reflected components, eclipse modelling.
+%
+% Key literature:
+%   Wertz (1978)
+%   Montenbruck & Gill (2000)
+%   Vallado (2021)
+%   Roscoe et al. (2014)
+
+\subsection{Third-Body Perturbations}
+\label{subsec:lit:third_body}
+% Present the Sun and Moon third-body acceleration formulation.
+% Discuss when 3-body effects become significant (MEO, high apogee, etc.).
+%
+% Key literature:
+%   Wertz (1978)
+%   Montenbruck & Gill (2000)
+%   Vallado (2021)
+%   Roscoe et al. (2014)
+%
+% Optionally insert your "Perturbation modelling" literature table:
+% \input{tables/tbl_lit_perturbation_modelling}
+
+%----------------------------------------
+\section{Error Growth and Propagation Stability}
+\label{sec:lit:error_growth}
+% Explain that this section discusses how and why propagated trajectories
+% diverge over time due to modelling and numerical effects.
+
+\subsection{Long-Term Orbit Prediction Accuracy}
+\label{subsec:lit:long_term_accuracy}
+% Summarise empirical studies of orbit prediction accuracy over days–months.
+% Emphasise typical time horizons for acceptable SGP4 and numerical models.
+%
+% Key literature:
+%   Vallado (2025)
+%   Conkey & Zielinski (2022)
+%   Liu et al. (2021)
+%   Acciarini et al. (2024)
+
+\subsection{Sensitivity to Force-Model Fidelity}
+\label{subsec:lit:force_sensitivity}
+% Discuss how omission or simplification of perturbations (drag, SRP, J2+)
+% leads to systematic drift in orbital elements and position/velocity.
+%
+% Key literature:
+%   Vallado (2021)
+%   Roscoe et al. (2014)
+%   Conkey & Zielinski (2022)
+%   Acciarini et al. (2024)
+%   Wang et al. (2024)
+
+\subsection{Numerical Integration Error}
+\label{subsec:lit:numerical_error}
+% Describe sources of numerical error:
+%   – truncation error
+%   – round-off
+%   – step-size selection and stability.
+%
+% Argue why, for the time scales of this project, numerical error is
+% often smaller than modelling error (supported by literature).
+%
+% Key literature:
+%   Bate, Mueller & White (1971)
+%   Battin (1999)
+%   Montenbruck & Gill (2000)
+%   Vallado (2021)
+
+\subsection{Regime-Dependent Error Growth}
+\label{subsec:lit:regime_error}
+% Highlight how the dominant error sources change with orbital regime:
+%   – LEO: drag-dominated
+%   – MEO: third-body effects, resonances
+%   – higher altitudes: SRP and gravity model limitations.
+%
+% Key literature:
+%   Vallado (2025)
+%   Conkey & Zielinski (2022)
+%   Roscoe et al. (2014)
+%
+% Optionally insert your "Error growth & stability" literature table:
+% \input{tables/tbl_lit_error_growth}
+
+%----------------------------------------
+\section{Satellite Formation Flying and Relative Motion}
+\label{sec:lit:formation_flying}
+% Explain that this section connects absolute orbit errors to relative
+% motion between chief and follower spacecraft.
+
+\subsection{Relative Motion Dynamics}
+\label{subsec:lit:rel_dyn}
+% Introduce Hill / Clohessy–Wiltshire equations and RTN frame.
+% Discuss nonlinear relative models for larger separations.
+%
+% Key literature:
+%   Montenbruck & Gill (2000)
+%   Schaub & Junkins (2003)
+%   Kristiansen et al. (2007)
+
+\subsection{Sensitivity of Relative Motion to Propagation Error}
+\label{subsec:lit:rel_sensitivity}
+% Discuss how small absolute-state differences (from different propagators)
+% lead to significant differences in predicted relative motion.
+%
+% Key literature:
+%   Kristiansen et al. (2007)
+%   Roscoe et al. (2014)
+%   Vallado (2021) – supporting context on drift behaviour
+
+\subsection{Formation-Keeping delta-V Requirements}
+\label{subsec:lit:deltaV}
+% Explain qualitatively how predicted relative drift influences
+% station-keeping manoeuvres and total ΔV budgets.
+%
+% Key literature:
+%   Roscoe et al. (2014)
+%   Kristiansen et al. (2007)
+
+\subsection{Disturbance Effects on Formation Stability}
+\label{subsec:lit:disturbance_formation}
+% Discuss differential drag, differential SRP and other disturbances
+% that cause secular growth in relative separation.
+%
+% Key literature:
+%   Roscoe et al. (2014)
+%   Kristiansen et al. (2007)
+%
+% Optionally insert your "Formation flying" literature table:
+% \input{tables/tbl_lit_formation_flying}
+
+%----------------------------------------
+\section{Summary of Literature Review}
+\label{sec:lit:summary}
+% Summarise the main points established by the literature:
+% - SGP4: widely used analytical propagator with known limitations.
+% - Numerical propagators: capable of high-fidelity long-term prediction
+%   when coupled with detailed force models.
+% - Perturbation models: gravity field, drag, SRP, and 3rd-body forces
+%   are crucial for realistic LEO orbit propagation.
+% - Error growth: governed primarily by modelling fidelity for the
+%   time horizons considered in this project.
+% - Formation flying: relative motion is highly sensitive to propagation
+%   differences, which directly affects ΔV estimates for station-keeping.
+%
+% Conclude by stating that this literature foundation motivates the
+% comparative study between the Skyfield–SGP4 baseline and the Basilisk
+% high-fidelity propagator carried out in the following chapters.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This chapter provides an overview of the theoretical foundations and prior research relevant to this project. The review is organized into four themes, each reflecting key components of the study and directly supporting the project's research questions. The first theme examines orbital propagation, with emphasis on analytical and numerical propagators, their underlying formulations, and the modelling choices that influence accuracy. The second theme focuses on orbital perturbation modelling, summarizing established models for gravity-field expansions, solar radiation pressure, third-body effects, and atmospheric drag. These two themes together provide the methodological background for understanding the differences between the Skyfield SGP4 baseline and the high-fidelity Basilisk implementations. 
+
+% The third theme addresses error growth and propagation stability, drawing on literature that characterizes long-term divergence, numerical drift, and prediction horizon limitations in low Earth orbit. This material is directly related to the project's investigation of how simulator differences evolve over time. Finally, the forth theme considers relative motion and formation-keeping sensitivity, reviewing how absolute propagation error translate into inaccuracies in relative-state predictions and, consequently, into differences in delta-V estimates for formation maintenance, Together, these themes establish the theoretical context for evaluating the reliability and suitability of different propagation approaches for small-satellite formation studies. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+
+\begin{table}[htbp]
+\centering
+\caption{Literature overview for the \emph{Orbital propagation} theme}
+\begin{tabular}{p{0.5\textwidth} p{0.4\textwidth}}
+\toprule
+\textbf{Field} & \textbf{Literature} \\
+\midrule
+
+\multirow[t]{4}{0.5\textwidth}{Analytical propagation (SGP4)} 
+  & Vallado (2021)\\
+  & Liu \textit{et al.} (2021)\\
+  & Conkey \& Zielinski (2022)\\
+  & Acciarini \textit{et al.} (2024)\\[0.5em]
+
+\multirow[t]{5}{0.5\textwidth}{Numerical orbit propagation}
+  & Brouwer \& Clemence (1961)\\
+  & Bate, Mueller \& White (1971)\\
+  & Battin (1999)\\
+  & Montenbruck \& Gill (2000)\\
+  & Vallado (2025)\\[0.5em]
+
+\multirow[t]{3}{0.5\textwidth}{Semianalytical / hybrid propagators}
+  & Kaula (1966)\\
+  & Conkey \& Zielinski (2022)\\
+  & Wang \textit{et al.} (2024)\\[0.5em]
+
+\multirow[t]{5}{0.5 \textwidth}{Propagator comparison \& validation}
+  & Roscoe \textit{et al.} (2014)\\
+  & Liu \textit{et al.} (2021)\\
+  & Conkey \& Zielinski (2022)\\
+  & Acciarini \textit{et al.} (2024)\\
+  & Vallado (2025)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[htbp]
+\centering
+\caption{Literature overview for the \emph{Orbital perturbation modelling} theme}
+\begin{tabular}{p{0.35\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Field} & \textbf{Literature} \\
+\midrule
+
+\multirow[t]{6}{0.35\textwidth}{Gravity-field perturbations}
+  & Kaula (1966)\\
+  & Battin (1999)\\
+  & Montenbruck \& Gill (2000)\\
+  & Wakker (2015)\\
+  & Vallado (2021)\\
+  & Wang \textit{et al.} (2024)\\[0.5em]
+
+\multirow[t]{3}{0.35\textwidth}{Atmospheric drag}
+  & Montenbruck \& Gill (2000)\\
+  & Roscoe \textit{et al.} (2014)\\
+  & Vallado (2021)\\[0.5em]
+
+\multirow[t]{4}{0.35\textwidth}{Solar radiation pressure (SRP)}
+  & Wertz (1978)\\
+  & Montenbruck \& Gill (2000)\\
+  & Roscoe \textit{et al.} (2014)\\
+  & Vallado (2021)\\[0.5em]
+
+\multirow[t]{4}{0.35\textwidth}{Third-body perturbation}
+  & Wertz (1978)\\
+  & Montenbruck \& Gill (2000)\\
+  & Roscoe \textit{et al.} (2014)\\
+  & Vallado (2021)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Literature overview for the \emph{Error growth \& propagation stability} theme}
+\begin{tabular}{p{0.35\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Field} & \textbf{Literature} \\
+\midrule
+
+\multirow[t]{4}{0.35\textwidth}{Long-term orbit prediction accuracy}
+  & Liu \textit{et al.} (2021)\\
+  & Conkey \& Zielinski (2022)\\
+  & Acciarini \textit{et al.} (2024)\\
+  & Vallado (2025)\\[0.5em]
+
+\multirow[t]{5}{0.35\textwidth}{Sensitivity to force-model fidelity}
+  & Roscoe \textit{et al.} (2014)\\
+  & Vallado (2021)\\
+  & Conkey \& Zielinski (2022)\\
+  & Acciarini \textit{et al.} (2024)\\
+  & Wang \textit{et al.} (2024)\\[0.5em]
+
+\multirow[t]{4}{0.35\textwidth}{Numerical integration error}
+  & Bate, Mueller \& White (1971)\\
+  & Battin (1999)\\
+  & Montenbruck \& Gill (2000)\\
+  & Vallado (2021)\\[0.5em]
+
+\multirow[t]{3}{0.35\textwidth}{Regime-dependent error growth}
+  & Roscoe \textit{et al.} (2014)\\
+  & Conkey \& Zielinski (2022)\\
+  & Vallado (2025)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Literature overview for the \emph{Satellite formation flying} theme}
+\begin{tabular}{p{0.35\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Field} & \textbf{Literature} \\
+\midrule
+
+\multirow[t]{3}{0.35\textwidth}{Relative motion dynamics}
+  & Montenbruck \& Gill (2000)\\
+  & Schaub \& Junkins (2003)\\
+  & Kristiansen \textit{et al.} (2007)\\[0.5em]
+
+\multirow[t]{3}{0.35\textwidth}{Sensitivity of relative motion to propagation error}
+  & Kristiansen \textit{et al.} (2007)\\
+  & Roscoe \textit{et al.} (2014)\\
+  & Vallado (2021)\\[0.5em]
+
+\multirow[t]{2}{0.35\textwidth}{Formation-keeping $\Delta V$ requirements}
+  & Kristiansen \textit{et al.} (2007)\\
+  & Roscoe \textit{et al.} (2014)\\[0.5em]
+
+\multirow[t]{2}{0.35\textwidth}{Disturbance effects on formation stability}
+  & Kristiansen \textit{et al.} (2007)\\
+  & Roscoe \textit{et al.} (2014)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\clearpage
+
+
+
+%========================================
+% Chapter 2 — Literature Review
+%========================================
+
+%----------------------------------------
+
+
+
+
+% \section{Orbital Propagation}
+% \begin{comment}
+
+% \end{comment}
+
+% \section{Orbital Perturbation Modelling}
+% \begin{comment}
+
+% \end{comment}
+
+% \section{Error Growth \& Propagation Stability}
+% \begin{comment}
+
+% \end{comment}
+
+% \section{Relative Motion \& Formation Keeping Sensitivity}
+% \begin{comment}
+
+% \end{comment}
+
+
+
+
+
+
+\begin{comment}
+Literature review goal:
+    1. To map out the existing knowledge
+        - What propagation models are commonly used?
+        - How do others simulate perturbations?
+        - What studies exist on formation drift in LEO?
+        - What simulation tools have been evaluated?
+
+    2. To identify what is missing or incomplete in the literature:
+        - Is there a rigorous comparison between low-fidelity and high-fidelity simulators for smallsat formations? 
+        - Are GNSS-R constellation simulation usually simplified?
+
+    3. To justify why your project matters:
+        - The review builds the argument:
+            Here is what's known 
+            -> Here is what's unknown 
+            -> Therefore, this project is needed
+
+
+Distinction from the Theory chapter:
+    Literature review = What OTHERS have done
+        Examples:
+            - 'Prior studies have shown ...'
+            - 'Smith et al. (2021) compared SGP4 and RK4 accuracy ...'
+            - 'GNSS-R missions typically require ~100 m formation stability ...'
+
+    Theory = What YOU will use as foundational theory
+        Examples:
+            - Derivation of J2 perturbation rates
+            - Equations of atmospheric drag
+            - Numerical integration basics
+
+
+How to actually conduct a literature review
+    Step 1: Define themes to explore
+        - Propagators
+        - Orbital perturbations
+        - formation drift
+        - GNSS-R
+
+    Step 2: Search strategically
+        Use:
+            - Google Scholar
+            - IEEE Xplore
+            - ESA / NASA technical reports
+            - AIAA papers
+            - Books 
+        Search terms like:
+            - "LEO formation drift J2 drag"
+            - "Orbit propagation accuracy comparison"
+
+    Step 3: Read with purpose
+        Don't read fully, extract:
+            - what they did
+            - what methods they used
+            - what limitations they mentioned
+            - how it relates to your project
+
+    Step 4: Organize by topic 
+        Example:
+            Subsection 2.2 "Orbit Propagation Methods" summarizes insight from 8-10 papers, not one summary per paper. 
+
+    Step 5: End each section with a critical message
+        Example:
+            "However, very few studies directly compare high-fidelity propagators with simplified implementations in smallsat GNSS-R missions. This motivates the need for…"
+
+
+An example in my own words to show the practical difference between the literature review and theory chapters:
+    Let's say I conduct a literature review on orbital perturbations as one of the themes. In the section about orbital perturbations, I would then write "...The author expanded on the work of this other author to create an extended model for aerodynamical drag in LEO. It was later shown by this third author that the new model proved more realistic". So I just explain that this is what the authors did 
+    And then in the theory, I would actually introduce the mathematical model developed by the authors I mention in the literature review
+
+
+
+Note: that not every topic covered in the Theory chapter must be introduced by the literature review. Exceptions include:
+    - Widely known background theory
+    - Notation systems, coordinate frames
+    - Not debated topics
+\end{comment}

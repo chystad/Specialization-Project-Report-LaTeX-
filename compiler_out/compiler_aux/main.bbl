@@ -1,0 +1,268 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{nasa_earthdata_gnss}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d35dd08d6337cf9263d46d5e67f1855b}{%
+           family={Earthdata},
+           familyi={E\bibinitperiod},
+           given={NASA},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{fullhash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{fullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{bibnamehash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{authorbibnamehash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{authornamehash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{authorfullhash}{d35dd08d6337cf9263d46d5e67f1855b}
+      \strng{authorfullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-11-23}
+      \field{title}{GNSS - Global Navigation Satellite System}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss
+      \endverb
+      \verb{url}
+      \verb https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss
+      \endverb
+    \endentry
+    \entry{szebehely1989history}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=66ae89359084503ae23d1e8b2b2f6e4e}{%
+           family={Szebehely},
+           familyi={S\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{fullhash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{fullhashraw}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{bibnamehash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{authorbibnamehash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{authornamehash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{authorfullhash}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \strng{authorfullhashraw}{66ae89359084503ae23d1e8b2b2f6e4e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Astronautica}
+      \field{title}{The History and Background of Astrodynamics}
+      \field{volume}{20}
+      \field{year}{1989}
+      \field{pages}{79\bibrangedash 81}
+      \range{pages}{3}
+    \endentry
+    \entry{Newton1687}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=7a621e01239c1fe6557cf9c9d2f85bd3}{%
+           family={Newton},
+           familyi={N\bibinitperiod},
+           given={Isaac},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Londini}%
+      }
+      \list{publisher}{1}{%
+        {Jussu Societatis Regi{æ} ac Typis Josephi Streater}%
+      }
+      \strng{namehash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{fullhash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{fullhashraw}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{bibnamehash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{authorbibnamehash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{authornamehash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{authorfullhash}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \strng{authorfullhashraw}{7a621e01239c1fe6557cf9c9d2f85bd3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Philosophi{æ} Naturalis Principia Mathematica}
+      \field{year}{1687}
+    \endentry
+    \entry{vallado2001}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5ce77d9d427077b0792c85535de9fc7e}{%
+           family={Vallado},
+           familyi={V\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{fullhash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{fullhashraw}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{bibnamehash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{authorbibnamehash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{authornamehash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{authorfullhash}{5ce77d9d427077b0792c85535de9fc7e}
+      \strng{authorfullhashraw}{5ce77d9d427077b0792c85535de9fc7e}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fundamentals of Astrodynamics and Applications}
+      \field{year}{2001}
+      \verb{urlraw}
+      \verb https://books.google.no/books?id=PJLlWzMBKjkC
+      \endverb
+      \verb{url}
+      \verb https://books.google.no/books?id=PJLlWzMBKjkC
+      \endverb
+    \endentry
+    \entry{liu2021}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=9ce13edf83d1f771c8a8d44aa78d80cf}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zac\bibnamedelima Yung-Chun},
+           giveni={Z\bibinitperiod\bibinitdelim Y\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=079bee588eb659ca030c5105a726bec0}{%
+           family={Tarlow},
+           familyi={T\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f6d970523fb7aaaa5b6279fb01b56cae}{%
+           family={Akbar},
+           familyi={A\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=82f51fce2dc6dd6c9ce7a6fea2df63e2}{%
+           family={Donnellan},
+           familyi={D\bibinitperiod},
+           given={Quentin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=facb70d48aa9788f635a9426412165ea}{%
+           family={Senkow},
+           familyi={S\bibinitperiod},
+           given={Darek},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f04e492aed70ba2ad1b14c9d21b9b6f0}
+      \strng{fullhash}{ef7b904022ffa111001a0e2581456be6}
+      \strng{fullhashraw}{ef7b904022ffa111001a0e2581456be6}
+      \strng{bibnamehash}{f04e492aed70ba2ad1b14c9d21b9b6f0}
+      \strng{authorbibnamehash}{f04e492aed70ba2ad1b14c9d21b9b6f0}
+      \strng{authornamehash}{f04e492aed70ba2ad1b14c9d21b9b6f0}
+      \strng{authorfullhash}{ef7b904022ffa111001a0e2581456be6}
+      \strng{authorfullhashraw}{ef7b904022ffa111001a0e2581456be6}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AIAA/USU Small Satellite Conference}
+      \field{title}{Improved Orbital Propagator Integrated with SGP4 and Machine Learning}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://digitalcommons.usu.edu/smallsat/2021/all2021/193
+      \endverb
+      \verb{url}
+      \verb https://digitalcommons.usu.edu/smallsat/2021/all2021/193
+      \endverb
+    \endentry
+    \entry{conkey2022}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=939b431f2577ab3325e65c7101c383b9}{%
+           family={Conkey},
+           familyi={C\bibinitperiod},
+           given={Dave},
+           giveni={D\bibinitperiod}}}%
+        {{hash=66ec357119c8e855d9491ca7b8d79a89}{%
+           family={Zielinski},
+           familyi={Z\bibinitperiod},
+           given={Mitchell},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{fullhash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{fullhashraw}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{bibnamehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{authorbibnamehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{authornamehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{authorfullhash}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \strng{authorfullhashraw}{2176a0297be7a09b1fd3c50f2ff07ffa}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advanced Maui Optical and Space Surveillance Technologies Conference (AMOS)}
+      \field{title}{Assessing Performance Characteristics of the SGP4-XP Propagation Algorithm}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://amostech.com/TechnicalPapers/2022/Poster/Conkey.pdf
+      \endverb
+      \verb{url}
+      \verb https://amostech.com/TechnicalPapers/2022/Poster/Conkey.pdf
+      \endverb
+    \endentry
+    \entry{acciarini2024}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=adcb53b336007b68d74a2dbb9babf029}{%
+           family={Acciarini},
+           familyi={A\bibinitperiod},
+           given={Giacomo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f3937323bb5bdb1f1e98b719ce133832}{%
+           family={Baydin},
+           familyi={B\bibinitperiod},
+           given={Atilim\bibnamedelima Günes},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=877562dadfdad676dd1a70eb21f3556e}{%
+           family={Izzo},
+           familyi={I\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{fullhash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{fullhashraw}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{bibnamehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{authorbibnamehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{authornamehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{authorfullhash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \strng{authorfullhashraw}{d8ef86c7b6b8f8b3cf818f8446cd2573}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Astronautica}
+      \field{title}{Closing the Gap Between SGP4 and High-Precision Propagation via Differentiable Programming}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094576524006374
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094576524006374
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

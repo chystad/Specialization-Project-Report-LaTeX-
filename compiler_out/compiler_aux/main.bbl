@@ -35,8 +35,8 @@
       \strng{authornamehash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-23}
@@ -48,6 +48,207 @@
       \verb{url}
       \verb https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss
       \endverb
+    \endentry
+    \entry{jones2018launch_cost}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=213891630c39237ea968f6619397e274}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Harry\bibnamedelima W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Albuquerque, New Mexico}%
+      }
+      \strng{namehash}{213891630c39237ea968f6619397e274}
+      \strng{fullhash}{213891630c39237ea968f6619397e274}
+      \strng{fullhashraw}{213891630c39237ea968f6619397e274}
+      \strng{bibnamehash}{213891630c39237ea968f6619397e274}
+      \strng{authorbibnamehash}{213891630c39237ea968f6619397e274}
+      \strng{authornamehash}{213891630c39237ea968f6619397e274}
+      \strng{authorfullhash}{213891630c39237ea968f6619397e274}
+      \strng{authorfullhashraw}{213891630c39237ea968f6619397e274}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{48th International Conference on Environmental Systems (ICES)}
+      \field{month}{7}
+      \field{note}{ICES-2018-81}
+      \field{title}{The Recent Large Reduction in Space Launch Cost}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb https://ntrs.nasa.gov/citations/20200001093
+      \endverb
+      \verb{url}
+      \verb https://ntrs.nasa.gov/citations/20200001093
+      \endverb
+    \endentry
+    \entry{ffi_factsheet_2024}{report}{}{}
+      \list{institution}{1}{%
+        {Norwegian Defence Research Establishment (FFI)}%
+      }
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{/mnt/data/FFI_faktaark_jamming_digitalt.pdf}}
+      \field{note}{Accessed: 2025-11-21}
+      \field{title}{Hva er jamming, spoofing og meaconing?}
+      \field{type}{FFI Factsheet}
+      \field{year}{2024}
+    \endentry
+    \entry{ffi_jamming_2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8dc28f4761ad5c456287ab3eba679528}{%
+           family={{Norwegian Defence Research Establishment (FFI)}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{fullhash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{fullhashraw}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{bibnamehash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{authorbibnamehash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{authornamehash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{authorfullhash}{8dc28f4761ad5c456287ab3eba679528}
+      \strng{authorfullhashraw}{8dc28f4761ad5c456287ab3eba679528}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ffi.no/en/news/jamming--a-technological-cat-and-mouse-game}}
+      \field{note}{Accessed: 2025-02-20}
+      \field{title}{Jamming - a technological cat-and-mouse game}
+      \field{year}{2024}
+    \endentry
+    \entry{gpsjam_2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=d84a6a1f13ba19ddd01f843674b2452b}{%
+           family={{GPSJam Project}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{fullhash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{fullhashraw}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{bibnamehash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{authorbibnamehash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{authornamehash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{authorfullhash}{d84a6a1f13ba19ddd01f843674b2452b}
+      \strng{authorfullhashraw}{d84a6a1f13ba19ddd01f843674b2452b}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://gpsjam.org}}
+      \field{note}{Accessed: 2025-11-21}
+      \field{title}{GPSJam - Real-time GNSS Interference Map}
+      \field{year}{2025}
+    \endentry
+    \entry{jin2010gnss-R}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d4ab8131189e387efe50d25c18bf7d91}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Shuanggen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8f8802a583710a1ba154ec9d2e062022}{%
+           family={Komjathy},
+           familyi={K\bibinitperiod},
+           given={Attila},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{fullhash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{fullhashraw}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{bibnamehash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{authorbibnamehash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{authornamehash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{authorfullhash}{7c422f61cdf2a0f12075719f4d0364aa}
+      \strng{authorfullhashraw}{7c422f61cdf2a0f12075719f4d0364aa}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Space Research}
+      \field{number}{1}
+      \field{title}{GNSS Reflectometry and Remote Sensing: New Objectives and Results}
+      \field{volume}{46}
+      \field{year}{2010}
+      \field{pages}{111\bibrangedash 117}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.asr.2010.01.014
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0273117710000499?casa_token=Oz4kQjAlYwsAAAAA:STxQm3Wyqd2XvnpbveQhRXNvqUOfPIugKy2wwwYIkM65IhS2z184eO7fH4z2QJhcTMW1f3IT
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0273117710000499?casa_token=Oz4kQjAlYwsAAAAA:STxQm3Wyqd2XvnpbveQhRXNvqUOfPIugKy2wwwYIkM65IhS2z184eO7fH4z2QJhcTMW1f3IT
+      \endverb
+    \endentry
+    \entry{hall_cordey_1988}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=76c283b9cf69fe03ee100942b0e89ad4}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b84b8503b18409226e77812ff2d2a06d}{%
+           family={Cordey},
+           familyi={C\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Edinburgh, Scotland}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{fullhash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{fullhashraw}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{bibnamehash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{authorbibnamehash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{authornamehash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{authorfullhash}{66eae607fb3b061c4ef104b8a2f577d3}
+      \strng{authorfullhashraw}{66eae607fb3b061c4ef104b8a2f577d3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Geoscience and Remote Sensing Symposium (IGARSS)}
+      \field{title}{Multistatic Scatterometry}
+      \field{year}{1988}
+      \field{pages}{561\bibrangedash 562}
+      \range{pages}{2}
+    \endentry
+    \entry{ntnu_smallsat_gnssr_2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=376850d948a81419cddd49bb379d4809}{%
+           family={{NTNU SmallSat Lab}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{376850d948a81419cddd49bb379d4809}
+      \strng{fullhash}{376850d948a81419cddd49bb379d4809}
+      \strng{fullhashraw}{376850d948a81419cddd49bb379d4809}
+      \strng{bibnamehash}{376850d948a81419cddd49bb379d4809}
+      \strng{authorbibnamehash}{376850d948a81419cddd49bb379d4809}
+      \strng{authornamehash}{376850d948a81419cddd49bb379d4809}
+      \strng{authorfullhash}{376850d948a81419cddd49bb379d4809}
+      \strng{authorfullhashraw}{376850d948a81419cddd49bb379d4809}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ntnu.edu/smallsat/gnss-r}}
+      \field{note}{Accessed: 2025-11-21}
+      \field{title}{CubeSat Concept Using GNSS-R}
+      \field{year}{2025}
     \endentry
     \entry{szebehely1989history}{article}{}{}
       \name{author}{1}{}{%
@@ -65,8 +266,8 @@
       \strng{authornamehash}{66ae89359084503ae23d1e8b2b2f6e4e}
       \strng{authorfullhash}{66ae89359084503ae23d1e8b2b2f6e4e}
       \strng{authorfullhashraw}{66ae89359084503ae23d1e8b2b2f6e4e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Astronautica}
@@ -98,8 +299,8 @@
       \strng{authornamehash}{7a621e01239c1fe6557cf9c9d2f85bd3}
       \strng{authorfullhash}{7a621e01239c1fe6557cf9c9d2f85bd3}
       \strng{authorfullhashraw}{7a621e01239c1fe6557cf9c9d2f85bd3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Philosophi{æ} Naturalis Principia Mathematica}
@@ -124,8 +325,8 @@
       \strng{authornamehash}{5ce77d9d427077b0792c85535de9fc7e}
       \strng{authorfullhash}{5ce77d9d427077b0792c85535de9fc7e}
       \strng{authorfullhashraw}{5ce77d9d427077b0792c85535de9fc7e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Fundamentals of Astrodynamics and Applications}
@@ -173,8 +374,8 @@
       \strng{authornamehash}{f04e492aed70ba2ad1b14c9d21b9b6f0}
       \strng{authorfullhash}{ef7b904022ffa111001a0e2581456be6}
       \strng{authorfullhashraw}{ef7b904022ffa111001a0e2581456be6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{AIAA/USU Small Satellite Conference}
@@ -208,8 +409,8 @@
       \strng{authornamehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
       \strng{authorfullhash}{2176a0297be7a09b1fd3c50f2ff07ffa}
       \strng{authorfullhashraw}{2176a0297be7a09b1fd3c50f2ff07ffa}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advanced Maui Optical and Space Surveillance Technologies Conference (AMOS)}
@@ -248,8 +449,8 @@
       \strng{authornamehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
       \strng{authorfullhash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
       \strng{authorfullhashraw}{d8ef86c7b6b8f8b3cf818f8446cd2573}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Astronautica}

@@ -1,17 +1,17 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'compiler_out/compiler_aux/main.blg'
-[199] biber-MSWIN64:340> INFO - === 
-[283] Biber.pm:420> INFO - Reading 'compiler_out/compiler_aux/main.bcf'
-[492] Biber.pm:994> INFO - Found 16 citekeys in bib section 0
-[513] Biber.pm:4463> INFO - Processing section 0
-[532] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[630] bibtex.pm:1713> INFO - LaTeX decoding ...
-[673] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[876] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[876] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[876] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[876] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[908] bbl.pm:676> INFO - Writing 'compiler_out/compiler_aux/main.bbl' with encoding 'UTF-8'
-[924] bbl.pm:779> INFO - Output to compiler_out/compiler_aux/main.bbl
-[924] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\chris\AppData\Local\Temp\biber_tmp_b3y_\f4d088b3f9f145b5c3058da33afd57d4_15756.utf8, line 6, warning: 1 characters of junk seen at toplevel
-[924] Biber.pm:133> INFO - WARNINGS: 1
+[1] Config.pm:311> INFO - Logfile is 'compiler_out/compiler_aux/main.blg'
+[184] biber-MSWIN64:340> INFO - === 
+[238] Biber.pm:420> INFO - Reading 'compiler_out/compiler_aux/main.bcf'
+[400] Biber.pm:994> INFO - Found 20 citekeys in bib section 0
+[421] Biber.pm:4463> INFO - Processing section 0
+[442] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[508] bibtex.pm:1713> INFO - LaTeX decoding ...
+[548] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[762] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[762] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[762] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[763] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[788] bbl.pm:676> INFO - Writing 'compiler_out/compiler_aux/main.bbl' with encoding 'UTF-8'
+[804] bbl.pm:779> INFO - Output to compiler_out/compiler_aux/main.bbl
+[805] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\chris\AppData\Local\Temp\biber_tmp_miYF\f4d088b3f9f145b5c3058da33afd57d4_33788.utf8, line 6, warning: 1 characters of junk seen at toplevel
+[805] Biber.pm:133> INFO - WARNINGS: 1

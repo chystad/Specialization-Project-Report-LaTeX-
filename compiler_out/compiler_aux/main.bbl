@@ -35,8 +35,8 @@
       \strng{authornamehash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-23}
@@ -68,8 +68,8 @@
       \strng{authornamehash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhashraw}{213891630c39237ea968f6619397e274}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{48th International Conference on Environmental Systems (ICES)}
@@ -90,8 +90,8 @@
       \list{institution}{1}{%
         {Norwegian Defence Research Establishment (FFI)}%
       }
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{/mnt/data/FFI_faktaark_jamming_digitalt.pdf}}
       \field{note}{Accessed: 2025-11-21}
@@ -113,8 +113,8 @@
       \strng{authornamehash}{8dc28f4761ad5c456287ab3eba679528}
       \strng{authorfullhash}{8dc28f4761ad5c456287ab3eba679528}
       \strng{authorfullhashraw}{8dc28f4761ad5c456287ab3eba679528}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ffi.no/en/news/jamming--a-technological-cat-and-mouse-game}}
@@ -136,8 +136,8 @@
       \strng{authornamehash}{d84a6a1f13ba19ddd01f843674b2452b}
       \strng{authorfullhash}{d84a6a1f13ba19ddd01f843674b2452b}
       \strng{authorfullhashraw}{d84a6a1f13ba19ddd01f843674b2452b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://gpsjam.org}}
@@ -169,8 +169,8 @@
       \strng{authornamehash}{7c422f61cdf2a0f12075719f4d0364aa}
       \strng{authorfullhash}{7c422f61cdf2a0f12075719f4d0364aa}
       \strng{authorfullhashraw}{7c422f61cdf2a0f12075719f4d0364aa}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Space Research}
@@ -550,8 +550,8 @@
       \strng{authornamehash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
       \strng{authorfullhash}{d8ef86c7b6b8f8b3cf818f8446cd2573}
       \strng{authorfullhashraw}{d8ef86c7b6b8f8b3cf818f8446cd2573}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Astronautica}
@@ -562,6 +562,179 @@
       \endverb
       \verb{url}
       \verb https://www.sciencedirect.com/science/article/pii/S0094576524006374
+      \endverb
+    \endentry
+    \entry{eci2014}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=109db4cb43d89dc5ce3e3b59464f5b3a}{%
+           family={Popescu},
+           familyi={P\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Agronomic Sciences \& Veterinary Medicine of Bucharest}%
+      }
+      \list{location}{1}{%
+        {Bucharest, Romania}%
+      }
+      \strng{namehash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{fullhash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{fullhashraw}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{bibnamehash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{authorbibnamehash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{authornamehash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{authorfullhash}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \strng{authorfullhashraw}{109db4cb43d89dc5ce3e3b59464f5b3a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This work describes the geolocation determination of remote sensing data using a satellite scanner system and presents the mathematical algorithm for determining the position of image pixels on the Earth's surface.}
+      \field{note}{PDF provided by user; publication year and journal not specified}
+      \field{title}{Pixel Geolocation Algorithm for Satellite Scanner Data}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/311807426_Pixel_geolocation_algorithm_for_satellite_scanner_data
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/311807426_Pixel_geolocation_algorithm_for_satellite_scanner_data
+      \endverb
+    \endentry
+    \entry{Montenbruck2000}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
+           family={Montenbruck},
+           familyi={M\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+        {{hash=77c26d441b367da6e23610e91f423855}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={Eberhard},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{fullhash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{fullhashraw}{a5288bde8e80165675c3d89505c99a96}
+      \strng{bibnamehash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{authorbibnamehash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{authornamehash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{authorfullhash}{a5288bde8e80165675c3d89505c99a96}
+      \strng{authorfullhashraw}{a5288bde8e80165675c3d89505c99a96}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{isbn}{978-3-540-67280-7}
+      \field{note}{Corrected 4th printing 2012}
+      \field{title}{Satellite Orbits: Models, Methods and Applications}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://ftp.space.dtu.dk/pub/nio/Macau/Montenbruck_2000_SatelliteOrbits.pdf
+      \endverb
+      \verb{url}
+      \verb https://ftp.space.dtu.dk/pub/nio/Macau/Montenbruck_2000_SatelliteOrbits.pdf
+      \endverb
+    \endentry
+    \entry{Roscoe2014}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=0affbd1eb95db2872394b7ba114e337d}{%
+           family={Roscoe},
+           familyi={R\bibinitperiod},
+           given={Christopher\bibnamedelimb W.\bibnamedelimi T.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=0e36aa2eb2772b8b44f10fca6935321b}{%
+           family={Griesbach},
+           familyi={G\bibinitperiod},
+           given={Jacob\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=a1c343f031f2fdc3e0c7ae40801c67b9}{%
+           family={Westphal},
+           familyi={W\bibinitperiod},
+           given={Jason\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8b3f36b1b9b492ba8a1cdd1580aefbf2}{%
+           family={Hawes},
+           familyi={H\bibinitperiod},
+           given={Dean\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=516553bd3f6039c5e79ced7442a962c4}{%
+           family={Carrico},
+           familyi={C\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           suffix={John\bibnamedelima P.},
+           suffixi={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Columbia, Maryland}%
+      }
+      \list{organization}{1}{%
+        {Applied Defense Solutions}%
+      }
+      \strng{namehash}{59ae6df15d4e4480af3f63e8ea53d0ee}
+      \strng{fullhash}{f13c885867c176ab3009fc4d839917f0}
+      \strng{fullhashraw}{f13c885867c176ab3009fc4d839917f0}
+      \strng{bibnamehash}{59ae6df15d4e4480af3f63e8ea53d0ee}
+      \strng{authorbibnamehash}{59ae6df15d4e4480af3f63e8ea53d0ee}
+      \strng{authornamehash}{59ae6df15d4e4480af3f63e8ea53d0ee}
+      \strng{authorfullhash}{f13c885867c176ab3009fc4d839917f0}
+      \strng{authorfullhashraw}{f13c885867c176ab3009fc4d839917f0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AAS/AIAA Spaceflight Mechanics Meeting}
+      \field{title}{Force Modeling and State Propagation for Navigation and Maneuver Planning for CubeSat Rendezvous, Proximity Operations, and Docking}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.scopus.com/pages/publications/84898934271?origin=resultslist
+      \endverb
+      \verb{url}
+      \verb https://www.scopus.com/pages/publications/84898934271?origin=resultslist
+      \endverb
+    \endentry
+    \entry{Wertz1978}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5772d44dd5bc95ef8faf8a4773563cbe}{%
+           family={Wertz},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht, Holland}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{fullhash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{fullhashraw}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{bibnamehash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{authorbibnamehash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{authornamehash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{authorfullhash}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \strng{authorfullhashraw}{5772d44dd5bc95ef8faf8a4773563cbe}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Reprint: 1980 softcover edition.}
+      \field{series}{Astrophysics and Space Science Library}
+      \field{title}{Spacecraft Attitude Determination and Control}
+      \field{volume}{73}
+      \field{year}{1978}
+      \verb{doi}
+      \verb 10.1007/978-94-009-9907-7
       \endverb
     \endentry
   \enddatalist

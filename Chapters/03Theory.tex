@@ -1,15 +1,24 @@
+% Some intoduction that ties the literature review to the theory chapter
 
+\section{Classical Orbital Elements}
+% Only really relevent for understanding TLEs for SGP4 propagation. Prioritize last
 
-\section{Numerical Precision}
-
-\section{Numerical Solvers}
-
-\section{Vector notation}
-
-\section{Reference Frames} \label{sec:Reference_Frames}
+\section{Reference Frames}
+Some general notation:
+\begin{displaymath}
+    R^{to}_{from}, \qquad r^{frame}_{to/from}
+\end{displaymath}
 
 \subsection{Inertial ECI frame}
-$\mathcal{F}^i$
+$\mathcal{F}^i$. Origin in the Earth's center and frame orientation fixed relative to the stars. Differs from ECEF in that respect. x-axis permanently fixed in a direction relative to the celestial sphere z-axis 90 degrees angle to the equatorial plane and extends up through the geographical North-Pole. y-axis defined with right-hand-rule
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/03Theory/ECI.png}
+    \caption{Earth Centered Inertial (ECI) coordinate system, courtesy of \cite{eci2014}}
+    \label{fig:eci_def} 
+\end{figure}
+
 
 \subsection{RTN frame}
 x-axis (R) outwards from the position vector (radial direction), z-axis (N) pointing towards the cross product between the position and velocity vectors (along-track direction), y-axis (T) completing the right-handed system (cross-track direction). Denoted by $\mathcal{F}^r$
@@ -28,17 +37,73 @@ Here, $r^i_{c/e}$ and $v^i_{c/e}$ are the position and velocity vectors of the c
 \end{equation}  
 
 
+\section{Orbital Perturbations}
 
-\section{Orbital Mechanics} \label{sec:Orbital_Mechanics}
+\subsection{Spherical Harmonics} \label{sec:J2}
 
-\subsection{Classical Orbital Elements (COEs)} \label{sec:COEs}
+Gravitational potential with J2 - J4 from \cite{vallado2001, Montenbruck2000}
 
-\section{Orbital Disturbances} \label{sec:Orbital_Disturbances}
-Orbital disturbances in descending order of significance.
+\begin{equation}
+    U(r, \phi) = \frac{\mu}{r} \left[ 1 - \sum_{n=2}^{4} J_n \left( \frac{R_E}{r} \right)^n P_n(\sin \phi) \right]
+\end{equation}
 
-\subsection{Earth's Oblateness} \label{sec:J2}
+where:
+\begin{itemize}
+    \item $\mu$ is Earth's gravitational parameter
+    \item $R_E$ is the Earth's equatorial radius
+    \item $r = ||r||$ is the geocentric distance
+    \item $\phi$ is the geocentric latitude
+    \item $J_n$ are the zonal harmonic coefficients
+    \item $P_n(\cdot)$ are the Legendre polynomials
+\end{itemize}
+
+\begin{equation}
+    a_{grav} = -\nabla U(r)
+\end{equation}
+
+TODO: Explain the decreasing significance of J2, J3 and J4 terms, and how they affect the mean orbital elements
+TODO: Add a table giving the numerical values for the J2-J4 terms
 
 \subsection{Atmospheric Drag} \label{sec:Atmospheric_Drag}
+
+Atmospheric drag exponential density model from \cite{vallado2001, Montenbruck2000, Roscoe2014}
+\[
+\mathbf{a}_{\text{drag}} = -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho \, v_{\text{rel}}^{2} \, \hat{\mathbf{v}}_{\text{rel}},
+\]
+
+\begin{itemize}
+    \item $C_D$ is the drag coefficient,
+    \item $A$ is the effective cross-sectional area,
+    \item $m$ is the spacecraft mass,
+    \item $\rho$ is the atmospheric density at the spacecraft location,
+    \item $\mathbf{v}_{\text{rel}}$ is the velocity of the spacecraft \textit{relative to the atmosphere},
+    \item $v_{\text{rel}} = \lVert \mathbf{v}_{\text{rel}} \rVert$,
+    \item $\hat{\mathbf{v}}_{\text{rel}} = \mathbf{v}_{\text{rel}} / v_{\text{rel}}$.
+\end{itemize}
+
+% Exponential density model
+\[
+\rho(h) = \rho_0 \exp\!\left( -\frac{h - h_0}{H} \right),
+\]
+
+where
+
+\begin{itemize}
+    \item $h$ is the altitude, $h = r - R_E$,
+    \item $\rho_0$ is the reference density at altitude $h_0$,
+    \item $H$ is the scale height.
+\end{itemize}
+
+% Full drag acceleration with exponential atmosphere
+\[
+\mathbf{a}_{\text{drag}}
+= -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho_0
+\exp\!\left( -\frac{h - h_0}{H} \right)
+v_{\text{rel}}^{2} \, \hat{\mathbf{v}}_{\text{rel}}.
+\]
+
+
+
 
 \subsection{Solar Radiation Pressure} \label{sec:Solar_Pressure}
 
@@ -71,130 +136,49 @@ rsun is the vector from the spacecraft to the sun in the spacecraft body frame a
 \end{equation}
 
 
+\subsection{Third-body Perturbations}
 
-\section{Two-Line Elements (TLEs)} \label{sec:TLEs}
+Third-body gravitational pull from the sun and the moon. Formulations gathered from \cite{vallado2001, Montenbruck2000, Wertz1978, Roscoe2014}
 
-\section{SGP4 Propagator} \label{sec:SGP4}
+Let $\mathbf{r}$ be the position of the spacecraft with respect to the Earth, and 
+$\mathbf{r}_{3B}$ the position of the third body (Sun or Moon) with respect to the Earth, 
+both expressed in the same inertial frame.
 
+The standard third-body acceleration is
 
+\[
+\mathbf{a}_{3B}
+    = \mu_{3B}
+    \left(
+        \frac{\mathbf{r}_{3B} - \mathbf{r}}{\lVert \mathbf{r}_{3B} - \mathbf{r} \rVert^{3}}
+        \;-\;
+        \frac{\mathbf{r}_{3B}}{\lVert \mathbf{r}_{3B} \rVert^{3}}
+    \right),
+\]
 
+where
 
+\begin{itemize}
+    \item $\mu_{3B}$ is the gravitational parameter of the third body (Sun or Moon),
+    \item the first term is the gravitational acceleration of the third body on the spacecraft,
+    \item the second term subtracts the acceleration of the Earth due to the third body 
+          (so the result is in the Earth-centred frame).
+\end{itemize}
 
+If you model both Sun and Moon, the total third-body acceleration is
 
+\[
+\mathbf{a}_{3B,\text{total}} = \mathbf{a}_{\text{Sun}} + \mathbf{a}_{\text{Moon}},
+\]
 
-
-
-
-
-
-\begin{comment}
-%equations, bib. \\
-\section{Equations}
-
-A simple equation can be included as: \\
-
-\begin{equation}
-        r = 2\pi^{2}
-        \label{eqn:simple_eqn}
-\end{equation} \\
-
-
-\noindent The text below shows an example of how to align equations on the equal sign, with only one reference for both. This may be useful for when they are linked and are actually only one equation but splitting them up makes it more readable. \\
-
-\begin{equation}
-\begin{aligned}
-        a &= \sin^{2}(\Delta\phi/2) + \cos(\phi_{1})\cdot\cos(\phi_{2})\cdot\sin^{2}(\Delta\lambda/2)\\
-        d &= 2R\cdot\arcsin(\sqrt{a})
-\end{aligned}
-\label{eqn:haversine}
-\end{equation} \\
-
-\noindent The whole equation can be referenced as "equation \eqref{eqn:haversine}", here showing the Haversine formula. One may also align sub-equations such that they are numbered the same but have a letter differentiating them as shown below. This can be used when they are linked, but you will need to reference both individual parts.
-
-\begin{subequations}
-\begin{align}
-    SSD 
-        & \quad = \sum_{i=1}^{n} (\vec{x_{i}}-\vec{\mu_{q}})^{2} \label{eq:ssd}\\[15pt] %creates more space between the sub-equations
-    SSE 
-        & \quad = \sum_{q=1}^{k} \delta_{rq} SSD \label{eq:sse}
-\end{align}
-\label{eqn:subeqn}
-\end{subequations} \\
-
-\noindent These equations can be refrenced by their spesific sub-equation as "equation \eqref{eq:ssd}", or by the whole group as "equations \eqref{eqn:subeqn}". The "double backslashes" in the .tex creates line spaces and gives more room around the equations and paragraphs. Use them as you think feels right. 
+each term computed using the same formula above with the appropriate 
+$\mu_{\odot}$, $\mu_{\text{Moon}}$ and ephemerides.
 
 
 
-\section{Tables and footnotes}
-
-Here is an example of both a regular table with data and a table with split headers, for scientific usage. Do not use horizontal/vertical rulers between the data, or encase the table with rulers. \\
-
-\begin{table}[ht!]
-\centering
-    \begin{tabular}{ m{3cm} m{2.5cm} m{2.5cm} m{2.5cm} m{2cm} } 
-    \toprule
-    \toprule
-    \textbf{Statistic} & \textbf{Velocity} & \textbf{Altitude} & \textbf{1/Angle} & \textbf{Temp.} \\
-    \midrule
-    Mean    & 122.68    & 240.98   & 93.75     & 13.95 \\[1.3ex]
-    Std     & 224.51    & 145.88   & 60.39     & 4.44  \\[1.3ex]
-    Q1      & 28.00     & 111.60   & 34.15     & 10.60 \\[1.3ex]
-    Median  & 63.00     & 223.20   & 99.59     & 13.30 \\[1.3ex]
-    Q3      & 137.00    & 359.10   & 151.99    & 16.70 \\[1.3ex]
-    Min     & 0.00      & 1.00     & 0.00      & 3.30  \\[1.3ex]
-    Max     & 14519.00  & 616.70   & 180.00    & 32.10 \\[1.3ex]
-    \bottomrule
-    \bottomrule
-    \end{tabular}
-% the square brackets after \caption gives the table a proper title in the list of tables, instead of just inserting the beginning of the table caption
-\caption[Dynamic feature statistics with outliers]{Table of dynamic feature statistics where outliers are included, for all data points. Velocity is given in \textit{m/h}, the altitude in \textit{mamsl}, the inverse trajectory angle in 1/degrees, and temperature in degrees Celsius.}
-\label{table:stat_fliers}
-\end{table}
+\section{Numerical Orbit Propagation}
+% How basilisk propagates the orbit
 
 
-\begin{table}[ht!]
-\centering
-    \begin{tabular}{ m{3cm} m{5cm} m{3cm} } 
-    \toprule
-    \toprule
-    \textbf{Area 1} & \textbf{Start date} & \textbf{End date} \\
-    \midrule
-    2018    & 03.06    & 29.06                       \\[1.3ex]
-    2019    & 03.06    & 03.07 or 31.08\footnotemark \\[1.3ex]
-    2020    & 03.06    & 05.09                       \\[1.3ex]
-    \midrule
-    \textbf{Area 2} & \textbf{Start date (farm 1/2)} & \textbf{End date} \\
-    \midrule
-    2012    & 09.06            & 07.09               \\[1.3ex]
-    2013    & 23.06 / 15.06    & 25.08               \\[1.3ex]
-    2014    & 05.06 / 25.06    & 10.09               \\[1.3ex]
-    2015    & 13.06 / 03.07    & 06.09               \\[1.3ex]
-    2016    & 17.06            & 22.07               \\[1.3ex]
-    \bottomrule
-    \bottomrule
-    \end{tabular}
-\caption[Selected time ranges for all data]{Selected time ranges for the data in all areas and all years.}
-\label{table:time_ranges}
-\end{table}
-
-\footnotetext{A footnote explaining something.}
-
-
-
-\section{A single figure}
-
-Figure \ref{fig:latlong} is included as an example. The square brackets before the caption description contains the title of the figure, which is what will be written in the list of figures. This should be short and concise. The same layout applies to tables and other floats. Remember to change the title as well as the caption if you are copying these examples. In the list of figures and tables all the different floats will be grouped together by chapter. Remember to always reference all your figures and tables in the text at least once.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/latlong.png}
-  \caption[Illustration of latitude and longitude]{Illustration of the earth, and how latitudes and longitudes are calculated with respect to the equator and the prime meridian.}
-  \label{fig:latlong}
-\end{figure}
-
-
-\section{Citations}
-
-Here are some examples on how to reference a source (where none is relevant to the text but just for illustration purposes only). One may cite a single reference by calling \cite{wolves_of_mount_mckinley}, or several in the same bracket by calling \cite{machine_learning, clustering_impossibility} when they are all related to the same statement. There are many different styles on how to cite, and how the layout and order of your citation style is presented. This is my favorite, as I find it neat and tidy \cite{sheep}. It will show up in order of appearance in the references section.
-
-\end{comment}
+\section{Analytical Orbit Propagation - SGP4}
+% How 

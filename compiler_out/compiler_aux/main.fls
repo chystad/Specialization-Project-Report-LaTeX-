@@ -367,13 +367,13 @@ INPUT .\Chapters\01Introduction.tex
 INPUT .\Chapters\01Introduction.tex
 INPUT .\Chapters\01Introduction.tex
 INPUT Chapters\01Introduction.tex
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
-INPUT .\Figures\01introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
+INPUT .\Figures\01Introduction\decreasing launch cost.png
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\Chapters\02LitteratureReview.tex
@@ -387,6 +387,13 @@ INPUT .\Chapters\03Theory.tex
 INPUT .\Chapters\03Theory.tex
 INPUT .\Chapters\03Theory.tex
 INPUT Chapters\03Theory.tex
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
+INPUT .\Figures\03Theory\ECI.png
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
@@ -465,3 +472,5 @@ INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb

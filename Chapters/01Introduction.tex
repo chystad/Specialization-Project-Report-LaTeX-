@@ -6,7 +6,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Figures/01introduction/decreasing launch cost.png}
+    \includegraphics[width=0.5\textwidth]{Figures/01Introduction/decreasing launch cost.png}
     \caption{Launch cost per kilogram to LEO versus first launch date, courtesy of \cite{jones2018launch_cost}}
     \label{fig:launch_cost} 
 \end{figure}
@@ -115,20 +115,52 @@ This motivates a systematic verification of the Skyfield-\gls{sgp4} implementati
 
 
 \section{Project Scope \& Limitations}
+This specialization project focuses on evaluating the long-term orbital propagation accuracy of two distinct simulation frameworks, Skyfield-\gls{sgp4} and a high-fidelity Basilisk propagator, in the context of \gls{gnss-r} formation-flying missions. To ensure a controlled and way defined comparison, the project's scope has been limited to a set of simulation configurations and perturbation models.
+
+\subsection{Simulation Configuration Scope}
+The analysis covers a relatively long time-horizon, ranging from several days up to one week, in order to adequately capture the frameworks' divergence over a mission-relevant time span. The simulated formation consists of two satellites flying in \gls{leo} in a leader-follower configuration. Both are initialized on the same orbital plane with nominally constant along-track separation and with the same initial conditions to guarantee same-case comparisons. 
+
+\subsection{Perturbation Modelling Scope}
+The Basilisk propagator incorporates a selection of the most influential orbtial perturbation effects in \gls{leo}: 
+\begin{itemize}
+    \item Earth's gravity field represented through J2-J4 spherical harmonics,
+    \item Atmospheric drag using an exponential density model,
+    \item Cannonball \gls{srp} model with a fixed reflectivity coefficient, and
+    \item third-body gravitational pull from the Sun and Moon
+\end{itemize}
+
+\subsection{Propagation Tool Scope}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Skyfield–\gls{sgp4} implementation serves as the baseline, while Basilisk is used as the higher-fidelity reference. Each framework is configured to propagate identical initial conditions, allowing direct numerical comparison of state evolution over the defined time interval.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Limitations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Several aspects of GNSS-R mission analysis lie outside the scope of this specialization project.
+First, no attitude dynamics are modeled. The satellites are assumed to maintain a fixed nadir-oriented attitude or otherwise idealized pointing, which removes attitude-orbit coupling and optical or RF pointing constraints from consideration.
+
+Second, the project includes no GNSS-R signal modeling or bistatic radar simulation. The study evaluates orbital geometry only; signal processing elements such as delay-Doppler map generation, specular-point reflectivity, link budget modeling, or interference detection algorithms fall beyond the project's objectives.
+
+Third, no active formation-keeping control is implemented. The satellites follow purely ballistic trajectories under the applied perturbations. As such, the delta-V analysis is limited to estimating how often and how strongly formation drift would need to be corrected, rather than simulating actual guidance, navigation, and control (GNC) actions.
+
+Finally, conclusions drawn from this study are limited to the tested scenarios. The orbital regimes, perturbation models, and formation geometry considered here may not generalize to all LEO missions, nor to GNSS-R concepts employing different formation layouts, attitude profiles, or operational constraints.
+
+These limitations naturally define the boundary between the present specialization project and a potential master's thesis. While this project focuses on verifying orbital propagation fidelity, a master's thesis could extend the analysis by incorporating full attitude modeling, GNSS-R signal simulation, operational formation-keeping strategies, and end-to-end detection performance. Such expansions would build upon the validated propagation models developed here, enabling a more comprehensive assessment of GNSS-R formation-flying missions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{comment}
     * Scope definition in terms of simulation parameters/configuration
-        - Time horizon
-        - Number of satellites
-        - Formation type / orbital configuration
-        - Orbital perturbations included
+        - Relatively long time-horizon. Up to a week
+        - 2 satellites flying in formation. Leader-follower configuration. Same orbital plane and maintained constant distance between them
+        - Orbital perturbations included: J2-J4 spherical harmonics, atmospheric drag, cannonball solar radiation pressure, 3rd-body influence
         - Propagation models chosen with corresponding python astrodynamics tool
 
     * Clarify limitations:
         - No attitude modelling
         - No GNSS-R modeling of any kind
-        - No formation control 
-        - Orbital perturbations excluded 
-        - Assumptions and perturbation model simplifications
+        - No active formation-keeping control 
         - Conclusions are limited to the tested scenarios and may not generalize into all LEO missions
 
     * Connect limitations to the Master's thesis
@@ -141,6 +173,8 @@ This motivates a systematic verification of the Skyfield-\gls{sgp4} implementati
 
 
 \section{Report Structure}
+
+Following is a brief overview of chapters in this report, and what each of them cover.
 \begin{comment}
     * Brief overview of what each chapter contains
 

@@ -564,6 +564,68 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0094576524006374
       \endverb
     \endentry
+    \entry{Grotte2020SpacecraftAttitude}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=aa4f9908c7c394f101bae259d191c8ae}{%
+           family={Grøtte},
+           familyi={G\bibinitperiod},
+           given={Mariusz\bibnamedelima Eivind},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=db7b58731e1d1406085236238be06461}{%
+           family={Gravdahl},
+           familyi={G\bibinitperiod},
+           given={Jan\bibnamedelima Tommy},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=dd7a219bd351f8768b82145983ef6c86}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Tor\bibnamedelima Arne},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=cab2e36b7341edc9844017ef01a44252}{%
+           family={Larsen},
+           familyi={L\bibinitperiod},
+           given={Jesper\bibnamedelima Abildgaard},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9c70c4409176d045e8a7b029f9e8dcac}{%
+           family={Vidal},
+           familyi={V\bibinitperiod},
+           given={Edgard\bibnamedelima Martinez},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=cd9a2ce2253dd877293003e170fd1a24}{%
+           family={Surma},
+           familyi={S\bibinitperiod},
+           given={Egidijus},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{89e0326c52e53b34dbee5e33f7be00c9}
+      \strng{fullhash}{390d26bef8a85c0c7446b1bca16906c7}
+      \strng{fullhashraw}{390d26bef8a85c0c7446b1bca16906c7}
+      \strng{bibnamehash}{89e0326c52e53b34dbee5e33f7be00c9}
+      \strng{authorbibnamehash}{89e0326c52e53b34dbee5e33f7be00c9}
+      \strng{authornamehash}{89e0326c52e53b34dbee5e33f7be00c9}
+      \strng{authorfullhash}{390d26bef8a85c0c7446b1bca16906c7}
+      \strng{authorfullhashraw}{390d26bef8a85c0c7446b1bca16906c7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{number}{2}
+      \field{title}{Spacecraft Attitude and Angular Rate Tracking using Reaction Wheels and Magnetorquers}
+      \field{volume}{53}
+      \field{year}{2020}
+      \field{pages}{14819\bibrangedash 14826}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2020.12.1924
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896320325441
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896320325441
+      \endverb
+    \endentry
     \entry{eci2014}{article}{}{}
       \name{author}{1}{}{%
         {{hash=109db4cb43d89dc5ce3e3b59464f5b3a}{%
@@ -599,6 +661,42 @@
       \endverb
       \verb{url}
       \verb https://www.researchgate.net/publication/311807426_Pixel_geolocation_algorithm_for_satellite_scanner_data
+      \endverb
+    \endentry
+    \entry{Metz2020CollisionAvoidance}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=4ca9a4d0cb65296163e621c7b084b1d0}{%
+           family={Metz},
+           familyi={M\bibinitperiod},
+           given={Sascha},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technische Universität Darmstadt}%
+      }
+      \list{location}{1}{%
+        {Darmstadt, Germany}%
+      }
+      \strng{namehash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{fullhash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{fullhashraw}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{bibnamehash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{authorbibnamehash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{authornamehash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{authorfullhash}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \strng{authorfullhashraw}{4ca9a4d0cb65296163e621c7b084b1d0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementation and Comparison of Data-Based Methods for Collision Avoidance in Satellite Operations}
+      \field{type}{Master's Thesis}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/344268107_Master_Thesis_Implementation_and_comparison_of_data-based_methods_for_collision_avoidance_in_satellite_operations
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/344268107_Master_Thesis_Implementation_and_comparison_of_data-based_methods_for_collision_avoidance_in_satellite_operations
       \endverb
     \endentry
     \entry{Montenbruck2000}{book}{}{}

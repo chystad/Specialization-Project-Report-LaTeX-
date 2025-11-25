@@ -34,17 +34,16 @@
 \contentsline {subsection}{\numberline {2.4.4}Disturbance Effects on Formation Stability}{9}{subsection.2.4.4}%
 \contentsline {section}{\numberline {2.5}Summary of Literature Review}{9}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Theory}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Classical Orbital Elements}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Reference Frames}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Inertial ECI frame}{13}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}RTN frame}{14}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Orbital Perturbations}{14}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Spherical Harmonics}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Atmospheric Drag}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Solar Radiation Pressure}{16}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Third-body Perturbations}{16}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Numerical Orbit Propagation}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Analytical Orbit Propagation - SGP4}{17}{section.3.5}%
+\contentsline {section}{\numberline {3.1}Reference Frames}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Earth-Centered Inertial (ECI) Frame}{14}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Radial-Transverse-Normal (RTN) Frame}{14}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Orbital Perturbations}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Spherical Harmonics}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Atmospheric Drag}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Solar Radiation Pressure}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Third-body Perturbations}{16}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Numerical Orbit Propagation}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Analytical Orbit Propagation - SGP4}{17}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Methods}{18}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Simulation Design}{18}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Literature Search Methodology}{18}{section.4.2}%

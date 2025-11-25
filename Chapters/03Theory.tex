@@ -1,38 +1,47 @@
 % Some intoduction that ties the literature review to the theory chapter
 
-\section{Classical Orbital Elements}
-% Only really relevent for understanding TLEs for SGP4 propagation. Prioritize last
+% \section{Classical Orbital Elements}
+% Only really relevent for understanding TLEs for SGP4 propagation. Prioritize last Check if needed.
 
 \section{Reference Frames}
-Some general notation:
-\begin{displaymath}
-    R^{to}_{from}, \qquad r^{frame}_{to/from}
-\end{displaymath}
+% Tommy mentioned that it is extremely important to be precise in the reference frame definitions and usage later on
 
-\subsection{Inertial ECI frame}
-$\mathcal{F}^i$. Origin in the Earth's center and frame orientation fixed relative to the stars. Differs from ECEF in that respect. x-axis permanently fixed in a direction relative to the celestial sphere z-axis 90 degrees angle to the equatorial plane and extends up through the geographical North-Pole. y-axis defined with right-hand-rule
+A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathcal{O}_{\textit{rf}}\,; \hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ where $\mathcal{O}_{\textit{rf}}$ is the origin, and $\{\hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ denote the dextral orthogonal unit vectors \cite{Grotte2020SpacecraftAttitude}. In this work, two reference frames are used: the \gls{eci} frame and the \gls{rtn} frame, which is illustrated by figure \ref{fig:frame_def}. The \gls{eci} frame is the inertial frame used to express all absolute satellite motion about the Earth, while the \gls{rtn} frame provides a satellite-centered frame of reference useful for expressing relative motion within a formation. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{Figures/03Theory/ECI.png}
-    \caption{Earth Centered Inertial (ECI) coordinate system, courtesy of \cite{eci2014}}
-    \label{fig:eci_def} 
+    \includegraphics[width=0.6\textwidth]{Figures/03Theory/Frames.png}
+    \caption{Definition of the Earth-Centered Inertial ($\mathcal{F}^{\,i}$) and Radial-Transverse-Normal ($\mathcal{F}^{\,r}$) frames used in this project. The RTN origin is centered in the leader's center of mass in a leader-follower satellite formation. The unit vectors have different length for illustrative purposes. Adapted from \cite{eci2014, Metz2020CollisionAvoidance}}
+    \label{fig:frame_def} 
 \end{figure}
 
 
-\subsection{RTN frame}
-x-axis (R) outwards from the position vector (radial direction), z-axis (N) pointing towards the cross product between the position and velocity vectors (along-track direction), y-axis (T) completing the right-handed system (cross-track direction). Denoted by $\mathcal{F}^r$
+
+
+\subsection{Earth-Centered Inertial (ECI) Frame}
+The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{x}_{i}\,, \hat{y}_{i}\,, \hat{z}_{i}\}$, has its origin at the Earth's \gls{cm} and fixed principal axes relative to the celestial sphere. At any given time, $\hat{x}_{i}$ points towards the Vernal Equinox, per definition striking through the equator. $\hat{z}_{i}$ points along the Earth's axis of rotation through its geographical North-Pole, and $\hat{x}_{i}$ is defined using the right-hand rule. An illustration showing this principal axis configuration is shown in figure \ref{fig:frame_def}. The position of an arbitrary satellite, $s$, relative to the Earth's \gls{cm} can then be expressed by its principal components in the \gls{eci} with the following notation:
+
 \begin{equation}
-    \hat{R}^i_r = \frac{r^i_{c/e}}{||r^i_{c/e}||}, \qquad \hat{N}^i_r = \frac{r^i_{c/e} \times v^i_{c/e}}{||r^i_{c/e} \times v^i_{c/e}||}, \qquad \hat{T}^i_r = \hat{N}^i_r \times \hat{R}^i_r
+    r_{s/i}^i =  a\hat{x}_{i}^i + b\hat{y}_{i}^i + c\hat{z}_{i}^i = \begin{bmatrix}
+        a & b & c
+    \end{bmatrix}^T
 \end{equation}
-Here, $r^i_{c/e}$ and $v^i_{c/e}$ are the position and velocity vectors of the chief/leader relative to the Earth's center expressed in the inertial frame. The transformation between ECI and RTN frames is given by:
+
+
+
+\subsection{Radial-Transverse-Normal (RTN) Frame}
+The \gls{rtn} frame, $\mathcal{F}^{\,r}:\{\mathcal{O}_{r}\,; \hat{x}_{r}\,, \hat{y}_{r}\,, \hat{z}_{r}\}$, is defined with its origin at the  leader's \gls{cm} in a leader-follower satellite formation. Using $l$ to denote the leader satellite, the frame's orthogonal dextral unit vectors can be defined in the \gls{eci} frame as: 
+\begin{equation}
+    \hat{R}^i = \hat{x}_r^i = \frac{r^i_{l/i}}{||r^i_{l/i}||}, \qquad \hat{N}^i = \hat{z}_r^i = \frac{r^i_{l/i} \times v^i_{l/i}}{||r^i_{l/i} \times v^i_{l/i}||}, \qquad \hat{T}^i = \hat{y}_r^i = \hat{z}^i_r \times \hat{x}_r^i
+\end{equation}
+Here, $\hat{x}_r^i$ is the radial unit vector, pointing outwards along the leader's position vector. $\hat{z}_r^i$ points in the direction orthogonal to $\{ r^i_{l/i}, v^i_{l/i} \}$ and corresponds to the cross-track direction. Finally, $\hat{y}_r^i$ is defined through the right-hand rule, giving the along-track direction. An illustration of these definitions is presented in figure \ref{fig:frame_def}. Using this definition, the transformations to \gls{eci} from \gls{rtn} and back is given by:
 \begin{equation}
     R^i_r = \begin{bmatrix}
-        \hat{R}^i_r & \hat{T}^i_r & \hat{N}^i_r
+        \hat{x}^i_r & \hat{y}^i_r & \hat{z}^i_r
     \end{bmatrix}, \qquad R^r_i = (R^i_r)^T = \begin{bmatrix}
-        (\hat{R}^i_r)^T \\
-        (\hat{T}^i_r)^T \\
-        (\hat{N}^i_r)^T
+        (\hat{x}^i_r)^T \\
+        (\hat{y}^i_r)^T \\
+        (\hat{z}^i_r)^T
     \end{bmatrix}
 \end{equation}  
 

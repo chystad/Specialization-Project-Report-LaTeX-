@@ -2,7 +2,7 @@
 \contentsline {figure}{\numberline {1.1.1}{\ignorespaces Launch cost per kilogram to LEO versus first launch date, courtesy of \blx@tocontentsinit {0}\cite {jones2018launch_cost}}}{1}{figure.caption.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.2.1}{\ignorespaces Earth Centered Inertial (ECI) coordinate system, courtesy of \blx@tocontentsinit {0}\cite {eci2014}}}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1.1}{\ignorespaces Definition of the Earth-Centered Inertial ($\mathcal {F}^{\,i}$) and Radial-Transverse-Normal ($\mathcal {F}^{\,r}$) frames used in this project. The RTN origin is centered in the leader's center of mass in a leader-follower satellite formation. The unit vectors have different length for illustrative purposes. Adapted from \blx@tocontentsinit {0}\cite {eci2014, Metz2020CollisionAvoidance}}}{13}{figure.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

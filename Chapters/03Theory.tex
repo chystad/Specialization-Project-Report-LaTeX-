@@ -6,7 +6,7 @@
 \section{Reference Frames}
 % Tommy mentioned that it is extremely important to be precise in the reference frame definitions and usage later on
 
-A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathcal{O}_{\textit{rf}}\,; \hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ where $\mathcal{O}_{\textit{rf}}$ is the origin, and $\{\hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ denote the dextral orthogonal unit vectors \cite{Grotte2020SpacecraftAttitude}. In this work, mainly two reference frames are used: the \gls{eci} frame and the \gls{rtn} frame, which is illustrated by figure \ref{fig:frame_def}. The \gls{eci} frame is the inertial frame used to express all absolute satellite motion about the Earth, while the \gls{rtn} frame provides a satellite-centered frame of reference suited for expressing relative motion within a formation. Lastly, because gravitational and geophysical models are naturally defined in an Earth-fixed coordinate system, a third frame, the \gls{ecef} frame, is also introduced.
+A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathcal{O}_{\textit{rf}}\,; \hat{\textbf{x}}_{\textit{rf}}\,, \hat{\textbf{y}}_{\textit{rf}}\,, \hat{\textbf{z}}_{\textit{rf}}\}$ where $\mathcal{O}_{\textit{rf}}$ is the origin, and $\{\hat{\textbf{x}}_{\textit{rf}}\,, \hat{\textbf{y}}_{\textit{rf}}\,, \hat{\textbf{z}}_{\textit{rf}}\}$ denote the dextral orthogonal unit vectors \cite{Grotte2020SpacecraftAttitude}. In this work, mainly two reference frames are used: the \gls{eci} frame and the \gls{rtn} frame, which is illustrated by figure \ref{fig:frame_def}. The \gls{eci} frame is the inertial frame used to express all absolute satellite motion about the Earth, while the \gls{rtn} frame provides a satellite-centered frame of reference suited for expressing relative motion within a formation. Lastly, because gravitational and geophysical models are naturally defined in an Earth-fixed coordinate system, a third frame, the \gls{ecef} frame, is also introduced.
 
 \begin{figure}[H]
     \centering
@@ -17,9 +17,9 @@ A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathc
 
 
 \subsection{Earth-Centered Inertial (ECI) Frame}
-The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{x}_{i}\,, \hat{y}_{i}\,, \hat{z}_{i}\}$, has its origin at the Earth's \gls{cm} and fixed principal axes relative to the celestial sphere. At any given time, $\hat{x}_{i}$ points towards the Vernal Equinox, per definition striking through the equator. $\hat{z}_{i}$ points along the Earth's axis of rotation through its geographical North-Pole, and $\hat{y}_{i}$ is defined using the right-hand rule. An illustration showing this principal axis configuration is shown in figure \ref{fig:frame_def}. The position of an arbitrary satellite, $s$, relative to the Earth's \gls{cm} can then be expressed by its principal components in the \gls{eci} frame with the following notation:
+The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{\textbf{x}}_{i}\,, \hat{\textbf{y}}_{i}\,, \hat{\textbf{z}}_{i}\}$, has its origin at the Earth's \gls{cm} and fixed principal axes relative to the celestial sphere. At any given time, $\hat{\textbf{x}}_{i}$ points towards the Vernal Equinox, per definition striking through the equator. $\hat{\textbf{z}}_{i}$ points along the Earth's axis of rotation through its geographical North-Pole, and $\hat{\textbf{y}}_{i}$ is defined using the right-hand rule. An illustration showing this principal axis configuration is shown in figure \ref{fig:frame_def}. The position of an arbitrary satellite, $s$, relative to the Earth's \gls{cm} can then be expressed by its principal components in the \gls{eci} frame with the following notation:
 \begin{equation}
-    r_{s/i}^i =  a\hat{x}_{i}^i + b\hat{y}_{i}^i + c\hat{z}_{i}^i = \begin{bmatrix}
+    \textbf{r}_{s/i}^i =  a\hat{\textbf{x}}_{i}^i + b\hat{\textbf{y}}_{i}^i + c\hat{\textbf{z}}_{i}^i = \begin{bmatrix}
         a & b & c
     \end{bmatrix}^T
 \end{equation}
@@ -27,51 +27,65 @@ The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{x}_{i}\,, \hat
 
 
 \subsection{Radial-Transverse-Normal (RTN) Frame}
-The \gls{rtn} frame, $\mathcal{F}^{\,r}:\{\mathcal{O}_{r}\,; \hat{x}_{r}\,, \hat{y}_{r}\,, \hat{z}_{r}\}$, is defined with its origin at the  leader's \gls{cm} in a leader-follower satellite formation. Using $l$ to denote the leader satellite, the frame's orthogonal dextral unit vectors can be defined in the \gls{eci} frame as: 
+The \gls{rtn} frame, $\mathcal{F}^{\,r}:\{\mathcal{O}_{r}\,; \hat{\textbf{x}}_{r}\,, \hat{\textbf{y}}_{r}\,, \hat{\textbf{z}}_{r}\}$, is defined with its origin at the  leader's \gls{cm} in a leader-follower satellite formation. Using $l$ to denote the leader satellite, the frame's orthogonal dextral unit vectors can be defined in the \gls{eci} frame as: 
 \begin{equation}
-    \hat{R}^i = \hat{x}_r^i = \frac{r^i_{l/i}}{||r^i_{l/i}||}, \qquad \hat{N}^i = \hat{z}_r^i = \frac{r^i_{l/i} \times v^i_{l/i}}{||r^i_{l/i} \times v^i_{l/i}||}, \qquad \hat{T}^i = \hat{y}_r^i = \hat{z}^i_r \times \hat{x}_r^i
+    \hat{\textbf{R}}^i = \hat{\textbf{x}}_r^i = \frac{\textbf{r}^i_{l/i}}{||\textbf{r}^i_{l/i}||}, \qquad \hat{\textbf{N}}^i = \hat{\textbf{z}}_r^i = \frac{\textbf{r}^i_{l/i} \times \textbf{v}^i_{l/i}}{||\textbf{r}^i_{l/i} \times \textbf{v}^i_{l/i}||}, \qquad \hat{\textbf{T}}^i = \hat{\textbf{y}}_r^i = \hat{\textbf{z}}^i_r \times \hat{\textbf{x}}_r^i
 \end{equation}
-Here, $\hat{x}_r^i$ is the radial unit vector, pointing outwards along the leader's position vector. $\hat{z}_r^i$ points in the direction orthogonal to $\{ r^i_{l/i}, v^i_{l/i} \}$ and corresponds to the cross-track direction. Finally, $\hat{y}_r^i$ is defined through the right-hand rule, giving the along-track direction. An illustration of these definitions is presented in figure \ref{fig:frame_def}. Using this definition, the transformations to \gls{eci} from \gls{rtn} and back is given by:
+Here, $\hat{\textbf{x}}_r^i$ is the radial unit vector, pointing outwards along the leader's position vector. $\hat{\textbf{z}}_r^i$ points in the direction orthogonal to $\{ \textbf{r}^i_{l/i}, \textbf{v}^i_{l/i} \}$ and corresponds to the cross-track direction. Finally, $\hat{\textbf{y}}_r^i$ is defined through the right-hand rule, giving the along-track direction. An illustration of these definitions is presented in figure \ref{fig:frame_def}. Using this definition, the transformations to \gls{eci} from \gls{rtn} and back is given by:
 \begin{equation}
-    R^i_r = \begin{bmatrix}
-        \hat{x}^i_r & \hat{y}^i_r & \hat{z}^i_r
-    \end{bmatrix}, \qquad R^r_i = (R^i_r)^T
+    \textbf{R}^i_r = \begin{bmatrix}
+        \hat{\textbf{x}}^i_r & \hat{\textbf{y}}^i_r & \hat{\textbf{z}}^i_r
+    \end{bmatrix}, \qquad \textbf{R}^r_i = (\textbf{R}^i_r)^T
 \end{equation}  
 
 % \begin{equation}
 %     R^i_r = \begin{bmatrix}
-%         \hat{x}^i_r & \hat{y}^i_r & \hat{z}^i_r
+%         \hat{\textbf{x}}^i_r & \hat{\textbf{y}}^i_r & \hat{\textbf{z}}^i_r
 %     \end{bmatrix}, \qquad R^r_i = (R^i_r)^T = \begin{bmatrix}
-%         (\hat{x}^i_r)^T \\
-%         (\hat{y}^i_r)^T \\
-%         (\hat{z}^i_r)^T
+%         (\hat{\textbf{x}}^i_r)^T \\
+%         (\hat{\textbf{y}}^i_r)^T \\
+%         (\hat{\textbf{z}}^i_r)^T
 %     \end{bmatrix}
 % \end{equation}  
 
 
 \subsection{Earth-Fixed Earth-Centered (ECEF) Frame}
-The \gls{ecef} frame: $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{x}_{f}\,, \hat{y}_{f}\,, \hat{z}_{f}\}$, is a rotating terrestrial frame whose axes are fixed relative to the Earth's surface. Its origin $\mathcal{O}_{f}=\mathcal{O}_{i}$ is located at the Earth's \gls{cm}, while $\hat{z}_f = \hat{z}_i$ aligns with the planet's mean rotation axis pointing towards the geographical North-Pole. $\hat{x}_f$ intersects the equator and the prime meridian, and $\hat{y}_f$ fulfills the right-hand rule by pointing $90^\circ$ East longitude. Because the Earth is spinning, the transformation between the \gls{eci} and \gls{ecef} frames is inherently time-dependent. In this project, the rotation between the two frames is described using the formulation provided by Dr. Stryjewski \cite{Stryjewski2020coord_trans}, who expresses the Earth's rotation about the inertial $\hat{z}_i$-axis through a time-varying angle $\theta(t)$. The epoch at which the \gls{eci} and \gls{ecef} frames coincide is J2000, meaning that $\theta(t) = 0$ at 12:00 TT on 1 January 2000. Relative to this epoch, the rotation into \gls{ecef} at any later time $t$ is given by:
+The \gls{ecef} frame, $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{\textbf{x}}_{f}\,, \hat{\textbf{y}}_{f}\,, \hat{\textbf{z}}_{f}\}$, is a rotating Earth-fixed frame with its origin at the Earth's \gls{cm}. The axis $\hat{\mathbf{z}}^{f}=\hat{\mathbf{z}}^{i}$ aligns with the Earth's mean rotation axis, $\hat{\mathbf{x}}^{f}$ lies on the intersection of the equator and prime meridian, and $\hat{\mathbf{y}}^{f}$ follows by the right-hand rule. Because the frame rotates with the Earth, the transformation between \gls{eci} and \gls{ecef} depends on time. This work adopts the formulation of Stryjewski \cite{Stryjewski2020coord_trans}, expressing the rotation about the inertial $\hat{\mathbf{z}}^{i}$-axis through a time-varying angle $\theta(t)$, which is zero at the J2000 epoch (1 January 2000, 12:00 TT). The corresponding rotation matrix is
 \begin{equation}
-    R^f_i = \begin{bmatrix}
+    \textbf{R}^f_i = \begin{bmatrix}
         \cos \theta(t) & -\sin \theta(t) &  0 \\
         \sin \theta(t) & \cos \theta(t) & 0 \\
         0 & 0 & 1
-    \end{bmatrix}, \qquad R^i_f = (R^f_i)^T
+    \end{bmatrix}, \qquad \textbf{R}^i_f = (\textbf{R}^f_i)^T
 \label{eq:eci2ecef}
 \end{equation}
-where the angle is computed as:
+with the rotation angle defined as
 \begin{equation}
-    \theta(t) = \omega (GMST(t) - (UT1(t)-UTC(t))), \qquad \omega = 0.261799387799149rad/h
+\theta(t) = \omega \left(GMST(t) - (UT1(t) - UTC(t))\right), \qquad
+\omega = 0.261799387799149~\text{rad/h}.
 \end{equation}
+% The \gls{ecef} frame: $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{\textbf{x}}_{f}\,, \hat{\textbf{y}}_{f}\,, \hat{\textbf{z}}_{f}\}$, is a rotating terrestrial frame whose axes are fixed relative to the Earth's surface. Its origin $\mathcal{O}_{f}=\mathcal{O}_{i}$ is located at the Earth's \gls{cm}, while $\hat{\textbf{z}}_f = \hat{\textbf{z}}_i$ aligns with the planet's mean rotation axis pointing towards the geographical North-Pole. $\hat{\textbf{x}}_f$ intersects the equator and the prime meridian, and $\hat{\textbf{y}}_f$ fulfills the right-hand rule by pointing $90^\circ$ East longitude. Because the Earth is spinning, the transformation between the \gls{eci} and \gls{ecef} frames is inherently time-dependent. In this project, the rotation between the two frames is described using the formulation provided by Dr. Stryjewski \cite{Stryjewski2020coord_trans}, who expresses the Earth's rotation about the inertial $\hat{\textbf{z}}_i$-axis through a time-varying angle $\theta(t)$. The epoch at which the \gls{eci} and \gls{ecef} frames coincide is J2000, meaning that $\theta(t) = 0$ at 12:00 TT on 1 January 2000. Relative to this epoch, the rotation into \gls{ecef} at any later time $t$ is given by:
+% \begin{equation}
+%     \textbf{R}^f_i = \begin{bmatrix}
+%         \cos \theta(t) & -\sin \theta(t) &  0 \\
+%         \sin \theta(t) & \cos \theta(t) & 0 \\
+%         0 & 0 & 1
+%     \end{bmatrix}, \qquad \textbf{R}^i_f = (\textbf{R}^f_i)^T
+% \label{eq:eci2ecef}
+% \end{equation}
+% where the angle is computed as:
+% \begin{equation}
+%     \theta(t) = \omega (GMST(t) - (UT1(t)-UTC(t))), \qquad \omega = 0.261799387799149rad/h
+% \end{equation}
 
 \section{Orbital Perturbations}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{Figures/03Theory/perturbation magnitudes.png}
-%     \caption{Order of magnitude of various perturbations of a satellite orbit. Courtesy of \cite{Montenbruck2000}}
-%     \label{fig:perturb_mag} 
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Figures/03Theory/perturbation magnitudes.png}
+    \caption{Order of magnitude of various perturbations of a satellite orbit. Courtesy of \cite{Montenbruck2000}}
+    \label{fig:perturb_mag} 
+\end{figure}
 
 
 
@@ -79,12 +93,12 @@ where the angle is computed as:
 
 Assuming the Earth's mass is concentrated in the \gls{eci} frame's origin, the acceleration experienced by a spacecraft, $s$, can be modelled using Newton's gravitational law:
 \begin{equation}
-    \ddot{r}_{s/i} = - \frac{\mu}{||r_{s/i}||_2^3} r_{s/i} \iff \ddot{r}_{s/i} = \nabla U, \qquad \text{where } U = \mu\frac{1}{||r_{s/i}||_2}
+    \textbf{a}_{grav} = \ddot{\textbf{r}}_{s/i} = - \frac{\mu}{||\textbf{r}_{s/i}||_2^3} \textbf{r}_{s/i} \iff \ddot{\textbf{r}}_{s/i} = \nabla U, \qquad \text{where } U = \mu\frac{1}{||\textbf{r}_{s/i}||_2}
 \label{eq:newton_gravity}
 \end{equation}
-Here $\mu = GM$ is the Earth's gravitational parameter, and $\nabla U$ is an equivalent representation given by the gradient of the gravity potential. Other literature define $U$ with the opposite sign, but here $U>0$ is chosen to stay consistent with the convention used by Montenbruck, et al. Their literature explains that this model is inaccurate due to the Earth's mass being unhomogeneously distributed through its volume, and because its rotational velocity causes its shape to bulge around the equator \cite{Montenbruck2000}. They go on to present an extension of equation \ref{eq:newton_gravity} to account for these irregularities in the Earth's gravitational field, starting with a generalization of the gravity potential by summing up the contributions from all internal mass elements. With $\rho(r^f_{p/i})$ representing the density at some point $p$, and $\{r_{s/i}^f, r_{p/i}^f\}$ denoting the positions of the satellite and the point in \gls{ecef} respectively, the general gravity potential can be expressed as:
+Here $\mu = GM$ is the Earth's gravitational parameter, and $\nabla U$ is an equivalent representation given by the gradient of the gravity potential. Other literature define $U$ with the opposite sign, but here $U>0$ is chosen to stay consistent with the convention used by Montenbruck \& Gill. Their literature explains that this model is inaccurate due to the Earth's mass being unhomogeneously distributed through its volume, and because its rotational velocity causes its shape to bulge around the equator \cite{Montenbruck2000}. They go on to present an extension of equation \ref{eq:newton_gravity} to account for these irregularities in the Earth's gravitational field, starting with a generalization of the gravity potential by summing up the contributions from all internal mass elements. With $\rho(\textbf{r}^f_{p/i})$ representing the density at some point $p$, and $\{\textbf{r}_{s/i}^f, \textbf{r}_{p/i}^f\}$ denoting the positions of the satellite and the point in \gls{ecef} respectively, the general gravity potential can be expressed as:
 \begin{equation}
-    U = G \int \frac{1}{||r_{s/i}^f - r_{p/i}^f||_2} dm= G \int \frac{1}{||r_{s/i}^f - r_{p/i}^f||_2} \rho(r_{p/i}^f) d^3 r_{p/i}^f
+    U = G \int \frac{1}{||\textbf{r}_{s/i}^f - \textbf{r}_{p/i}^f||_2} dm= G \int \frac{1}{||\textbf{r}_{s/i}^f - \textbf{r}_{p/i}^f||_2} \rho(\textbf{r}_{p/i}^f) d^3 \textbf{r}_{p/i}^f
 \label{eq:grav_acc}
 \end{equation}
 However, the density distribution is not accurately known, which makes the expression impractical. To evaluate the integral further, the fraction can be expanded using a series of Legendre polynomials. The general Legendre polynomial $P_{nm}$ of degree $n$ and order $m$ is defined as:
@@ -95,13 +109,11 @@ Introducing the spacecraft's geocentric distance $r = ||r_{s/i}||_2$, the latitu
 \begin{equation}
     U = \frac{\mu}{R} \sum_{n=0}^{\infty} \sum_{m=0}^{n} (C_{nm}V_{nm} + S_{nm}W_{nm}), \; \begin{cases}
         V_{nm} &= \left( \frac{R}{r} \right)^{n+1} P_{nm}(\sin \phi^f) \cdot \cos m \lambda^f \\
-        W_{nm} &= \left( \frac{R}{r} \right)^{n+1} P_{nm}(\sin \phi*f) \cdot \sin m \lambda^f 
+        W_{nm} &= \left( \frac{R}{r} \right)^{n+1} P_{nm}(\sin \phi^f) \cdot \sin m \lambda^f 
     \end{cases}
 \label{eq:grav_pot_full}
 \end{equation}
 Here, $R$ denote the Earth's reference radius, and the geopotential coefficients $C_{nm}$ and $S_{nm}$ encode the internal mass distribution's effect on the satellite. Because the longitudinal mass variations are comparatively small, a common simplification is to set $m=0$, giving the so-called zonal coefficient. Under this assumption, $J_n = -C_n0$ and $W_{n0}=0$, which significantly simplifies the equation \ref{eq:grav_pot_full}. Using the zonal terms up to forth degree, the truncated gravitational potential can be computed from the Legendre polynomials and $J$-terms in table \ref{tab:geopotential_legendre}:
-
-
 \begin{equation}
 \begin{split}
     U (r, \phi^f, \lambda^f)&= \frac{\mu}{R} \sum_{n=0}^{4}(C_{n0} V_{n0} + S_{n0}W_{n0}) \\
@@ -114,7 +126,7 @@ Here, $R$ denote the Earth's reference radius, and the geopotential coefficients
     U(r, \phi^f) &= \frac{\mu}{r} \left[ 1 - \sum_{n=2}^{4} J_n \left( \frac{R}{r} \right)^n P_n(\sin \phi^f) \right]
 \end{split}
 \end{equation}
-Among the zonal coefficients, $J_2$ is by far the most significant, and dominates the non-spherical effects. It captures the Earth's oblateness and produces the well known secular perturbations in the orbital elements, which drifts the right ascension of the ascending node and rotation of the argument of perigee. The higher-degree $J_3$ and $J_4$ terms are several orders of magnitude less significant, but still produce a notable perturbation. $J_3$ induces long-period variations in eccentricity due to asymmetry between the northern and southern hemispheres, while $J_4$ refines the flatness modelling, and contributes to small corrections to the secular rates caused by $J_2$ \cite{vallado2001, Montenbruck2000}.
+Among the zonal coefficients, $J_2$ is by far the most significant, and dominates the non-spherical effects. It captures the Earth's oblateness and produces the well known secular perturbations in the orbital elements, which drifts the right ascension of the ascending node and rotation of the argument of perigee. The higher-degree $J_3$ and $J_4$ terms are several orders of magnitude less significant, but still produce a notable perturbation. $J_3$ induces long-period variations in eccentricity due to asymmetry between the northern and southern hemispheres, while $J_4$ refines the flatness modelling, and contributes to small corrections to the secular rates caused by $J_2$ \cite{vallado2001, Montenbruck2000, Roscoe2014}.
 \begin{table}[h!]
 \centering
 \begin{tabular}{c c c}
@@ -133,48 +145,32 @@ $n$ & $J_n$ & $P_n(u)$ \\
 \end{table}
 Inserting this truncated spherical harmonic expression into equation \ref{eq:grav_acc} yields the acceleration experienced by an arbitrary spacecraft, expressed in the \gls{ecef} frame. By computing the gradient, then applying the time-varying transformation in equation \ref{eq:eci2ecef}, the acceleration can then be transformed into the \gls{eci} frame:
 \begin{equation}
-    \ddot{r}^f_{s/i} = \nabla U(r, \phi^f) \;\;\Longrightarrow\;\; \ddot{r}^i_{s/i} = R^i_f \nabla U(r, \phi^f)
+    \textbf{a}_{grav}^f = \ddot{\textbf{r}}^f_{s/i} = \nabla U(r, \phi^f) \;\;\Longleftrightarrow\;\; \textbf{a}_{grav}^i = \ddot{\textbf{r}}^i_{s/i} = \textbf{R}^i_f \nabla U(r, \phi^f)
 \end{equation}
+% Feedback from chat:
+% The sentence "inserting this truncated spherical ..." is slightly implementation-focus and should be adjusted to fit the theory chapter. Something like:
+%   The truncated potential can be differentiated to obtain the gravitational acceleration in ECEF. Using the rotation $R_f^i(t)$, this vector is then expressed in ECI, which forms the basis for the dynamical equations used in the simulations.
+% All good otherwise
+
 
 \subsection{Atmospheric Drag} \label{sec:Atmospheric_Drag}
 
-Atmospheric drag exponential density model from \cite{vallado2001, Montenbruck2000, Roscoe2014}
-\[
-\mathbf{a}_{\text{drag}} = -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho \, v_{\text{rel}}^{2} \, \hat{\mathbf{v}}_{\text{rel}},
-\]
+Atmospheric drag is the most influential non-gravitational perturbation acting on satellites in \gls{leo}. The perturbation is caused by a momentum exchange between the spacecraft's surface and the residual air-molecules encountered along its trajectory. The resulting acceleration will always act opposite to the satellite's velocity, causing a slow deceleration over time. The momentum exchange is typically modelled in the free-molecular flow regime, which assumes that the molecules bouncing off the spacecraft's surface do not interfere with incoming ones. The acceleration can then be expressed using the classical aerodynamic formulation \cite{Montenbruck2000, vallado2001}:
+\begin{equation}
+    \mathbf{a}_{\text{drag}}^i = \ddot{\textbf{r}}^{\,i}_{s/i} = -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho \, v_{\text{rel}}^{2} \, \hat{\textbf{v}}_{rel}^i
+\label{eq:drag}
+\end{equation}
+In this expression, $A$ is the cross-section of the spacecraft perpendicular to the incoming molecular flow, which is often approximated as constant even though it varies with the spacecraft's attitude and geometry \cite{Roscoe2014}. Furthermore, the acceleration magnitude is inversely proportional to the spacecraft's mass $m$, given by the area-to-mass ratio. The term $\textbf{v}_{rel}^i$ represents the relative velocity between the satellite and the surrounding atmosphere expressed in \gls{eci}. $v_{rel}$ and $\hat{\textbf{v}}_{rel}^i$ is the velocity's magnitude and unit vector, respectively. Montenbruck \& Gill presents a satisfactory first-order approximation where the atmosphere co-rotates with the Earth \cite{Montenbruck2000}:
+\begin{equation}
+\mathbf{v}_{rel}^i = \mathbf{v}^i_{s/i} - \boldsymbol{\omega}_{f/i}^i \times \mathbf{r}_{s/i}^i ,
+\end{equation}
+where $\{\mathbf{r}^i_{s/i}, \mathbf{v}_{s/i}^i\}$ is the position and velocity of an arbitrary satellite $s$ in \gls{eci}, and $\boldsymbol{\omega}_{f/i}^i$ is the Earth's angular velocity. The parameter $\rho$ denotes the local atmospheric density, and its modelling is a major source of drag uncertainty because the upper atmosphere is subject to constant change from solar and geomagnetic activity. A ''rough estimate'' of the density's dependence on the altitude $h$ is the exponential density model \cite{Montenbruck2000, vallado2001}: 
+\begin{equation}
+    \rho(h) = \rho_0 \exp\!\left( -\frac{h - h_0}{H_0} \right), \qquad H_0 = \frac{\mathcal{R}T}{\mu_m g}
+\end{equation}
+Here $h_0$ is the geocentric distance to the Earth's surface, $h$ is the conventional altitude and $\rho_0$ is the reference density at altitude $h=0$. $H_0$ is the density scale height, and is defined as the height where the density is reduced to $\rho_0/e$. This height is given as a function of Boltzmamnn's constant $\mathcal{R}$, the atmospheric temperature $T$, the mean molecular mass $\mu_m$ and the acceleration magnitude due to gravity $g$ \cite{Montenbruck2000, SpaceAcademyAtmosMod}.
 
-\begin{itemize}
-    \item $C_D$ is the drag coefficient,
-    \item $A$ is the effective cross-sectional area,
-    \item $m$ is the spacecraft mass,
-    \item $\rho$ is the atmospheric density at the spacecraft location,
-    \item $\mathbf{v}_{\text{rel}}$ is the velocity of the spacecraft \textit{relative to the atmosphere},
-    \item $v_{\text{rel}} = \lVert \mathbf{v}_{\text{rel}} \rVert$,
-    \item $\hat{\mathbf{v}}_{\text{rel}} = \mathbf{v}_{\text{rel}} / v_{\text{rel}}$.
-\end{itemize}
-
-% Exponential density model
-\[
-\rho(h) = \rho_0 \exp\!\left( -\frac{h - h_0}{H} \right),
-\]
-
-where
-
-\begin{itemize}
-    \item $h$ is the altitude, $h = r - R_E$,
-    \item $\rho_0$ is the reference density at altitude $h_0$,
-    \item $H$ is the scale height.
-\end{itemize}
-
-% Full drag acceleration with exponential atmosphere
-\[
-\mathbf{a}_{\text{drag}}
-= -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho_0
-\exp\!\left( -\frac{h - h_0}{H} \right)
-v_{\text{rel}}^{2} \, \hat{\mathbf{v}}_{\text{rel}}.
-\]
-
-
+The final parameter in equation \ref{eq:drag} is the drag coefficient $C_D$. It describes the interaction between the impacting atmospheric molecule and the spacecraft's surface. Its value is dependent on the surface material, gas-surface interaction, temperature and flow regime through complex mechanisms, which makes its calculation non-trivial. However, Montenbruck \& Gill reports that typical values of $C_D$ range between $1.5-3.0$, and that the initial estimation is commonly corrected through orbit determination \cite{Montenbruck2000}.
 
 
 \subsection{Solar Radiation Pressure} \label{sec:Solar_Pressure}

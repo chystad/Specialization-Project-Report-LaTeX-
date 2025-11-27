@@ -393,6 +393,8 @@ INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm080
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0800.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0800.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0600.tfm
 INPUT .\Figures\03Theory\Frames.png
 INPUT .\Figures\03Theory\Frames.png
 INPUT .\Figures\03Theory\Frames.png
@@ -403,6 +405,19 @@ INPUT .\Figures\03Theory\Frames.png
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT .\Figures\03Theory\perturbation magnitudes.png
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
 INPUT .\Chapters\04Method.tex
 INPUT .\Chapters\04Method.tex
 INPUT .\Chapters\04Method.tex
@@ -472,6 +487,8 @@ INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb

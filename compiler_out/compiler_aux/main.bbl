@@ -35,8 +35,8 @@
       \strng{authornamehash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-23}
@@ -68,8 +68,8 @@
       \strng{authornamehash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhashraw}{213891630c39237ea968f6619397e274}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{48th International Conference on Environmental Systems (ICES)}
@@ -90,8 +90,8 @@
       \list{institution}{1}{%
         {Norwegian Defence Research Establishment (FFI)}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{/mnt/data/FFI_faktaark_jamming_digitalt.pdf}}
       \field{note}{Accessed: 2025-11-21}
@@ -113,8 +113,8 @@
       \strng{authornamehash}{8dc28f4761ad5c456287ab3eba679528}
       \strng{authorfullhash}{8dc28f4761ad5c456287ab3eba679528}
       \strng{authorfullhashraw}{8dc28f4761ad5c456287ab3eba679528}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.ffi.no/en/news/jamming--a-technological-cat-and-mouse-game}}
@@ -136,8 +136,8 @@
       \strng{authornamehash}{d84a6a1f13ba19ddd01f843674b2452b}
       \strng{authorfullhash}{d84a6a1f13ba19ddd01f843674b2452b}
       \strng{authorfullhashraw}{d84a6a1f13ba19ddd01f843674b2452b}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://gpsjam.org}}
@@ -510,8 +510,8 @@
       \strng{authornamehash}{2176a0297be7a09b1fd3c50f2ff07ffa}
       \strng{authorfullhash}{2176a0297be7a09b1fd3c50f2ff07ffa}
       \strng{authorfullhashraw}{2176a0297be7a09b1fd3c50f2ff07ffa}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advanced Maui Optical and Space Surveillance Technologies Conference (AMOS)}
@@ -699,6 +699,41 @@
       \verb https://www.researchgate.net/publication/344268107_Master_Thesis_Implementation_and_comparison_of_data-based_methods_for_collision_avoidance_in_satellite_operations
       \endverb
     \endentry
+    \entry{Stryjewski2020coord_trans}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=d973af8b048d1a2b306f756d903a798e}{%
+           family={Stryjewski},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {MIT Lincoln Laboratory}%
+      }
+      \strng{namehash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{fullhash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{fullhashraw}{d973af8b048d1a2b306f756d903a798e}
+      \strng{bibnamehash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{authorbibnamehash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{authornamehash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{authorfullhash}{d973af8b048d1a2b306f756d903a798e}
+      \strng{authorfullhashraw}{d973af8b048d1a2b306f756d903a798e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{Version 08/19/20}
+      \field{title}{Coordinate Transformations}
+      \field{type}{Technical Report}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://x-lumin.com/wp-content/uploads/2020/09/Coordinate_Transforms.pdf
+      \endverb
+      \verb{url}
+      \verb https://x-lumin.com/wp-content/uploads/2020/09/Coordinate_Transforms.pdf
+      \endverb
+    \endentry
     \entry{Montenbruck2000}{book}{}{}
       \name{author}{2}{}{%
         {{hash=80a8be6ff5184fbb0119b6701e40cfb1}{%
@@ -740,6 +775,48 @@
       \endverb
       \verb{url}
       \verb https://ftp.space.dtu.dk/pub/nio/Macau/Montenbruck_2000_SatelliteOrbits.pdf
+      \endverb
+    \endentry
+    \entry{Zhong2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=48c79c1f7cfddba3955c60db103869fb}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Weichao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8f36b7c244e514b20015f753f02acb19}{%
+           family={Gurfil},
+           familyi={G\bibinitperiod},
+           given={Pini},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{fullhash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{fullhashraw}{ad27b037a97bc7df2ca81714af703013}
+      \strng{bibnamehash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{authorbibnamehash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{authornamehash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{authorfullhash}{ad27b037a97bc7df2ca81714af703013}
+      \strng{authorfullhashraw}{ad27b037a97bc7df2ca81714af703013}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Guidance, Control, and Dynamics}
+      \field{number}{6}
+      \field{title}{Mean Orbital Elements Estimation for Autonomous Satellite Guidance and Orbit Control}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{pages}{1624\bibrangedash 1641}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.2514/1.60701
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/260501946_Mean_Orbital_Elements_Estimation_for_Autonomous_Satellite_Guidance_and_Orbit_Control
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/260501946_Mean_Orbital_Elements_Estimation_for_Autonomous_Satellite_Guidance_and_Orbit_Control
       \endverb
     \endentry
     \entry{Roscoe2014}{inproceedings}{}{}
@@ -786,8 +863,8 @@
       \strng{authornamehash}{59ae6df15d4e4480af3f63e8ea53d0ee}
       \strng{authorfullhash}{f13c885867c176ab3009fc4d839917f0}
       \strng{authorfullhashraw}{f13c885867c176ab3009fc4d839917f0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the AAS/AIAA Spaceflight Mechanics Meeting}
@@ -822,8 +899,8 @@
       \strng{authornamehash}{5772d44dd5bc95ef8faf8a4773563cbe}
       \strng{authorfullhash}{5772d44dd5bc95ef8faf8a4773563cbe}
       \strng{authorfullhashraw}{5772d44dd5bc95ef8faf8a4773563cbe}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Reprint: 1980 softcover edition.}

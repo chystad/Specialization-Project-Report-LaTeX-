@@ -6,27 +6,24 @@
 \section{Reference Frames}
 % Tommy mentioned that it is extremely important to be precise in the reference frame definitions and usage later on
 
-A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathcal{O}_{\textit{rf}}\,; \hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ where $\mathcal{O}_{\textit{rf}}$ is the origin, and $\{\hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ denote the dextral orthogonal unit vectors \cite{Grotte2020SpacecraftAttitude}. In this work, two reference frames are used: the \gls{eci} frame and the \gls{rtn} frame, which is illustrated by figure \ref{fig:frame_def}. The \gls{eci} frame is the inertial frame used to express all absolute satellite motion about the Earth, while the \gls{rtn} frame provides a satellite-centered frame of reference useful for expressing relative motion within a formation. 
+A reference frame is uniquely described by $\mathcal{F}^{\,\textit{rf}}:\{\mathcal{O}_{\textit{rf}}\,; \hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ where $\mathcal{O}_{\textit{rf}}$ is the origin, and $\{\hat{x}_{\textit{rf}}\,, \hat{y}_{\textit{rf}}\,, \hat{z}_{\textit{rf}}\}$ denote the dextral orthogonal unit vectors \cite{Grotte2020SpacecraftAttitude}. In this work, mainly two reference frames are used: the \gls{eci} frame and the \gls{rtn} frame, which is illustrated by figure \ref{fig:frame_def}. The \gls{eci} frame is the inertial frame used to express all absolute satellite motion about the Earth, while the \gls{rtn} frame provides a satellite-centered frame of reference suited for expressing relative motion within a formation. Lastly, because gravitational and geophysical models are naturally defined in an Earth-fixed coordinate system, a third frame, the \gls{ecef} frame, is also introduced.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Figures/03Theory/Frames.png}
-    \caption{Definition of the Earth-Centered Inertial ($\mathcal{F}^{\,i}$) and Radial-Transverse-Normal ($\mathcal{F}^{\,r}$) frames used in this project. The RTN origin is centered in the leader's center of mass in a leader-follower satellite formation. The unit vectors have different length for illustrative purposes. Adapted from \cite{eci2014, Metz2020CollisionAvoidance}}
+    \caption{Illustration of the Earth-Centered Inertial ($\mathcal{F}^{\,i}$) and Radial-Transverse-Normal ($\mathcal{F}^{\,r}$) frames used in this project. The unit vectors have different length for illustrative purposes. Adapted from \cite{eci2014, Metz2020CollisionAvoidance}} 
     \label{fig:frame_def} 
 \end{figure}
 
 
-
-
 \subsection{Earth-Centered Inertial (ECI) Frame}
-The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{x}_{i}\,, \hat{y}_{i}\,, \hat{z}_{i}\}$, has its origin at the Earth's \gls{cm} and fixed principal axes relative to the celestial sphere. At any given time, $\hat{x}_{i}$ points towards the Vernal Equinox, per definition striking through the equator. $\hat{z}_{i}$ points along the Earth's axis of rotation through its geographical North-Pole, and $\hat{x}_{i}$ is defined using the right-hand rule. An illustration showing this principal axis configuration is shown in figure \ref{fig:frame_def}. The position of an arbitrary satellite, $s$, relative to the Earth's \gls{cm} can then be expressed by its principal components in the \gls{eci} with the following notation:
-
+The \gls{eci} frame, $\mathcal{F}^{\,i}:\{\mathcal{O}_{i}\,; \hat{x}_{i}\,, \hat{y}_{i}\,, \hat{z}_{i}\}$, has its origin at the Earth's \gls{cm} and fixed principal axes relative to the celestial sphere. At any given time, $\hat{x}_{i}$ points towards the Vernal Equinox, per definition striking through the equator. $\hat{z}_{i}$ points along the Earth's axis of rotation through its geographical North-Pole, and $\hat{y}_{i}$ is defined using the right-hand rule. An illustration showing this principal axis configuration is shown in figure \ref{fig:frame_def}. The position of an arbitrary satellite, $s$, relative to the Earth's \gls{cm} can then be expressed by its principal components in the \gls{eci} frame with the following notation:
 \begin{equation}
     r_{s/i}^i =  a\hat{x}_{i}^i + b\hat{y}_{i}^i + c\hat{z}_{i}^i = \begin{bmatrix}
         a & b & c
     \end{bmatrix}^T
 \end{equation}
-
+% TODO: define J2000 ECI
 
 
 \subsection{Radial-Transverse-Normal (RTN) Frame}
@@ -38,40 +35,106 @@ Here, $\hat{x}_r^i$ is the radial unit vector, pointing outwards along the leade
 \begin{equation}
     R^i_r = \begin{bmatrix}
         \hat{x}^i_r & \hat{y}^i_r & \hat{z}^i_r
-    \end{bmatrix}, \qquad R^r_i = (R^i_r)^T = \begin{bmatrix}
-        (\hat{x}^i_r)^T \\
-        (\hat{y}^i_r)^T \\
-        (\hat{z}^i_r)^T
-    \end{bmatrix}
+    \end{bmatrix}, \qquad R^r_i = (R^i_r)^T
 \end{equation}  
 
+% \begin{equation}
+%     R^i_r = \begin{bmatrix}
+%         \hat{x}^i_r & \hat{y}^i_r & \hat{z}^i_r
+%     \end{bmatrix}, \qquad R^r_i = (R^i_r)^T = \begin{bmatrix}
+%         (\hat{x}^i_r)^T \\
+%         (\hat{y}^i_r)^T \\
+%         (\hat{z}^i_r)^T
+%     \end{bmatrix}
+% \end{equation}  
+
+
+\subsection{Earth-Fixed Earth-Centered (ECEF) Frame}
+The \gls{ecef} frame: $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{x}_{f}\,, \hat{y}_{f}\,, \hat{z}_{f}\}$, is a rotating terrestrial frame whose axes are fixed relative to the Earth's surface. Its origin $\mathcal{O}_{f}=\mathcal{O}_{i}$ is located at the Earth's \gls{cm}, while $\hat{z}_f = \hat{z}_i$ aligns with the planet's mean rotation axis pointing towards the geographical North-Pole. $\hat{x}_f$ intersects the equator and the prime meridian, and $\hat{y}_f$ fulfills the right-hand rule by pointing $90^\circ$ East longitude. Because the Earth is spinning, the transformation between the \gls{eci} and \gls{ecef} frames is inherently time-dependent. In this project, the rotation between the two frames is described using the formulation provided by Dr. Stryjewski \cite{Stryjewski2020coord_trans}, who expresses the Earth's rotation about the inertial $\hat{z}_i$-axis through a time-varying angle $\theta(t)$. The epoch at which the \gls{eci} and \gls{ecef} frames coincide is J2000, meaning that $\theta(t) = 0$ at 12:00 TT on 1 January 2000. Relative to this epoch, the rotation into \gls{ecef} at any later time $t$ is given by:
+\begin{equation}
+    R^f_i = \begin{bmatrix}
+        \cos \theta(t) & -\sin \theta(t) &  0 \\
+        \sin \theta(t) & \cos \theta(t) & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}, \qquad R^i_f = (R^f_i)^T
+\label{eq:eci2ecef}
+\end{equation}
+where the angle is computed as:
+\begin{equation}
+    \theta(t) = \omega (GMST(t) - (UT1(t)-UTC(t))), \qquad \omega = 0.261799387799149rad/h
+\end{equation}
 
 \section{Orbital Perturbations}
 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{Figures/03Theory/perturbation magnitudes.png}
+%     \caption{Order of magnitude of various perturbations of a satellite orbit. Courtesy of \cite{Montenbruck2000}}
+%     \label{fig:perturb_mag} 
+% \end{figure}
+
+
+
 \subsection{Spherical Harmonics} \label{sec:J2}
 
-Gravitational potential with J2 - J4 from \cite{vallado2001, Montenbruck2000}
+Assuming the Earth's mass is concentrated in the \gls{eci} frame's origin, the acceleration experienced by a spacecraft, $s$, can be modelled using Newton's gravitational law:
+\begin{equation}
+    \ddot{r}_{s/i} = - \frac{\mu}{||r_{s/i}||_2^3} r_{s/i} \iff \ddot{r}_{s/i} = \nabla U, \qquad \text{where } U = \mu\frac{1}{||r_{s/i}||_2}
+\label{eq:newton_gravity}
+\end{equation}
+Here $\mu = GM$ is the Earth's gravitational parameter, and $\nabla U$ is an equivalent representation given by the gradient of the gravity potential. Other literature define $U$ with the opposite sign, but here $U>0$ is chosen to stay consistent with the convention used by Montenbruck, et al. Their literature explains that this model is inaccurate due to the Earth's mass being unhomogeneously distributed through its volume, and because its rotational velocity causes its shape to bulge around the equator \cite{Montenbruck2000}. They go on to present an extension of equation \ref{eq:newton_gravity} to account for these irregularities in the Earth's gravitational field, starting with a generalization of the gravity potential by summing up the contributions from all internal mass elements. With $\rho(r^f_{p/i})$ representing the density at some point $p$, and $\{r_{s/i}^f, r_{p/i}^f\}$ denoting the positions of the satellite and the point in \gls{ecef} respectively, the general gravity potential can be expressed as:
+\begin{equation}
+    U = G \int \frac{1}{||r_{s/i}^f - r_{p/i}^f||_2} dm= G \int \frac{1}{||r_{s/i}^f - r_{p/i}^f||_2} \rho(r_{p/i}^f) d^3 r_{p/i}^f
+\label{eq:grav_acc}
+\end{equation}
+However, the density distribution is not accurately known, which makes the expression impractical. To evaluate the integral further, the fraction can be expanded using a series of Legendre polynomials. The general Legendre polynomial $P_{nm}$ of degree $n$ and order $m$ is defined as:
+\begin{equation}
+    P_{nm}(u) = (1-u^2)^{m/2} \frac{d^m}{du^m}P_n(u)
+\end{equation}
+Introducing the spacecraft's geocentric distance $r = ||r_{s/i}||_2$, the latitude $\phi^f$ and the longitude $\lambda^f$ allows the satellite's position in the \gls{ecef} frame to be expressed in spherical coordinates $\{ r, \phi^f, \lambda^f \}$. The superscript $^f$ is in this case used to indicate that the angles are Earth-fixed. Using these coordinates together with the associated Legendre polynomials, the gravity potential can be written in its general spherical harmonic form:
+\begin{equation}
+    U = \frac{\mu}{R} \sum_{n=0}^{\infty} \sum_{m=0}^{n} (C_{nm}V_{nm} + S_{nm}W_{nm}), \; \begin{cases}
+        V_{nm} &= \left( \frac{R}{r} \right)^{n+1} P_{nm}(\sin \phi^f) \cdot \cos m \lambda^f \\
+        W_{nm} &= \left( \frac{R}{r} \right)^{n+1} P_{nm}(\sin \phi*f) \cdot \sin m \lambda^f 
+    \end{cases}
+\label{eq:grav_pot_full}
+\end{equation}
+Here, $R$ denote the Earth's reference radius, and the geopotential coefficients $C_{nm}$ and $S_{nm}$ encode the internal mass distribution's effect on the satellite. Because the longitudinal mass variations are comparatively small, a common simplification is to set $m=0$, giving the so-called zonal coefficient. Under this assumption, $J_n = -C_n0$ and $W_{n0}=0$, which significantly simplifies the equation \ref{eq:grav_pot_full}. Using the zonal terms up to forth degree, the truncated gravitational potential can be computed from the Legendre polynomials and $J$-terms in table \ref{tab:geopotential_legendre}:
+
 
 \begin{equation}
-    U(r, \phi) = \frac{\mu}{r} \left[ 1 - \sum_{n=2}^{4} J_n \left( \frac{R_E}{r} \right)^n P_n(\sin \phi) \right]
+\begin{split}
+    U (r, \phi^f, \lambda^f)&= \frac{\mu}{R} \sum_{n=0}^{4}(C_{n0} V_{n0} + S_{n0}W_{n0}) \\
+    U (r, \phi^f)&= \frac{\mu}{R} \sum_{n=0}^{4}(C_{n0} V_{n0}) \\
+     &= \frac{\mu}{R} \left[C_{00}V_{00} + C_{10}V_{10} + C_{20}V_{20} + C_{30}V_{30} + C_{40}V_{40} \right] \\
+     &= \frac{\mu}{R} \left[ \left( \frac{R}{r} \right) -J_2\left( \frac{R}{r} \right)^3 P_2(\sin \phi^f) \right. \\
+    & \qquad \quad \left.-J_3\left( \frac{R}{r} \right)^4 P_3(\sin \phi^f) -J_4\left( \frac{R}{r} \right)^5 P_4(\sin \phi^f) \right] \\
+    U (r, \phi^f) &= \frac{\mu}{r} \left[ 1 -J_2\left( \frac{R}{r} \right)^2 P_2(\sin \phi^f) \right. \\
+    & \qquad \quad \left.-J_3\left( \frac{R}{r} \right)^3 P_3(\sin \phi^f) -J_4\left( \frac{R}{r} \right)^4 P_4(\sin \phi^f) \right] \\
+    U(r, \phi^f) &= \frac{\mu}{r} \left[ 1 - \sum_{n=2}^{4} J_n \left( \frac{R}{r} \right)^n P_n(\sin \phi^f) \right]
+\end{split}
 \end{equation}
-
-where:
-\begin{itemize}
-    \item $\mu$ is Earth's gravitational parameter
-    \item $R_E$ is the Earth's equatorial radius
-    \item $r = ||r||$ is the geocentric distance
-    \item $\phi$ is the geocentric latitude
-    \item $J_n$ are the zonal harmonic coefficients
-    \item $P_n(\cdot)$ are the Legendre polynomials
-\end{itemize}
-
+Among the zonal coefficients, $J_2$ is by far the most significant, and dominates the non-spherical effects. It captures the Earth's oblateness and produces the well known secular perturbations in the orbital elements, which drifts the right ascension of the ascending node and rotation of the argument of perigee. The higher-degree $J_3$ and $J_4$ terms are several orders of magnitude less significant, but still produce a notable perturbation. $J_3$ induces long-period variations in eccentricity due to asymmetry between the northern and southern hemispheres, while $J_4$ refines the flatness modelling, and contributes to small corrections to the secular rates caused by $J_2$ \cite{vallado2001, Montenbruck2000}.
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c c}
+\hline
+$n$ & $J_n$ & $P_n(u)$ \\
+\hline
+0 & $-1$ & $1$ \\
+1 & $0$ & $u$ \\
+2 & $1.08263 \times 10^{-3}$ & $\tfrac{1}{2}(3u^2 - 1)$ \\
+3 & $-2.53266 \times 10^{-6}$ & $\tfrac{1}{2}(5u^3 - 3u)$ \\
+4 & $-1.61962 \times 10^{-6}$ & $\tfrac{1}{8}(35u^4 - 30u^2 + 3)$ \\
+\hline
+\end{tabular}
+\caption{Zonal coefficients and associated Legendre polynomials up to fourth degree. Values courtesy of \cite{Zhong2013}.}
+\label{tab:geopotential_legendre}
+\end{table}
+Inserting this truncated spherical harmonic expression into equation \ref{eq:grav_acc} yields the acceleration experienced by an arbitrary spacecraft, expressed in the \gls{ecef} frame. By computing the gradient, then applying the time-varying transformation in equation \ref{eq:eci2ecef}, the acceleration can then be transformed into the \gls{eci} frame:
 \begin{equation}
-    a_{grav} = -\nabla U(r)
+    \ddot{r}^f_{s/i} = \nabla U(r, \phi^f) \;\;\Longrightarrow\;\; \ddot{r}^i_{s/i} = R^i_f \nabla U(r, \phi^f)
 \end{equation}
-
-TODO: Explain the decreasing significance of J2, J3 and J4 terms, and how they affect the mean orbital elements
-TODO: Add a table giving the numerical values for the J2-J4 terms
 
 \subsection{Atmospheric Drag} \label{sec:Atmospheric_Drag}
 

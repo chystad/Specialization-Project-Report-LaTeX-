@@ -91,6 +91,8 @@ INPUT .\acronyms.tex
 INPUT .\acronyms.tex
 INPUT .\acronyms.tex
 INPUT acronyms.tex
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\tex\latex\tocbibind\tocbibind.sty
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
 INPUT C:\Users\chris\AppData\Local\Programs\MiKTeX\tex\latex\import\import.sty

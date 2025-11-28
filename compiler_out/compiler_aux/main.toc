@@ -45,24 +45,25 @@
 \contentsline {subsection}{\numberline {3.2.1}Spherical Harmonics}{16}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Atmospheric Drag}{18}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Solar Radiation Pressure}{19}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Third-body Perturbations}{20}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Numerical Orbit Propagation}{20}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Analytical Orbit Propagation - SGP4}{20}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Methods}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Simulation Design}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Literature Search Methodology}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Software Development}{21}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Software Architecture}{21}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}Main Pipeline}{21}{subsubsection.4.3.1.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.2}Config}{22}{subsubsection.4.3.1.2}%
-\contentsline {chapter}{\numberline {5}Results}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Prelim results}{24}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Simulator output difference plots}{24}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}R}{25}{subsection.5.1.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{26}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future work}{26}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Conclusions}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {}References}{28}{chapter.7}%
-\contentsline {chapter}{\numberline {}Appendices:}{31}{chapter*.16}%
-\contentsline {chapter}{\numberline {}A - Github repository}{32}{appendix*.17}%
-\contentsline {chapter}{\numberline {}B - Numerical Values}{33}{appendix*.20}%
+\contentsline {subsection}{\numberline {3.2.4}Third-Body Perturbations}{20}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Numerical Orbit Propagation}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Analytical Orbit Propagation - SGP4}{21}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Methods}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Simulation Design}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Literature Search Methodology}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Software Development}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Software Architecture}{22}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}Main Pipeline}{22}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}Config}{23}{subsubsection.4.3.1.2}%
+\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Simulation Parameters}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Prelim results}{25}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Simulator output difference plots}{26}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}R}{26}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future work}{27}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusions}{28}{chapter.7}%
+\contentsline {chapter}{\numberline {}References}{29}{chapter.7}%
+\contentsline {chapter}{\numberline {}Appendices:}{32}{chapter*.18}%
+\contentsline {chapter}{\numberline {}A - Github repository}{33}{appendix*.19}%
+\contentsline {chapter}{\numberline {}B - Numerical Values}{34}{appendix*.22}%

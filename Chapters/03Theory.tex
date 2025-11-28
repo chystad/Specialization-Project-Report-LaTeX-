@@ -61,8 +61,7 @@ The \gls{ecef} frame, $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{\textbf{x}}_{
 \end{equation}
 with the rotation angle defined as
 \begin{equation}
-\theta(t) = \omega \left(GMST(t) - (UT1(t) - UTC(t))\right), \qquad
-\omega = 0.261799387799149~\text{rad/h}.
+    \theta(t) = \omega \left(GMST(t) - (UT1(t) - UTC(t))\right), \qquad \omega = 0.261799387799149~\text{rad/h}.
 \end{equation}
 % The \gls{ecef} frame: $\mathcal{F}^{\,f}:\{\mathcal{O}_{f}\,; \hat{\textbf{x}}_{f}\,, \hat{\textbf{y}}_{f}\,, \hat{\textbf{z}}_{f}\}$, is a rotating terrestrial frame whose axes are fixed relative to the Earth's surface. Its origin $\mathcal{O}_{f}=\mathcal{O}_{i}$ is located at the Earth's \gls{cm}, while $\hat{\textbf{z}}_f = \hat{\textbf{z}}_i$ aligns with the planet's mean rotation axis pointing towards the geographical North-Pole. $\hat{\textbf{x}}_f$ intersects the equator and the prime meridian, and $\hat{\textbf{y}}_f$ fulfills the right-hand rule by pointing $90^\circ$ East longitude. Because the Earth is spinning, the transformation between the \gls{eci} and \gls{ecef} frames is inherently time-dependent. In this project, the rotation between the two frames is described using the formulation provided by Dr. Stryjewski \cite{Stryjewski2020coord_trans}, who expresses the Earth's rotation about the inertial $\hat{\textbf{z}}_i$-axis through a time-varying angle $\theta(t)$. The epoch at which the \gls{eci} and \gls{ecef} frames coincide is J2000, meaning that $\theta(t) = 0$ at 12:00 TT on 1 January 2000. Relative to this epoch, the rotation into \gls{ecef} at any later time $t$ is given by:
 % \begin{equation}
@@ -93,7 +92,7 @@ with the rotation angle defined as
 
 Assuming the Earth's mass is concentrated in the \gls{eci} frame's origin, the acceleration experienced by a spacecraft, $s$, can be modelled using Newton's gravitational law:
 \begin{equation}
-    \textbf{a}_{grav} = \ddot{\textbf{r}}_{s/i} = - \frac{\mu}{||\textbf{r}_{s/i}||_2^3} \textbf{r}_{s/i} \iff \ddot{\textbf{r}}_{s/i} = \nabla U, \qquad \text{where } U = \mu\frac{1}{||\textbf{r}_{s/i}||_2}
+    \textbf{a}_{grav} = \left(\ddot{\textbf{r}}_{s/i}\right)_{grav} = - \frac{\mu}{||\textbf{r}_{s/i}||_2^3} \textbf{r}_{s/i} \iff \left(\ddot{\textbf{r}}_{s/i}\right)_{grav} = \nabla U, \quad \text{where } U = \mu\frac{1}{||\textbf{r}_{s/i}||_2}
 \label{eq:newton_gravity}
 \end{equation}
 Here $\mu = GM$ is the Earth's gravitational parameter, and $\nabla U$ is an equivalent representation given by the gradient of the gravity potential. Other literature define $U$ with the opposite sign, but here $U>0$ is chosen to stay consistent with the convention used by Montenbruck \& Gill. Their literature explains that this model is inaccurate due to the Earth's mass being unhomogeneously distributed through its volume, and because its rotational velocity causes its shape to bulge around the equator \cite{Montenbruck2000}. They go on to present an extension of equation \ref{eq:newton_gravity} to account for these irregularities in the Earth's gravitational field, starting with a generalization of the gravity potential by summing up the contributions from all internal mass elements. With $\rho(\textbf{r}^f_{p/i})$ representing the density at some point $p$, and $\{\textbf{r}_{s/i}^f, \textbf{r}_{p/i}^f\}$ denoting the positions of the satellite and the point in \gls{ecef} respectively, the general gravity potential can be expressed as:
@@ -145,7 +144,7 @@ $n$ & $J_n$ & $P_n(u)$ \\
 \end{table}
 Inserting this truncated spherical harmonic expression into equation \ref{eq:grav_acc} yields the acceleration experienced by an arbitrary spacecraft, expressed in the \gls{ecef} frame. By computing the gradient, then applying the time-varying transformation in equation \ref{eq:eci2ecef}, the acceleration can then be transformed into the \gls{eci} frame:
 \begin{equation}
-    \textbf{a}_{grav}^f = \ddot{\textbf{r}}^f_{s/i} = \nabla U(r, \phi^f) \;\;\Longleftrightarrow\;\; \textbf{a}_{grav}^i = \ddot{\textbf{r}}^i_{s/i} = \textbf{R}^i_f \nabla U(r, \phi^f)
+    \textbf{a}_{grav}^f = \left(\ddot{\textbf{r}}^f_{s/i}\right)_{grav} = \nabla U(r, \phi^f) \;\;\Longleftrightarrow\;\; \textbf{a}_{grav}^i = \left(\ddot{\textbf{r}}^i_{s/i}\right)_{grav} = \textbf{R}^i_f \nabla U(r, \phi^f)
 \end{equation}
 % Feedback from chat:
 % The sentence "inserting this truncated spherical ..." is slightly implementation-focus and should be adjusted to fit the theory chapter. Something like:
@@ -157,10 +156,10 @@ Inserting this truncated spherical harmonic expression into equation \ref{eq:gra
 
 Atmospheric drag is the most influential non-gravitational perturbation acting on satellites in \gls{leo}. The perturbation is caused by a momentum exchange between the spacecraft's surface and the residual air-molecules encountered along its trajectory. The resulting acceleration will always act opposite to the satellite's velocity, causing a slow deceleration over time. The momentum exchange is typically modelled in the free-molecular flow regime, which assumes that the molecules bouncing off the spacecraft's surface do not interfere with incoming ones. The acceleration can then be expressed using the classical aerodynamic formulation \cite{Montenbruck2000, vallado2001}:
 \begin{equation}
-    \mathbf{a}_{\text{drag}}^i = \ddot{\textbf{r}}^{\,i}_{s/i} = -\tfrac{1}{2} C_D \, \frac{A}{m} \, \rho \, v_{\text{rel}}^{2} \, \hat{\textbf{v}}_{rel}^i
+    \mathbf{a}_{\text{drag}}^i = \left(\ddot{\textbf{r}}^{\,i}_{s/i}\right)_{drag} = -\tfrac{1}{2} C_D \, \frac{A_D}{m} \, \rho \, v_{\text{rel}}^{2} \, \hat{\textbf{v}}_{rel}^i
 \label{eq:drag}
 \end{equation}
-In this expression, $A$ is the cross-section of the spacecraft perpendicular to the incoming molecular flow, which is often approximated as constant even though it varies with the spacecraft's attitude and geometry \cite{Roscoe2014}. Furthermore, the acceleration magnitude is inversely proportional to the spacecraft's mass $m$, given by the area-to-mass ratio. The term $\textbf{v}_{rel}^i$ represents the relative velocity between the satellite and the surrounding atmosphere expressed in \gls{eci}. $v_{rel}$ and $\hat{\textbf{v}}_{rel}^i$ is the velocity's magnitude and unit vector, respectively. Montenbruck \& Gill presents a satisfactory first-order approximation where the atmosphere co-rotates with the Earth \cite{Montenbruck2000}:
+In this expression, $A_D$ is the cross-section of the spacecraft perpendicular to the incoming molecular flow, which is often approximated as constant even though it varies with the spacecraft's attitude and geometry \cite{Roscoe2014}. Furthermore, the acceleration magnitude is inversely proportional to the spacecraft's mass $m$, given by the area-to-mass ratio. The term $\textbf{v}_{rel}^i$ represents the relative velocity between the satellite and the surrounding atmosphere expressed in \gls{eci}. $v_{rel}$ and $\hat{\textbf{v}}_{rel}^i$ is the velocity's magnitude and unit vector, respectively. Montenbruck \& Gill presents a satisfactory first-order approximation where the atmosphere co-rotates with the Earth \cite{Montenbruck2000}:
 \begin{equation}
 \mathbf{v}_{rel}^i = \mathbf{v}^i_{s/i} - \boldsymbol{\omega}_{f/i}^i \times \mathbf{r}_{s/i}^i ,
 \end{equation}
@@ -175,78 +174,40 @@ The final parameter in equation \ref{eq:drag} is the drag coefficient $C_D$. It 
 
 \subsection{Solar Radiation Pressure} \label{sec:Solar_Pressure}
 
-Radiation is modeled by using solar flux at one astronomical unit and scaling by distance from the sun relative to 1 AU. The solar flux at one AU is taken as:
-
+\gls{srp} becomes the dominant non-gravitational orbital perturbation acting on a spacecraft for altitudes greater than approximately $800km$. Its influence manifests as long-period variations of the orbital eccentricity, argument of perigee and inclination, especially for satellites with a large area-to-mass ratio. \gls{srp} exerts a small force through the absorption or reflection of photons. Both mechanisms transfer momentum from the photons to the surface, generating force proportional to the solar flux and directed away from the Sun. As described by Montenbruck \& Gill, the resulting acceleration depends on the geometry between the Sun direction vector $\textbf{r}_{Sun/s}^i$ and the unit vector normal to the spacecraft's flat surface $\hat{\textbf{n}}_s$ \cite{Montenbruck2000}:
 \begin{equation}
-    SF_{AU} = 1372.5398 \; \left[ \frac{W}{m^2} \right]
+    \textbf{a}_{SRP}^i = \left(\ddot{\mathbf{r}}_{s/i}^{\,i}\right)_{SRP} = -P_{Sun} \, \frac{\text{AU}^2}{||\textbf{r}_{Sun/s}^{i}||_2^2} \, \frac{A_R}{m_s} \cos(\theta)\left[(1-\varepsilon) \hat{\textbf{r}}_{Sun/s}^i + 2\varepsilon \cos(\theta)\hat{\mathbf{n}}_s\right]
+\label{eq:srp_extended}
 \end{equation}
-
-The cannonball model assumes the spacecraft is a simple sphere. The radiation pressure at 1AU, pSR, can be taken as the solar flux divided by the speed of light.
-
+$P_{Sun}$ is the radiation pressure given by the solar flux at one Astronomical Unit (AU), which is defined as mean radius of Earth's orbit. Numerical values for this radiation pressure and one AU in meters is show table \ref{tab:phys_const}. $\{\textbf{r}_{Sun/s}^{i}, \hat{\textbf{r}}_{Sun/s}^i\}$ is the Sun's position relative to the satellite and its corresponding unit vector, respectively. $A_R/m_s$ is the ratio between the cross-section area perpendicular to $\hat{\textbf{r}}_{Sun/s}^i$ and the satellite's mass. $\theta$ represents the angle between the incoming radiation $\hat{\textbf{r}}_{Sun/s}^i$ and $n_s$, and $\varepsilon$ represents the surface reflectivity. However, Montenbrock \& Gill argues that the assumption $\theta=0$ is sufficient for many applications. Using this assumption, equation \ref{eq:srp_extended} can be simplified to the so-called ''cannonball'' model by introducing a radiation pressure coefficient $C_R = 1 - \varepsilon$ \cite{Montenbruck2000}:
 \begin{equation}
-    p_{SR} = \frac{SF_{AU}}{c} \; \left[ \frac{N}{m^2} \right]
-\end{equation}
-
-Then, a “scaling factor” can be determined. This “scaling factor” is equivalent to the magnitude of the solar radiation force divided by the distance between the spacecraft and the sun:
-
-\begin{equation}
-    \frac{|\mathbf{F}_{\text{radiation}}|}{|\mathbf{r}_{\text{sun}}|} = 
-    - c_R \, p_{SR} \, A_d \, \frac{AU^2}{|\mathbf{r}_{\text{sun}}|^3}
-    \; \left[ \frac{N}{m} \right]
-\end{equation}
-
-rsun is the vector from the spacecraft to the sun in the spacecraft body frame and cR is the reflectivity. This factor is then multiplied by the position vector from the spacecraft to the sun to get the force on the spacecraft due to solar radiation pressure.
-
-\begin{equation}
-    \mathbf{F}_{\text{radiation}} =
-    \frac{|\mathbf{F}_{\text{radiation}}|}{|\mathbf{r}_{\text{sun}}|}
-    \, \mathbf{r}_{\text{sun}} \; [N]
+    \textbf{a}_{SRP}^i = \left(\ddot{\mathbf{r}}_{s/i}^{\,i}\right)_{SRP} = -P_{Sun} C_R \frac{A_R}{m_s} \, \frac{\textbf{r}_{Sun/s}^{i}}{||\textbf{r}_{Sun/s}^{i}||_2^3} \,\text{AU}^2
 \end{equation}
 
 
-\subsection{Third-body Perturbations}
+\subsection{Third-Body Perturbations}
 
-Third-body gravitational pull from the sun and the moon. Formulations gathered from \cite{vallado2001, Montenbruck2000, Wertz1978, Roscoe2014}
-
-Let $\mathbf{r}$ be the position of the spacecraft with respect to the Earth, and 
-$\mathbf{r}_{3B}$ the position of the third body (Sun or Moon) with respect to the Earth, 
-both expressed in the same inertial frame.
-
-The standard third-body acceleration is
-
-\[
-\mathbf{a}_{3B}
-    = \mu_{3B}
-    \left(
-        \frac{\mathbf{r}_{3B} - \mathbf{r}}{\lVert \mathbf{r}_{3B} - \mathbf{r} \rVert^{3}}
-        \;-\;
-        \frac{\mathbf{r}_{3B}}{\lVert \mathbf{r}_{3B} \rVert^{3}}
-    \right),
-\]
-
-where
-
-\begin{itemize}
-    \item $\mu_{3B}$ is the gravitational parameter of the third body (Sun or Moon),
-    \item the first term is the gravitational acceleration of the third body on the spacecraft,
-    \item the second term subtracts the acceleration of the Earth due to the third body 
-          (so the result is in the Earth-centred frame).
-\end{itemize}
-
-If you model both Sun and Moon, the total third-body acceleration is
-
-\[
-\mathbf{a}_{3B,\text{total}} = \mathbf{a}_{\text{Sun}} + \mathbf{a}_{\text{Moon}},
-\]
-
-each term computed using the same formula above with the appropriate 
-$\mu_{\odot}$, $\mu_{\text{Moon}}$ and ephemerides.
-
+In addition to the Earth's gravity field, a satellite in orbit around Earth also experiences gravitational pull from the Sun and Moon, causing a perturbing acceleration. Although these bodies are distant, their great masses still produce accelerations comparable to higher-order geopotential terms, especially for satellites in \gls{meo} or higher. As described by Montenbruck \& Gill, the perturbing acceleration from a massive third-body $B$ is obtained by subtracting its acceleration on the Earth from its acceleration on the spacecraft through Newton's gravitational law \cite{Montenbruck2000}. Its formulation in the \gls{eci} frame is:
+\begin{equation}
+    \textbf{a}^i_B = \left(\ddot{\textbf{r}}^{\,i}_{s/i}\right)_{B} = \mu_B \left( \frac{\textbf{r}_{B/i}^i - \textbf{r}_{s/i}^i}{||\textbf{r}_{B/i}^i - \textbf{r}_{s/i}^i||_2^3} - \frac{\textbf{r}_{B/i}^i}{||\textbf{r}_{B/i}^i||_2^3}\right) = \mu_B \left( \frac{\textbf{r}_{B/s}^i}{||\textbf{r}_{B/s}^i||_2^3} - \frac{\textbf{r}_{B/i}^i}{||\textbf{r}_{B/i}^i||_2^3}\right)
+\label{eq:3B}
+\end{equation}
+Here  $\mu_B = GM_B$ is the massive body's gravitational parameter, $\textbf{r}_{B/s}^i$ is the body's position relative to the satellite, and $\{ \textbf{r}_{B/i}^i, \textbf{r}_{s/i}^i \}$ denote the geocentric coordinates of the body and satellite, respectively. This differential formulation in equation \ref{eq:3B} ensures that only the perturbing acceleration is expressed. Furthermore, Montenbruck \& Gill explains how the perturbing gravitational attraction on a satellite changes direction relative to the Earth during its orbit. The tidal forces cause the satellite to experience a pull away from Earth whenever it is on the imaginary line striking through the Earth and the massive body, and a pull towards Earth whenever it is perpendicular to this line \cite{Montenbruck2000}. This effect is visualized by the ''Earh-Centered Frame'' in figure \ref{fig:tidal}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/03Theory/3rd body tidal forces.png}
+    \caption{Tidal forces due to the gravitaional attraction of a distant point-like mass. Courtesy of \cite{Montenbruck2000}} 
+    \label{fig:tidal} 
+\end{figure}
+The total perturbing acceleration $ \mathbf{a}_{B,\text{tot}}^i$ on a satellite from multiple massive bodies, like the Sun and Moon, can be found by summing multiple instances of equation \ref{eq:3B} with their corresponding distances and gravitational parameters:
+\begin{equation}
+    \mathbf{a}_{B,\text{tot}}^i = \mathbf{a}_{\text{Sun}}^i + \mathbf{a}_{\text{Moon}}^i
+\end{equation}
 
 
 \section{Numerical Orbit Propagation}
 % How basilisk propagates the orbit
 
 
-\section{Analytical Orbit Propagation - SGP4}
+\section{Analytical Orbit Propagation - SGP4} 
 % How 

@@ -1,3 +1,20 @@
+\section{Simulation Parameters}
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c c}
+\hline
+$Parameter$ & $Value$ & $Unit$ \\
+\hline
+$C_D$ & $1.5-3$ & -\\
+$A_D$ & - & - \\
+$C_R$ & $-$ & -\\
+$A_{SRP}$ & - & - \\
+\hline
+\end{tabular}
+\caption{Physical constants and associated numerical value. $J$-terms courtesy of \cite{Zhong2013}.}
+\label{tab:sim_param}
+\end{table}
+
 \section{Prelim results}
 The current simulator implementation has been used to generate preliminary results for a two-satellite scenario consisting of one chief and one follower spacecraft initialized on different orbital planes in LEO. Skyfield’s SGP4 model serves as the baseline, while the Basilisk simulation includes gravity-gradient effects, solar radiation pressure, and lunar third-body pull. Atmospheric drag has not yet been implemented, and both propagators are run over the same integration time for direct comparison. 
 

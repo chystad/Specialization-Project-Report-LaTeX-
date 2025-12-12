@@ -50,10 +50,10 @@
 \contentsline {section}{\numberline {3.4}Analytical Orbit Propagation - SGP4}{21}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Methods}{22}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Simulation Design}{22}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Literature Search Methodology}{22}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Software Development}{22}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Software Architecture}{22}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}Main Pipeline}{22}{subsubsection.4.3.1.1}%
+\contentsline {section}{\numberline {4.2}Literature Search Methodology}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Software Development}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Software Architecture}{23}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}Main Pipeline}{23}{subsubsection.4.3.1.1}%
 \contentsline {subsubsection}{\numberline {4.3.1.2}Config}{23}{subsubsection.4.3.1.2}%
 \contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Simulation Parameters}{25}{section.5.1}%
@@ -64,6 +64,6 @@
 \contentsline {section}{\numberline {6.1}Future work}{27}{section.6.1}%
 \contentsline {chapter}{\numberline {7}Conclusions}{28}{chapter.7}%
 \contentsline {chapter}{\numberline {}References}{29}{chapter.7}%
-\contentsline {chapter}{\numberline {}Appendices:}{32}{chapter*.18}%
-\contentsline {chapter}{\numberline {}A - Github repository}{33}{appendix*.19}%
-\contentsline {chapter}{\numberline {}B - Numerical Values}{34}{appendix*.22}%
+\contentsline {chapter}{\numberline {}Appendices:}{32}{chapter*.19}%
+\contentsline {chapter}{\numberline {}A - Github repository}{33}{appendix*.20}%
+\contentsline {chapter}{\numberline {}B - Numerical Values}{34}{appendix*.23}%

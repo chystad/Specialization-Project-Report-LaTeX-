@@ -207,7 +207,25 @@ The total perturbing acceleration $ \mathbf{a}_{B,\text{tot}}^i$ on a satellite 
 
 \section{Numerical Orbit Propagation}
 % How basilisk propagates the orbit
+% Fixed-step vs variable-step integration. Tableu tables
+\subsection{General Formulation}
+
+
+\subsection{Runge-Kutta Methods}
+% Explicit vs. implicit RK (brief)
+
+
+\subsection{Fixed-Step vs Variable-Step Integration}
+
+
+\subsection{Numerical Error Sources}
+% * Local truncation error
+% * Global error accumilation
+% * Floating-point precision
+% * Sensitivity to initial conditions
 
 
 \section{Analytical Orbit Propagation - SGP4} 
-% How 
+* Claim: Skyfield calls Vallado's SGP4 algorithm
+
+* Include the fact that SGP4 predictions are most accurate around the epoch when the orbital elements are "best".

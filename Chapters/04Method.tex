@@ -1,14 +1,65 @@
-\section{Simulation Design}
+This chapter describes the method used to investigate the differences between the semi-analytical Skyfield SGP4 orbital propagator and a high-fidelity numerical propagator for satellites in \gls{leo}. The comparison is performed through a series of simulation-based experiments designed to assess long-term propagation accuracy, sensitivity to perturbation modelling and numerical integration effects. The main goal of this chapter is therefore to present a transparent overview of the simulation environment and the comparison methodology. 
+
+A simulation-based approach is adopted for two main reasons. First, the project aims to understand the Skyfield and Basilisk divergence by quantifying individual perturbation effect's impact on predictions and assessing numerical effects. This research question is inherently rooted in simulations, and the comparison in a simulation environment enables systematic variation of conditions to investigate this. Second, in the event that the SGP4 propagation tool is deemed too inaccurate for downstream orbital or formation flight analyses, an alternative propagation tool has to be implemented in its stead. It therefore makes sense to design [WRITE MORE AFTER COMPLETING THE REST OF THE METHODOLOGY CHAPTER]
+
+1. it is useful to compare the SGP4 against a tunable simulation tool in order to get a better understanding of why SGP4 predictions drift over time. This would be harder to deduce from experimental data alone
+2. In the event that the SGP4 propagation tool is deemed too inaccurate for downstream orbital or formation flight analyses, an alternative simulator has to be implemented in its stead. It therefore makes sense to design an 
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Figures/04Method/Simulator Flow v2.png}
-    \caption{Program flow diagram} 
-    \label{fig:program_flow} 
-\end{figure}
 
-\section{Literature Search Methodology}
+
+\clearpage
+\section{Literature Search}
+\label{sec:Literature_Search}
+The literature review was conducted to build a solid theoretical foundation for the project, and to map out other similar studies. More specifically, the primary objectives were to identify established propagation methods, understand the major orbital perturbations with their relative impact on spacecrafts in \gls{leo}, and to review existing studies on prediction error growth of SGP4 and numerical orbital propagators over longer time horizons. Based on these objectives, the literature search and following review was structured around three main themes: 
+\begin{itemize}
+    \item Orbital propagation methods
+    \item Orbital perturbation modelling
+    \item Prediction error growth 
+\end{itemize}
+The following subsections will present the structured approach used to collect sources and filter out irrelevant or questionable publications for the literature review. This process will hereby be referred to as \textit{literature search}, and must not be confused with the literature review in chapter \ref{chap:literature_review} that analyses and discusses the sources provided by the search. 
+
+\subsection{Sources \& Search Strategy}
+The literature search was initially focused on peer-reviewed journal articles accessed through Scopus and relevant papers provided through academic supervision. As the project matured and new relevant subjects became apparent, the search was later expanded to include books, master's theses and additional journal publications through Google Scholar. For astrodynamical models and perturbation effects, two highly credited textbooks were used extensively, particularly \textit{Satellite orbits: Models, Methods and applications} by Montenbruck and Gill, and \textit{Fundamentals of astrodynamics and applications} by Vallado. These were treated as primary sources and provided the theoretical foundation for the literature review. 
+% I deliberately did not mention Skyfield and Basilisk documentation here, as it was not used in the literature review. However, they gave valuable insight into the inner workings of the simulators. I could have written something like "Documentation for Skyfield and Basilisk software frameworks was also consulted. These were necesary to verify how the propagation methods and force modeles are implemented in practice, not just through abstract function calls"
+
+
+The literature search was conducted by defining a structured set of keywords and search phrases within each of the main themes from section \ref{sec:Literature_Search}. As familiarity with the field grew, keywords and search phrases were refined and combined into boolean search strings to focus the search towards specific topics. A comprehensive table of all the keywords, search phrases and time ranges used in the literature search is shown in Table \ref{tab:search}. In this context, \textit{time range} refers to an interval that restricts the search to sources published within the interval. This method is applied in order to ensure that the literature is both relevant and up to date. For both \textit{Orbital propagation methods} and \textit{Orbital perturbation modelling} fields, the time range is set to all sources published after 1960. The large time span was chosen by necessity to include older foundational work because many core astrodynamical models and formulations come from early spaceflight-era literature, as explained in Chapter \ref{chap:literature_review}. The time range also served to exclude some of the earliest astrodynamic publications when the field had not yet reached maturity. The \textit{Prediction error growth} field has a narrower time range, specifically after 2010. This has been chosen to exclude older publications that use outdated numerical models and to focus on the newest accuracy evaluation of the SGP4 propagator.
+
+
+% \begin{table}[H]
+% \begin{tabular}{lcll}
+% \toprule
+% \textbf{Field} & \textbf{Keywords} & \textbf{Search Phrases} & \textbf{Time range} \\ \midrule
+% Orbital propagation methods    &                   & \begin{tabular}[c]{@{}l@{}}Satellite orbit\\ Orbit propagation\\ Orbit propagation method\\ Orbital dynamics \\ Astrodynamics\\ Orbital mechanics\\ Numerical orbit integration\\ Analytical orbit propagation\\ Semi-analytical orbit propagation\\ SGP4\\ Cowell's method \\ Runge-Kutta orbit propagator\\ High-fidelity orbit simulation\\ Propagator validation\end{tabular} & 1960 - now          \\ \hline
+% Orbital perturbation modelling &                   & \begin{tabular}[c]{@{}l@{}}Orbital perturbation\\ LEO perturbation\\ Gravity field modelling\\ Spherical harmonics\\ Atmospheric drag model\\ LEO drag\\ Exponential atmosphere\\ Solar radiation pressure\\ Cannonball model\\ 3rd body\\ Formation flying perturbation\\ Perturbation comparison\end{tabular}                                                                   & 1960 - now          \\ \hline
+% Prediction error growth        &                   & \begin{tabular}[c]{@{}l@{}}Orbit prediction horizon\\ SGP4 accuracy\\ Propagation uncertainty\\ Long-term orbit accuracy\\ Long-term prediction error\\ Numerical integration error\\ Variable-step integrator error\\ Fixed-step integration error\\ Relative orbital motion accuracy\end{tabular}                                                                               & 2010 - now          \\ \hline
+% \end{tabular}
+% \end{table}
+
+
+\begin{table}[H]
+\begin{tabular}{llll}
+\toprule
+\textbf{Field} & \textbf{Keywords} & \textbf{Search Phrases} & \textbf{Time range} \\ \midrule
+Orbital propagation methods  & \begin{tabular}[t]{@{}l@{}}SGP4\\ Propagation\\ Astrodynamics\\ Orbit\\ Runge-Kutta\\ Satellite\\ LEO\end{tabular}                   & \begin{tabular}[t]{@{}l@{}}Satellite orbit\\ Orbit propagation\\ Orbit propagation method\\ Orbital dynamics \\ Astrodynamics\\ Orbital mechanics\\ Numerical orbit integration\\ Analytical orbit propagation\\ Semi-analytical orbit propagation\\ Cowell's method \\ Runge-Kutta orbit propagator\\ High-fidelity orbit simulation\\ Propagator validation\end{tabular} & 1960 - now          \\ \hline
+Orbital perturbation modelling & \begin{tabular}[t]{@{}l@{}}Perturbation\\ Disturbance\\ Gravity\\ Model\\ LEO\\ SRP\\ Drag\end{tabular}                              & \begin{tabular}[t]{@{}l@{}}Orbital perturbation\\ LEO perturbation\\ Gravity field modelling\\ Spherical harmonics\\ Atmospheric drag model\\ LEO drag\\ Exponential atmosphere\\ Solar radiation pressure\\ Cannonball model\\ 3rd body\\ Formation flying perturbation\\ Perturbation comparison\end{tabular}                                                            & 1960 - now          \\ \hline
+Prediction error growth        & \begin{tabular}[t]{@{}l@{}}Simulation\\ Accuracy\\ Error\\ Prediction\\ SGP4\\ Fixed-step\\ Variable-step\\ Integration\end{tabular} & \begin{tabular}[t]{@{}l@{}}Orbit prediction horizon\\ SGP4 accuracy\\ Propagation uncertainty\\ Long-term orbit accuracy\\ Long-term prediction error\\ Numerical integration error\\ Variable-step integrator error\\ Fixed-step integration error\\ Relative orbital motion accuracy\end{tabular}                                                                        & 2010 - now          \\ \hline
+\end{tabular}
+\caption{Keywords, search phrases and limited time range used in the literature search for each main theme.}
+\label{tab:search}
+\end{table}
+
+
+\subsection{Initial Relevance Screening}
+Immediate search results were subject to an initial screening to assess their relevance to the project. In this screening process, titles, abstracts and conclusions were reviewed in order to exclude any sources not directly relevant for LEO orbit propagation, perturbation modelling or long time horizon prediction error. The initial search returned approximately 150 sources, which was reduced to 22 remaining sources after the initial relevance screening. The large reduction reflects the broad keyword searches, and the relatively narrow focus of this project. 
+
+
+\subsection{Quality and Credibility Screening}
+Following the initial relevance screening, a second screening phase was conducted to assess the quality and credibility of the remaining sources. Each source's credibility was assessed through a total of four criteria. First, the author's expertise and standing in the field is evaluated by checking their previous work. This also helps to distinguish foundational contributors from aiding authors. Second, the reputation of the publishing journal or institution is considered. However, even renowned authors and publishers can still publish flawed work. That is why the two next criteria aim to evaluate their content in more detail. The third criteria detect errors and inconsistencies by cross-checking facts and mathematical formulations. Here, the primary sources from Montenbruck and Vallado \cite{Montenbruck2000, vallado2001} was especially important to evaluate astrodynamical models, but other previously assessed independent sources were also used for the same purpose. Finally, the source's methodology and overall structure were evaluated to ensure that final results were produced by using a well thought out approach. After the final screening, the number of remaining sources had been reduced to 13
+
+
+
 \begin{comment}
 Should contain the following:
     * How you preformed the search
@@ -19,6 +70,53 @@ Should contain the following:
         - How many articles you ended up with
         - How you grouped them
 \end{comment} 
+
+
+\section{Overall Simulation and Analysis Workflow}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{Figures/04Method/Simulator Flow v2.png}
+    \caption{Program flow diagram} 
+    \label{fig:program_flow} 
+\end{figure}
+
+\begin{comment}
+Should explain how the simulation works
+* Inputs
+* Outputs
+* Processing steps
+* In what order these occour
+\end{comment}
+
+
+
+\section{Orbit Propagation Methods}
+
+
+\section{Simulation Configuration and Assumptions}
+
+
+\section{Data Processing and Comparison Metrics}
+
+
+\section{Verification and Consistency Checks}
+
+
+\section{Methodological Limitations}
+
+
+
+
+\begin{comment}
+
+
+\section{Simulation Design}
+
+
+
+
+
  
 
 \section{Software Development} \label{sec:Software_Development}
@@ -81,27 +179,5 @@ The below list shows additional capabilities in Basilisk that have yet to be imp
     \item Track a point relative to the satellite's COM
 \end{itemize}
 
-
-
-
-
-
-
-\begin{comment}
-Include the complete description of the methods used in your research here. \\
-
-\noindent Below is an example of how subsectioning works. The sections and subsections will be included in the table of contents, while subsubsections will not be in the table of contents but still have their own title in the text.
-
-\section{Section one}
-
-\subsection{Subsection one}
-
-\subsubsection{Subsubsection one}
-
-\subsubsection{Subsubsection Two}
-
-\subsection{Subsection Two}
-
-\section{Section two}
 
 \end{comment}

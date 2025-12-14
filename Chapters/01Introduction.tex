@@ -71,8 +71,10 @@ This motivates a systematic verification of the Skyfield-\gls{sgp4} implementati
 \begin{itemize}
     \item What is the intrinsic numerical difference between the Skyfield-\gls{sgp4} and the Basilisk frameworks when configured identically?
     \item How does the introduction of extended perturbation models influence the divergence between the propagators over time? 
-    \item How do differences in simulated translational states affect formation-keeping delta-V analyses?
+    \item How do differences in simulated translational states affect formation-keeping analyses?
  \end{itemize}
+ % Alternatively: How do differences in simulated translational states affect downstream orbital and formation analyses
+ % Alternatively: 1. How accurate are Skyfield SGP4 orbital predictions over longer time horizons?
  Answering these questions will support the project's goal of guaranteeing the reliability and accuracy of orbital propagation tools used for \gls{gnss-r} small-satellite formation studies in future mission design.
 
 \begin{comment}
@@ -136,6 +138,7 @@ The Skyfield–\gls{sgp4} implementation serves as the baseline, while Basilisk 
 
 
 \subsection{Limitations}
+% Add the fact that formation or relative satellite dynamics is not included. The project only evaluates the natural drift of satellites, and how that changes the satellite formation geometry
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Several aspects of GNSS-R mission analysis lie outside the scope of this specialization project.
 First, no attitude dynamics are modeled. The satellites are assumed to maintain a fixed nadir-oriented attitude or otherwise idealized pointing, which removes attitude-orbit coupling and optical or RF pointing constraints from consideration.

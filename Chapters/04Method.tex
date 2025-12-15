@@ -27,25 +27,31 @@ The literature search was initially focused on peer-reviewed journal articles ac
 The literature search was conducted by defining a structured set of keywords and search phrases within each of the main themes from Section \ref{sec:Literature_Search}. As familiarity with the field grew, keywords and search phrases were refined and combined into boolean search strings to focus the search towards specific topics. A comprehensive table of all the keywords, search phrases and time ranges used in the literature search is shown in Table \ref{tab:search}. In this context, \textit{time range} refers to an interval that restricts the search to sources published within the interval. This method is applied in order to ensure that the literature is both relevant and up to date. For both \textit{Orbital propagation methods} and \textit{Orbital perturbation modelling} fields, the time range is set to all sources published after 1960. The large time span was chosen by necessity to include older foundational work because many core astrodynamical models and formulations come from early spaceflight-era literature, as explained in Chapter \ref{chap:literature_review}. The time range also served to exclude some of the earliest astrodynamic publications when the field had not yet reached maturity. The \textit{Prediction error growth} field has a narrower time range, specifically after 2010. This has been chosen to exclude older publications that use outdated numerical models and to focus on the newest accuracy evaluation of the SGP4 propagator.
 
 
-% \begin{table}[H]
-% \begin{tabular}{lcll}
-% \toprule
-% \textbf{Field} & \textbf{Keywords} & \textbf{Search Phrases} & \textbf{Time range} \\ \midrule
-% Orbital propagation methods    &                   & \begin{tabular}[c]{@{}l@{}}Satellite orbit\\ Orbit propagation\\ Orbit propagation method\\ Orbital dynamics \\ Astrodynamics\\ Orbital mechanics\\ Numerical orbit integration\\ Analytical orbit propagation\\ Semi-analytical orbit propagation\\ SGP4\\ Cowell's method \\ Runge-Kutta orbit propagator\\ High-fidelity orbit simulation\\ Propagator validation\end{tabular} & 1960 - now          \\ \hline
-% Orbital perturbation modelling &                   & \begin{tabular}[c]{@{}l@{}}Orbital perturbation\\ LEO perturbation\\ Gravity field modelling\\ Spherical harmonics\\ Atmospheric drag model\\ LEO drag\\ Exponential atmosphere\\ Solar radiation pressure\\ Cannonball model\\ 3rd body\\ Formation flying perturbation\\ Perturbation comparison\end{tabular}                                                                   & 1960 - now          \\ \hline
-% Prediction error growth        &                   & \begin{tabular}[c]{@{}l@{}}Orbit prediction horizon\\ SGP4 accuracy\\ Propagation uncertainty\\ Long-term orbit accuracy\\ Long-term prediction error\\ Numerical integration error\\ Variable-step integrator error\\ Fixed-step integration error\\ Relative orbital motion accuracy\end{tabular}                                                                               & 2010 - now          \\ \hline
-% \end{tabular}
-% \end{table}
-
-
 \begin{table}[H]
-\begin{tabular}{llll}
+\centering
+\renewcommand{\arraystretch}{1.2} % optional: improves readability
+\begin{tabularx}{\textwidth}{P{3.5cm} l l c}
 \toprule
-\textbf{Field} & \textbf{Keywords} & \textbf{Search Phrases} & \textbf{Time range} \\ \midrule
-Orbital propagation methods  & \begin{tabular}[t]{@{}l@{}}SGP4\\ Propagation\\ Astrodynamics\\ Orbit\\ Runge-Kutta\\ Satellite\\ LEO\end{tabular}                   & \begin{tabular}[t]{@{}l@{}}Satellite orbit\\ Orbit propagation\\ Orbit propagation method\\ Orbital dynamics \\ Astrodynamics\\ Orbital mechanics\\ Numerical orbit integration\\ Analytical orbit propagation\\ Semi-analytical orbit propagation\\ Cowell's method \\ Runge-Kutta orbit propagator\\ High-fidelity orbit simulation\\ Propagator validation\end{tabular} & 1960 - now          \\ \hline
-Orbital perturbation modelling & \begin{tabular}[t]{@{}l@{}}Perturbation\\ Disturbance\\ Gravity\\ Model\\ LEO\\ SRP\\ Drag\end{tabular}                              & \begin{tabular}[t]{@{}l@{}}Orbital perturbation\\ LEO perturbation\\ Gravity field modelling\\ Spherical harmonics\\ Atmospheric drag model\\ LEO drag\\ Exponential atmosphere\\ Solar radiation pressure\\ Cannonball model\\ 3rd body\\ Formation flying perturbation\\ Perturbation comparison\end{tabular}                                                            & 1960 - now          \\ \hline
-Prediction error growth        & \begin{tabular}[t]{@{}l@{}}Simulation\\ Accuracy\\ Error\\ Prediction\\ SGP4\\ Fixed-step\\ Variable-step\\ Integration\end{tabular} & \begin{tabular}[t]{@{}l@{}}Orbit prediction horizon\\ SGP4 accuracy\\ Propagation uncertainty\\ Long-term orbit accuracy\\ Long-term prediction error\\ Numerical integration error\\ Variable-step integrator error\\ Fixed-step integration error\\ Relative orbital motion accuracy\end{tabular}                                                                        & 2010 - now          \\ \hline
-\end{tabular}
+\textbf{Field} & \textbf{Keywords} & \textbf{Search Phrases} & \textbf{Time range} \\
+\midrule
+Orbital propagation methods
+& \begin{tabular}[t]{@{}l@{}}SGP4\\ Propagation\\ Astrodynamics\\ Orbit\\ Runge-Kutta\\ Satellite\\ LEO\end{tabular}
+& \begin{tabular}[t]{@{}l@{}} Orbit propagation method\\ Orbital dynamics\\ Astrodynamics\\ Orbital mechanics\\ Numerical orbit integration\\ Analytical orbit propagation\\ Semi-analytical orbit propagation\\ Cowell's method\\ Runge-Kutta orbit propagator\\ High-fidelity orbit simulation\\ Propagator validation\end{tabular}
+& 1960--now \\
+
+\hline
+Orbital perturbation modelling
+& \begin{tabular}[t]{@{}l@{}}Perturbation\\ Disturbance\\ Gravity\\ Model\\ LEO\\ SRP\\ Drag\end{tabular}
+& \begin{tabular}[t]{@{}l@{}}Orbital perturbation\\ LEO perturbation\\ Gravity field modelling\\ Spherical harmonics\\ Atmospheric drag model\\ LEO drag\\ Exponential atmosphere\\ Solar radiation pressure\\ Cannonball model\\ 3rd body\\ Formation flying perturbation\\ Perturbation comparison\end{tabular}
+& 1960--now \\
+
+\hline
+Prediction error growth
+& \begin{tabular}[t]{@{}l@{}}Simulation\\ Accuracy\\ Error\\ Prediction\\ SGP4\\ Fixed-step\\ Variable-step\\ Integration\end{tabular}
+& \begin{tabular}[t]{@{}l@{}}Orbit prediction horizon\\ SGP4 accuracy\\ Propagation uncertainty\\ Long-term orbit accuracy\\ Long-term prediction error\\ Numerical integration error\\ Variable-step integrator error\\ Fixed-step integration error\\ Relative orbital motion accuracy\end{tabular}
+& 2010--now \\
+\bottomrule
+\end{tabularx}
 \caption{Keywords, search phrases and limited time range used in the literature search for each main theme.}
 \label{tab:search}
 \end{table}
@@ -98,24 +104,42 @@ Following configuration, the Skyfield SGP4 sub-simulation is initialized and exe
 
 Next, the Basilisk sub-simulation is initialized. Compared to Skyfield, this initialization involves additional steps, including the creation of simulation processes, tasks, spacecraft and recorders required by the Basilisk framework, as well as defining numerical integrators and environmental models. The inclusion of individual perturbation models such as Earth's spherical harmonics, atmospheric drag, solar radiation pressure, and third-body gravitational effects, is controlled by the global configuration. In the detailed flow diagram in Figure \ref{fig:program_flow}, these conditional steps are indicated by the annotation ''if Config'', showing that these models will only be created if specified by the simulator configuration.  Once initialized, the Basilisk simulation is run, and the resulting satellite \gls{eci} state trajectories are outputted as a file named \texttt{<time>\_bsk.h5}.
 
-The final module in the pipeline is the data processing and plotting module. In Figure \ref{fig:high_level_program_flow}, the flow from the Basilisk simulation to this module is denoted by a dashed arrow. This notation indicates that the module can either be executed directly as part of the simulation run, or be called independently at a later time. When executed in series with the other modules, it loads the newly generated Skyfield and Basilisk output files and performs the data processing required to generate the plots specified in the global configuration. Depending on the requested output, this may involve simple visualization of position and velocity data, or additional data processing steps such as reference frame transformations for relative motion analysis. The data processing specifics are presented in greater detail in Section \ref{sec:data_processing}. Alternatively, the same module can be configured to operate on previously generated simulation data, allowing analyses to be repeated or extended without running the computationally expensive propagations. 
+The final module in the pipeline is the data processing and plotting module. In Figure \ref{fig:high_level_program_flow}, the flow from the Basilisk simulation to this module is denoted by a dashed arrow. This notation indicates that the module can either be executed directly as part of the simulation run, or be called independently at a later time. When executed in series with the other modules, it loads the newly generated Skyfield and Basilisk output files and performs the data processing required to generate the plots specified in the global configuration. Depending on the requested output, this may involve simple visualization of position and velocity data, or additional data processing steps such as reference frame transformations for relative motion analysis. The data processing specifics are presented in greater detail in Section \ref{sec:data_processing}. Alternatively, the same module can be configured to operate on previously generated simulation data, allowing analyses to be repeated or extended without running the computationally expensive propagations.
+
+
+\subsection{Simulator Inputs}
+Simulation cases and propagation settings are defined through a set of three user-defined configuration files, as shown by the yellow box in the \textit{User input} layer of Figure \ref{fig:program_flow}. The global simulation configuration is specified in the file \texttt{default.yaml}, which defines all parameters required to describe the simulation scenario. This file contains the simulation start time and duration, satellite parameters and \gls{tle}s for both the leader and follower satellite, as well as settings related to data processing and plotting. With this structure, the global configuration ensures consistency across all sub-simulation. A comprehensive list of all simulator input parameters is displayed in Table \ref{tab:config_files}. 
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llc}
+\hline
+\textbf{Config file} & \textbf{Input parameters} & \textbf{Unit} \\ \hline
+default.yaml
+& \begin{tabular}[c]{@{}l@{}}Simulation start time\\ Simulation duration\\ For each satellite:\\
+\quad TLE\\
+\quad Mass\\
+\quad Drag coefficient\\
+\quad Cross-section area perpendicular to velocity\\
+\quad Radiation pressure coefficient\\
+\quad Cross-section area perpendicular to the Sun-vector\\
+Data processing and plotting flags\end{tabular}
+& \begin{tabular}[c]{@{}c@{}}UTC\\ h\\ -\\ -\\ kg\\ -\\ m$^2$\\ -\\ m$^2$\\ -\end{tabular} \\ \hline
+skyfield.yaml
+& SGP4 time step size
+& sec \\ \hline
+basilisk.yaml
+& \begin{tabular}[c]{@{}l@{}}Fixed-step size\\ Numeric integrator\\ Spherical harmonics degree\\ Enable spherical harmonics flag\\ Enable drag flag\\ Enable solar radiation pressure flag\\ Enable Sun third-body pull flag\\ Enable Moon third-body pull flag\end{tabular}
+& \begin{tabular}[c]{@{}c@{}}sec\\ -\\ -\\ -\\ -\\ -\\ -\\ -\end{tabular} \\ \hline
+\end{tabular}
+\caption{A comprehensive list of all simulator input parameters across all config files.}
+\label{tab:config_files}
+\end{table}
 
 
 
-\begin{comment}
-Should explain how the simulation works
-* Inputs
-* Outputs
-* Processing steps
-* In what order these occour
-\end{comment}
-
-
-
-\subsection{Orbit Propagation Methods}
-
-
-\subsection{Simulation Configuration \& Assumptions}
+The parameters that apply to a specific propagator are placed in its corresponding configuration file. For instance, the Skyfield configuration file, \texttt{skyfield.yaml}, contains a single parameter specifying the time interval between SGP4 state evaluations. The Basilisk configuration file, \texttt{basilisk.yaml}, contains parameters related to numerical propagation, including the choice of numerical integrator, fixed integration time step (when applicable), the degree of the Earth's spherical harmonics model, and boolean flags for enabling/disabling any of the perturbation effects
 
 
 \subsection{Data Processing \& Comparison Metrics}
@@ -125,81 +149,101 @@ Should explain how the simulation works
 \subsection{Verification \& Consistency Checks}
 
 
-\section{Methodological Limitations}
 
 
 
+
+\section{Simulation Setup \& Assumptions}
+
+The simulation framework was designed to support multiple simulation experiments with different objectives while maintaining a consistent underlying scenario. Throughout this project, three distinct simulation experiments were conducted, each addressing a specific research goal. All experiments were based on the same orbital case, defined by a common start time, identical satellite parameters, and the same leader-follower formation geometry. Differences between the experiments were introduced only through changes in simulation duration and Basilisk-specific configuration settings. This approach ensures that observed differences in the results can be attributed to propagation method, perturbation modelling, or numerical integration choices rather than changes in the underlying scenario. The following subsections will first present how the final simulation configuration parameters were determined, then explain how they were methodically varied between experiments to isolate different effects.
+
+
+\subsection{Satellite Modelling}
+Both the leader and follower satellites are modelled to represent a generic 6U CubeSat covered by solar panels. The physical parameters used in the experiments are selected to be representative of this shape, and are assumed to be constant throughout the simulation duration. Identical parameters are used for both satellites in order to isolate differences arising from orbit propagation rather than spacecraft properties. The typical mass of such a spacecraft is reported to be approximately $m_s = 6.0$kg. Attitude dynamics are not modelled, and the satellites are assumed to maintain a worst-case fixed orientation to induce the largest perturbation forces from drag and \gls{srp} simultaneously. This means that the largest satellite face is pointing towards velocity vector and Sun direction at all times, even though this attitude is not always physically feasible. The corresponding cross-section areas normal to these directions are therefore $A_D = A_{SRP} = 0.3m \times 0.2m = 0.06m^2$.
+
+The satellites' drag coefficients are chosen to approximate the atmosphere-satellite interactions for non-spherical spacecraft in \gls{leo}. Quinci writes in his paper that a reasonable drag coefficient is $2.2$ for a typical spacecraft \cite{Quinci2021}, which is backed up by Montenbruck and Gill who propose a crude estimate in the range $2.0 - 2.3$ \cite{Montenbruck2000}. Therefore, the drag coefficient is set to $C_D = 2.2$. Continuing with the assumption that both satellites are covered by solar panels, Montenbruck and Gill documents that a typical value for solar radiation pressure coefficient is $C_R = 1.21$ because of the panels' reflectivity, and is therefore adopted for this study.
+
+
+\subsection{Orbital Configuration}
+
+The leader satellite orbit is defined using a real \gls{tle} corresponding to the HYPSO-1 satellite. HYPSO-1 is a 6U CubeSat operating in \gls{leo}, making it a suitable reference for this study both in terms of orbital regime and spacecraft scale. Using a real \gls{tle} ensures that the baseline orbit includes realistic orbital elements and atmospheric drag characteristics, as reflected by the \gls{tle}'s ballistic coefficient parameter. The \gls{tle} used to initialize the leader satellite orbit is shown below for reproducibility:
+\begin{verbatim}
+HYPSO-1                 
+1 51053U 22002BX  25296.93021535  .00034531  00000+0  64114-3 0  9996
+2 51053  97.3166   6.7052 0004161  83.3535 276.8189 15.48851464210108
+HYPSO-1-follower                 
+1 51053U 22002BX  25296.93021535  .00034531  00000+0  64114-3 0  9996
+2 51053  97.3166   6.7052 0004161  83.3535 266.8189 15.48851464210108
+\end{verbatim}
+The follower satellite orbit is derived by modifying the leader's \gls{tle} such that the follower trails the leader by a fixed angular separation of $10^\circ$ along the same orbital plane. This is achieved by adjusting the phase of the orbit while keeping all other orbital elements identical. The resulting configuration forms a simple leader-follower formation with a constant nominal along-track separation and no relative inclination or eccentricity offsets. Only a single formation geometry is considered in this project, and no active formation control or orbital maneuvers are modelled. This simplified configuration is chosen to enable a clear comparison of relative motion predictions between orbit propagation methods
+
+
+
+
+\subsection{Simulation Experiments}
+% This is the important subsection that describes how the experiments were conducted to produce the results. Start by explaining the three experiments that was run and what their individual goals were. Then continue by naming all parameters that were the same across all experiments (start time, satellite parameters, TLEs and Skyfield SGP4 step size). Then seguay into explaining the configuration differences between the experiments. Below is a recap from what I sent to you before:
+Three simulation experiments were conducted to address the different research questions of the project. In all experiments, satellite parameters, \gls{tle}s, formation geometry, and Skyfield SGP4 step size were kept identical, and the simulation start time was chosen to match the \gls{tle} epochs. This ensured that differences between experiments arise solely from controlled changes, and not because of the underlying simulation case or differences in Skyfield SGP4 propagation. An overview of the three experiments is provided in Table \ref{tab:experiments_overview}, which summarizes their respective purposes, comparison methods, simulation durations, Basilisk numerical integrators, and enabled perturbations. The remaining input parameters were adjusted between experiments according to their specific focus, as detailed in the table.
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{P{3.3cm} P{3.5cm} P{3.5cm} P{3.5cm}}
+\hline
+\textbf{Experiment \#}
+& \textbf{1}
+& \textbf{2}
+& \textbf{3} \\ \hline
+
+\textbf{Purpose}
+& To investigate the Skyfield SGP4 and Basilisk propagation differences
+& To quantify the individual perturbation effect's impact on the satellite orbits
+& To study the numerical integrator's impact on propagation accuracy \\ \hline
+
+\textbf{Comparison method}
+& Single Basilisk output compared directly against Skyfield baseline
+& Multiple Basilisk outputs compared against Basilisk reduced perturbation baseline
+& Multiple Basilisk outputs compared against Skyfield baseline \\ \hline
+
+\textbf{Simulation duration}
+& 168 hours
+& 96 hours
+& 96 hours \\ \hline
+
+\textbf{Skyfield step size}
+& 1 seconds
+& 5 seconds
+& 5 seconds \\ \hline
+
+\textbf{basilisk step size}
+& 1 seconds
+& 5 seconds
+& Subject to change \\ \hline
+
+\textbf{Basilisk numerical integrator}
+& RK4
+& RK4
+& Subject to change \\ \hline
+
+\textbf{Enabled perturbations}
+& All
+& Subject to change
+& All \\ \hline
+\end{tabular}
+\caption{Overview of how the three experiments differs from each other in purpose, comparison method and configuration.}
+\label{tab:experiments_overview}
+\end{table}
+
+
+The first experiment focuses on evaluating the long-term disagreement between the Skyfield SGP4 propagator and the high-fidelity numerical propagation using Basilisk. In this experiment, the maximum simulation duration 168 hours (7 days) is used, and all orbital perturbations are enabled. Both Skyfield and Basilisk are configured to use a 1-second step size, with Basilisk using the fixed-step RK4 numerical integrator. This configuration represents the highest-fidelity numerical propagation used in the project and serves as the primary reference for assessing SGP4 accuracy over extended time horizons.
+
+The second experiment aims to quantify the relative impact of individual orbital perturbations on the propagated satellite trajectories. For this experiment, the simulation duration is reduced to 96 hours, and both the Skyfield SGP4 and Basilisk propagation step sizes are increased to 5 seconds, as summarized in Table \ref{tab:experiments_overview}. This modification is applied to limit computational cost, since multiple Basilisk simulations are executed with different combinations of enabled perturbation models. Basilisk employs a fixed-step RK4 integrator, while the enabled perturbations are varied between simulation runs. Each resulting Basilisk trajectory is compared against a reduced-perturbation Basilisk baseline, allowing the relative contribution of individual perturbation effects to be isolated.
+
+The third experiment investigates the influence of numerical integration settings on the propagated satellite trajectories. The simulation duration is again set to 96 hours, while the Skyfield SGP4 step size remains fixed at 5 seconds. Multiple Basilisk simulations are performed using different numerical integrators and, where applicable, different step sizes, as indicated in Table \ref{tab:experiments_overview}. All Basilisk configurations are compared against a single Skyfield SGP4 baseline trajectory in order to assess the sensitivity of the propagation results to numerical integration choices.
 
 \begin{comment}
-
-
-\section{Simulation Design}
-
-
-
-
-
- 
-
-\section{Software Development} \label{sec:Software_Development}
-
-\subsection{Software Architecture} \label{sec:Software_Architecture}
-This section is just for me to organize my thoughts while I work on developing the software architrecture. 
-
-\subsubsection{Main Pipeline}
-Sequential steps executed by the main program. 
-\begin{enumerate}
-    \item Initialize the simulation environment with global satellite instances and simulation parameters from config.
-    \item Call a function to run the SGP4 propagator from ''GNSS\_R\_System\_Simulator''.
-    \begin{enumerate}
-        \item Its initial conditions are the TLEs and the initial epoch, fetched from the satellite instances (from config).
-        \item This function call also extracts the states ($\vec{r}$ and $\vec{v}$) at the initial epoch in the SGP4 output frame (TEME, I believe).
-        \item The function call then transforms the states to the Basilisk inertial frame (TEME(?) $\rightarrow$ ECI(?)) and adds it to the satellite instances.
-        \item Log the output trajectories in an external file or standardized data structure for later use.
-    \end{enumerate}
-    \item Call a function to run the dynamical Basilisk simulation. \begin{enumerate} 
-        \item Its initial conditions are the states from the SGP4 output at the initial epoch, fetched from the satellite instances.
-        \item Log the output trajectories in an external file or standardized data structure for later use.
-    \end{enumerate}
-\end{enumerate}
-
-\subsubsection{Config}
-This subsection describes all the fields included in the config file
-\begin{itemize}
-    \item SIMULATION (This will contain all the high-level simulation parameters that are global for all simulation frameworks) \begin{itemize}
-        \item \texttt{startTime} (Real-world date and time of the simulation start. Is this different from ''inital epoch''?)
-        \item \texttt{simulationDuration} (How long period into the future the simulation will simulate)
-    \end{itemize} 
-    \item SATELLITE (This will contain all the satellite-specific parameters, and there will be one such section for each satellite in the simulation) \begin{itemize}
-        \item \texttt{satelliteName} (A string identifier for the satellite)
-        \item \texttt{TLELine1} (The first line of the TLE data for the satellite)
-        \item \texttt{TLELine2} (The second line of the TLE data for the satellite)
-        \item \texttt{initialEpoch} (The epoch time corresponding to the TLE data, in a standardized format. Should always be the same as \texttt{startTime}???)
-        \item physical attributes like size, mass, drag coefficient, inertia, etc. (TBD!)
-        \end{itemize}
-    \item PLOTTING (This will contain all the parameters related to how the simulation results should be visualized) \begin{itemize}
-        \item \texttt{savePath} (Path to save the generated plots)
-        \item Other plotting parameters (TBD!)
-    \end{itemize}
-    \item SKYFIELD (This will contain all the parameters specific to the Skyfield simulation) \begin{itemize}
-        \item \texttt{timeStep} (The time step for the Skyfield simulation)
-        \item Skyfield-specific parameters (TBD!)
-    \end{itemize}
-    \item BASILISK (This will contain all the parameters specific to the Basilisk simulation framework) \begin{itemize}
-        \item \texttt{timeStep} (The time step for the Basilisk simulation)
-        \item \texttt{solver} (The numerical solver to be used in the Basilisk simulation)
-        \item \texttt{gravityModel} (The gravity model to be used in the Basilisk simulation)
-        \item \texttt{radiationPressureModel} (The radiation pressure model to be used in the Basilisk simulation)
-        \item Other Basilisk-specific parameters (TBD!)
-    \end{itemize}
-\end{itemize}
-
-
-
-The below list shows additional capabilities in Basilisk that have yet to be implemented, but could serve to increase the fidelity of the simulation.
-\begin{itemize}
-    \item Track a point relative to the satellite's COM
-\end{itemize}
-
-
+During this project, three simulation experiments with different goals were conducted, and all used mostly the same simulation case (same start time, same parameters and TLEs for both satellites). However, the duration, and Basilisk settings were changed between the experiments. The first experiment was concerned with investigating how much the Skyfield and Basilisk outputs disagreed. This experiment used the following parameters: * Duration: 168 hours (7 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: RK4 - Basilisk delta T: 5 seconds - Enabled perturbations: All The second experiment sought to quantify the individual perturbation's impact on the satellite orbits. It used the following parameters: * Duration: 96 hours (4 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: RK4 - Basilisk delta T: 5 seconds - Perturbations enabled: Different combinations between each run In this experiment, multiple basilisk simulations using different combinations of perturbations were run and compared against the same Skyfield trajectory. The last experiment sought to investigate the impact of different numerical integrators and step sizes. It used the following parameters: * Duration: 96 hours (4 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: Vary between RK4, RK45, RK78 between runs - Basilisk delta T: Vary between runs - Perturbations enabled: Different combinations between each run Again, multiple Basilisk outputs from using different numerical integrator configurations were compared against a single Skyfield trajectory.
 \end{comment}
+
+
+

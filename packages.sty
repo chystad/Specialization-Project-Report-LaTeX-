@@ -19,6 +19,9 @@
 \usepackage{siunitx} %includes SI-units
 \usepackage[bf]{caption} %makes float captions bold
 \usepackage{array, booktabs} %to make better tables
+\usepackage{ragged2e} % Help with word spacing in tables
+\usepackage{tabularx} % Used for better tables
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
 \usepackage{graphicx} %to include graphics
 \usepackage{float} %to include floats
 \usepackage[export]{adjustbox} %to adjust floats
@@ -51,4 +54,6 @@
             linkcolor=blue,
             citecolor=blue,
             urlcolor=blue]{hyperref}
+
+
 

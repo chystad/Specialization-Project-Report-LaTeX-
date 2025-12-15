@@ -59,20 +59,23 @@
 \contentsline {subsection}{\numberline {4.1.3}Quality and Credibility Screening}{25}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}Simulation}{25}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Overall Simulation \& Analysis Pipeline}{26}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Orbit Propagation Methods}{28}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Simulation Configuration \& Assumptions}{28}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Data Processing \& Comparison Metrics}{28}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Verification \& Consistency Checks}{28}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Methodological Limitations}{28}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Results}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Simulation Parameters}{29}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Prelim results}{29}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Simulator output difference plots}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}R}{30}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future work}{31}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Conclusions}{32}{chapter.7}%
-\contentsline {chapter}{\numberline {}References}{33}{chapter.7}%
-\contentsline {chapter}{\numberline {}Appendices:}{36}{chapter*.21}%
-\contentsline {chapter}{\numberline {}A - Github repository}{37}{appendix*.22}%
-\contentsline {chapter}{\numberline {}B - Numerical Values}{38}{appendix*.25}%
+\contentsline {subsection}{\numberline {4.2.2}Simulator Inputs}{27}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Data Processing \& Comparison Metrics}{29}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Verification \& Consistency Checks}{29}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Simulation Setup \& Assumptions}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Satellite Modelling}{29}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Orbital Configuration}{30}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Simulation Experiments}{30}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Results}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Simulation Parameters}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Prelim results}{33}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Simulator output difference plots}{34}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}R}{34}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future work}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Methodological Limitations}{35}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Conclusions}{36}{chapter.7}%
+\contentsline {chapter}{\numberline {}References}{37}{chapter.7}%
+\contentsline {chapter}{\numberline {}Appendices:}{40}{chapter*.23}%
+\contentsline {chapter}{\numberline {}A - Github repository}{41}{appendix*.24}%
+\contentsline {chapter}{\numberline {}B - Numerical Values}{42}{appendix*.27}%

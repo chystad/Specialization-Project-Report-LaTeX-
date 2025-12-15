@@ -900,6 +900,40 @@
       \field{howpublished}{\url{https://www.spaceacademy.net.au/watch/debris/atmosmod.htm}}
       \field{title}{Terrestrial Atmosphere Modelling}
     \endentry
+    \entry{Quinci2021}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=649f54b8ecd3d05bc59242f7a97421e9}{%
+           family={Quinci},
+           familyi={Q\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Polytechnic of Milan}%
+      }
+      \strng{namehash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{fullhash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{fullhashraw}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{bibnamehash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{authorbibnamehash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{authornamehash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{authorfullhash}{649f54b8ecd3d05bc59242f7a97421e9}
+      \strng{authorfullhashraw}{649f54b8ecd3d05bc59242f7a97421e9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-12-10}
+      \field{title}{Attitude Control System Design of an Earth-Pointing 6U CubeSat in Low Earth Orbit}
+      \field{type}{techreport}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://d1wqtxts1xzle7.cloudfront.net/86542048/10531692_Quinci-libre.pdf
+      \endverb
+      \verb{url}
+      \verb https://d1wqtxts1xzle7.cloudfront.net/86542048/10531692_Quinci-libre.pdf
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

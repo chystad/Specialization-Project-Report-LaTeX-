@@ -24,7 +24,7 @@ The literature search was initially focused on peer-reviewed journal articles ac
 % I deliberately did not mention Skyfield and Basilisk documentation here, as it was not used in the literature review. However, they gave valuable insight into the inner workings of the simulators. I could have written something like "Documentation for Skyfield and Basilisk software frameworks was also consulted. These were necesary to verify how the propagation methods and force modeles are implemented in practice, not just through abstract function calls"
 
 
-The literature search was conducted by defining a structured set of keywords and search phrases within each of the main themes from section \ref{sec:Literature_Search}. As familiarity with the field grew, keywords and search phrases were refined and combined into boolean search strings to focus the search towards specific topics. A comprehensive table of all the keywords, search phrases and time ranges used in the literature search is shown in Table \ref{tab:search}. In this context, \textit{time range} refers to an interval that restricts the search to sources published within the interval. This method is applied in order to ensure that the literature is both relevant and up to date. For both \textit{Orbital propagation methods} and \textit{Orbital perturbation modelling} fields, the time range is set to all sources published after 1960. The large time span was chosen by necessity to include older foundational work because many core astrodynamical models and formulations come from early spaceflight-era literature, as explained in Chapter \ref{chap:literature_review}. The time range also served to exclude some of the earliest astrodynamic publications when the field had not yet reached maturity. The \textit{Prediction error growth} field has a narrower time range, specifically after 2010. This has been chosen to exclude older publications that use outdated numerical models and to focus on the newest accuracy evaluation of the SGP4 propagator.
+The literature search was conducted by defining a structured set of keywords and search phrases within each of the main themes from Section \ref{sec:Literature_Search}. As familiarity with the field grew, keywords and search phrases were refined and combined into boolean search strings to focus the search towards specific topics. A comprehensive table of all the keywords, search phrases and time ranges used in the literature search is shown in Table \ref{tab:search}. In this context, \textit{time range} refers to an interval that restricts the search to sources published within the interval. This method is applied in order to ensure that the literature is both relevant and up to date. For both \textit{Orbital propagation methods} and \textit{Orbital perturbation modelling} fields, the time range is set to all sources published after 1960. The large time span was chosen by necessity to include older foundational work because many core astrodynamical models and formulations come from early spaceflight-era literature, as explained in Chapter \ref{chap:literature_review}. The time range also served to exclude some of the earliest astrodynamic publications when the field had not yet reached maturity. The \textit{Prediction error growth} field has a narrower time range, specifically after 2010. This has been chosen to exclude older publications that use outdated numerical models and to focus on the newest accuracy evaluation of the SGP4 propagator.
 
 
 % \begin{table}[H]
@@ -58,8 +58,6 @@ Immediate search results were subject to an initial screening to assess their re
 \subsection{Quality and Credibility Screening}
 Following the initial relevance screening, a second screening phase was conducted to assess the quality and credibility of the remaining sources. Each source's credibility was assessed through a total of four criteria. First, the author's expertise and standing in the field is evaluated by checking their previous work. This also helps to distinguish foundational contributors from aiding authors. Second, the reputation of the publishing journal or institution is considered. However, even renowned authors and publishers can still publish flawed work. That is why the two next criteria aim to evaluate their content in more detail. The third criteria detect errors and inconsistencies by cross-checking facts and mathematical formulations. Here, the primary sources from Montenbruck and Vallado \cite{Montenbruck2000, vallado2001} was especially important to evaluate astrodynamical models, but other previously assessed independent sources were also used for the same purpose. Finally, the source's methodology and overall structure were evaluated to ensure that final results were produced by using a well thought out approach. After the final screening, the number of remaining sources had been reduced to 13
 
-
-
 \begin{comment}
 Should contain the following:
     * How you preformed the search
@@ -72,14 +70,37 @@ Should contain the following:
 \end{comment} 
 
 
-\section{Overall Simulation and Analysis Workflow}
+
+
+
+\section{Simulation}
+In order to compare the Skyfield SGP4 predictions against a high-fidelity Basilisk counterpart, a modular simulation framework has been developed in Python. The following subsections will present the high-level structure of this simulator, a deeper understanding of each orbit propagation sub-simulation and its implementation, the data processing methodology, and finally, how the simulator is configured to run specific simulation cases. For future reference, the term \textit{simulator} describes the simulation framework in its entirety, and \textit{sub-simulation} will be used to denote an individual orbital propagator within it. 
+
+\subsection{Overall Simulation \& Analysis Pipeline}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/04Method/Modular simulation.jpg}
+    \caption{High-level simulator flow diagram} 
+    \label{fig:high_level_program_flow} 
+\end{figure}
+The overall structure of the simulation framework is illustrated in Figure \ref{fig:high_level_program_flow}, which presents a high-level abstraction of the simulator as a sequence of modules. The simulator is composed of four modules: a configuration module, a semi-analytical orbit propagation module based on Skyfield SGP4, a numerical orbit propagation module based on Basilisk, and a data processing and plotting module. A more detailed view of the internal processes executed within each module, from configuration up to and including the Basilisk simulation module, is shown in Figure \ref{fig:program_flow}. This diagram is divided into five separate layers meant to represent different aspects of the simulator structure. The top and bottom layers represent the simulator inputs and outputs, respectively. The middle layer show the modules divided into program blocks, and its adjacent layers show how object instances are passed between them. Finally, the \textit{Data processing and plotting} module is omitted from this diagram to avoid unnecessary complexity, and because it is explained in greater detail in Section \ref{sec:data_processing}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{Figures/04Method/Simulator Flow v2.png}
-    \caption{Program flow diagram} 
+    \includegraphics[width=1.0\textwidth]{Figures/04Method/Simulator Flow final.png}
+    \caption{Detailed simulator flow diagram} 
     \label{fig:program_flow} 
 \end{figure}
+
+The configuration module is responsible for initializing the global simulation environment. Three user-defined configuration files specify the simulation start time and duration, satellite properties and \gls{tle}s, numerical integrator settings and perturbation models. These configuration files are parsed and combined into a single configuration instance that is shared by both Skyfield and Basilisk sub-simulations to ensure consistency between the propagators. As part of this process, a snapshot of the combined configuration is outputted as \texttt{<time>\_cfg.yaml}, where \texttt{<time>} denotes real-world timestamp for when the simulator was executed. This snapshot is important for traceability because it enables checking what simulation configuration was used to produce a set of simulator outputs at a later stage. 
+
+Following configuration, the Skyfield SGP4 sub-simulation is initialized and executed. Using the specified \gls{tle}s and simulation parameters, Skyfield propagates the satellite states over the full simulation duration. In this process, satellite translational states are evaluated at discrete time intervals defined by the simulation configuration, and the internal workings of the SGP4 algorithm. After completion, the resulting \gls{eci} position and velocities are outputted as a data file named \texttt{<time>\_skf.h5}, where \texttt{<time>} is the same timestamp used by the configuration module. The Skyfield SGP4-propagated satellite states at the initial simulation time are extracted and used to define the initial conditions for the Basilisk sub-simulation. This step is necessary because Basilisk does not natively support \gls{tle}-based initialization, and this approach ensures that both propagation methods start from identical initial states. 
+
+Next, the Basilisk sub-simulation is initialized. Compared to Skyfield, this initialization involves additional steps, including the creation of simulation processes, tasks, spacecraft and recorders required by the Basilisk framework, as well as defining numerical integrators and environmental models. The inclusion of individual perturbation models such as Earth's spherical harmonics, atmospheric drag, solar radiation pressure, and third-body gravitational effects, is controlled by the global configuration. In the detailed flow diagram in Figure \ref{fig:program_flow}, these conditional steps are indicated by the annotation ''if Config'', showing that these models will only be created if specified by the simulator configuration.  Once initialized, the Basilisk simulation is run, and the resulting satellite \gls{eci} state trajectories are outputted as a file named \texttt{<time>\_bsk.h5}.
+
+The final module in the pipeline is the data processing and plotting module. In Figure \ref{fig:high_level_program_flow}, the flow from the Basilisk simulation to this module is denoted by a dashed arrow. This notation indicates that the module can either be executed directly as part of the simulation run, or be called independently at a later time. When executed in series with the other modules, it loads the newly generated Skyfield and Basilisk output files and performs the data processing required to generate the plots specified in the global configuration. Depending on the requested output, this may involve simple visualization of position and velocity data, or additional data processing steps such as reference frame transformations for relative motion analysis. The data processing specifics are presented in greater detail in Section \ref{sec:data_processing}. Alternatively, the same module can be configured to operate on previously generated simulation data, allowing analyses to be repeated or extended without running the computationally expensive propagations. 
+
+
 
 \begin{comment}
 Should explain how the simulation works
@@ -91,16 +112,17 @@ Should explain how the simulation works
 
 
 
-\section{Orbit Propagation Methods}
+\subsection{Orbit Propagation Methods}
 
 
-\section{Simulation Configuration and Assumptions}
+\subsection{Simulation Configuration \& Assumptions}
 
 
-\section{Data Processing and Comparison Metrics}
+\subsection{Data Processing \& Comparison Metrics}
+\label{sec:data_processing}
 
 
-\section{Verification and Consistency Checks}
+\subsection{Verification \& Consistency Checks}
 
 
 \section{Methodological Limitations}

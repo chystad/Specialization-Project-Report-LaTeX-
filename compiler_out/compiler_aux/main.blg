@@ -1,18 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[1] Config.pm:311> INFO - Logfile is 'compiler_out/compiler_aux/main.blg'
-[185] biber-MSWIN64:340> INFO - === 
-[246] Biber.pm:420> INFO - Reading 'compiler_out/compiler_aux/main.bcf'
-[438] Biber.pm:994> INFO - Found 25 citekeys in bib section 0
-[462] Biber.pm:4463> INFO - Processing section 0
-[484] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[581] bibtex.pm:1713> INFO - LaTeX decoding ...
-[658] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[938] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[939] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[939] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[939] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[972] bbl.pm:676> INFO - Writing 'compiler_out/compiler_aux/main.bbl' with encoding 'UTF-8'
-[997] bbl.pm:779> INFO - Output to compiler_out/compiler_aux/main.bbl
-[998] Biber.pm:131> WARN - legacy month field 'August' in entry 'Stryjewski2020coord_trans' is not an integer - this will probably not sort properly.
-[998] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\chris\AppData\Local\Temp\biber_tmp_Gf8j\f4d088b3f9f145b5c3058da33afd57d4_1088.utf8, line 6, warning: 1 characters of junk seen at toplevel
-[998] Biber.pm:133> INFO - WARNINGS: 2
+[0] Config.pm:311> INFO - Logfile is 'compiler_out/compiler_aux/main.blg'
+[172] biber-MSWIN64:340> INFO - === 
+[230] Biber.pm:420> INFO - Reading 'compiler_out/compiler_aux/main.bcf'
+[403] Biber.pm:994> INFO - Found 25 citekeys in bib section 0
+[427] Biber.pm:4463> INFO - Processing section 0
+[446] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[553] bibtex.pm:1713> INFO - LaTeX decoding ...
+[628] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[892] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[892] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[892] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[893] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[922] bbl.pm:676> INFO - Writing 'compiler_out/compiler_aux/main.bbl' with encoding 'UTF-8'
+[942] bbl.pm:779> INFO - Output to compiler_out/compiler_aux/main.bbl
+[942] Biber.pm:131> WARN - legacy month field 'August' in entry 'Stryjewski2020coord_trans' is not an integer - this will probably not sort properly.
+[942] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\chris\AppData\Local\Temp\biber_tmp_q2vP\f4d088b3f9f145b5c3058da33afd57d4_10912.utf8, line 6, warning: 1 characters of junk seen at toplevel
+[942] Biber.pm:133> INFO - WARNINGS: 2

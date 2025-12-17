@@ -2,7 +2,7 @@
 \contentsline {chapter}{Preface}{ii}{chapter*.3}%
 \contentsline {chapter}{Contents}{iii}{chapter*.4}%
 \contentsline {chapter}{List of Figures}{vii}{chapter*.5}%
-\contentsline {chapter}{List of Tables}{viii}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{ix}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background \& Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Problem Definition}{3}{section.1.2}%
@@ -67,15 +67,21 @@
 \contentsline {subsection}{\numberline {4.3.2}Orbital Configuration}{30}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Simulation Experiments}{30}{subsection.4.3.3}%
 \contentsline {chapter}{\numberline {5}Results}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Simulation Parameters}{33}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Prelim results}{33}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Simulator output difference plots}{34}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}R}{34}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future work}{35}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Methodological Limitations}{35}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Conclusions}{36}{chapter.7}%
-\contentsline {chapter}{\numberline {}References}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {}Appendices:}{40}{chapter*.23}%
-\contentsline {chapter}{\numberline {}A - Github repository}{41}{appendix*.24}%
-\contentsline {chapter}{\numberline {}B - Numerical Values}{42}{appendix*.27}%
+\contentsline {section}{\numberline {5.1}Benchmark Comparison}{34}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Earth-Relative Position Difference}{34}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Formation-Relative Position Difference}{35}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Sensitivity to Perturbation Configurations}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Perturbation Impact on Earth-Relative Position}{36}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Perturbation Impact on Formation-Relative Position}{37}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Sensitivity to Numerical Integration Configuration}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Numerical Impact on Earth-Relative Position}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Numerical Impact on Formation-Relative Position}{39}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Concluding Remarks}{40}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Discussion}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future work}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Methodological Limitations}{41}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Conclusions}{42}{chapter.7}%
+\contentsline {chapter}{\numberline {}References}{43}{chapter.7}%
+\contentsline {chapter}{\numberline {}Appendices:}{46}{chapter*.31}%
+\contentsline {chapter}{\numberline {}A - Github repository}{47}{appendix*.32}%
+\contentsline {chapter}{\numberline {}B - Numerical Values}{48}{appendix*.35}%

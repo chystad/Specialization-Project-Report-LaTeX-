@@ -453,6 +453,69 @@ INPUT .\Chapters\05Results.tex
 INPUT .\Chapters\05Results.tex
 INPUT .\Chapters\05Results.tex
 INPUT Chapters\05Results.tex
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Groundtrack comparison - RKF78.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader simulator position difference magnitude.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex1\Ex1 - Leader-follower relative position simulator difference - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Big perturb comparison.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader simulator position difference magnitude - Small perturb.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - SH comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex2\Ex2 - Leader-follower relative position simulator difference - All perturb comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader simulator position difference magnitude - numerical comparison.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
+INPUT .\Figures\05Results\Ex3\Ex3 - Leader-follower relative position simulator difference - numerical comparison - no radial.png
 INPUT .\Chapters\06Discussion.tex
 INPUT .\Chapters\06Discussion.tex
 INPUT .\Chapters\06Discussion.tex

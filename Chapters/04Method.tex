@@ -196,7 +196,7 @@ Three simulation experiments were conducted to address the different research qu
 & \textbf{3} \\ \hline
 
 \textbf{Purpose}
-& To investigate the Skyfield SGP4 and Basilisk propagation differences
+& To compare the best Basilisk model against Skyfield SGP4
 & To quantify the individual perturbation effect's impact on the satellite orbits
 & To study the numerical integrator's impact on propagation accuracy \\ \hline
 
@@ -215,14 +215,14 @@ Three simulation experiments were conducted to address the different research qu
 & 5 seconds
 & 5 seconds \\ \hline
 
-\textbf{basilisk step size}
+\textbf{Basilisk min/fixed step size}
 & 1 seconds
 & 5 seconds
 & Subject to change \\ \hline
 
 \textbf{Basilisk numerical integrator}
-& RK4
-& RK4
+& RKF78
+& RKF78
 & Subject to change \\ \hline
 
 \textbf{Enabled perturbations}
@@ -240,10 +240,3 @@ The first experiment focuses on evaluating the long-term disagreement between th
 The second experiment aims to quantify the relative impact of individual orbital perturbations on the propagated satellite trajectories. For this experiment, the simulation duration is reduced to 96 hours, and both the Skyfield SGP4 and Basilisk propagation step sizes are increased to 5 seconds, as summarized in Table \ref{tab:experiments_overview}. This modification is applied to limit computational cost, since multiple Basilisk simulations are executed with different combinations of enabled perturbation models. Basilisk employs a fixed-step RK4 integrator, while the enabled perturbations are varied between simulation runs. Each resulting Basilisk trajectory is compared against a reduced-perturbation Basilisk baseline, allowing the relative contribution of individual perturbation effects to be isolated.
 
 The third experiment investigates the influence of numerical integration settings on the propagated satellite trajectories. The simulation duration is again set to 96 hours, while the Skyfield SGP4 step size remains fixed at 5 seconds. Multiple Basilisk simulations are performed using different numerical integrators and, where applicable, different step sizes, as indicated in Table \ref{tab:experiments_overview}. All Basilisk configurations are compared against a single Skyfield SGP4 baseline trajectory in order to assess the sensitivity of the propagation results to numerical integration choices.
-
-\begin{comment}
-During this project, three simulation experiments with different goals were conducted, and all used mostly the same simulation case (same start time, same parameters and TLEs for both satellites). However, the duration, and Basilisk settings were changed between the experiments. The first experiment was concerned with investigating how much the Skyfield and Basilisk outputs disagreed. This experiment used the following parameters: * Duration: 168 hours (7 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: RK4 - Basilisk delta T: 5 seconds - Enabled perturbations: All The second experiment sought to quantify the individual perturbation's impact on the satellite orbits. It used the following parameters: * Duration: 96 hours (4 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: RK4 - Basilisk delta T: 5 seconds - Perturbations enabled: Different combinations between each run In this experiment, multiple basilisk simulations using different combinations of perturbations were run and compared against the same Skyfield trajectory. The last experiment sought to investigate the impact of different numerical integrators and step sizes. It used the following parameters: * Duration: 96 hours (4 days) * Skyfield delta T: 5 seconds * Basilisk settings: - Integrator: Vary between RK4, RK45, RK78 between runs - Basilisk delta T: Vary between runs - Perturbations enabled: Different combinations between each run Again, multiple Basilisk outputs from using different numerical integrator configurations were compared against a single Skyfield trajectory.
-\end{comment}
-
-
-

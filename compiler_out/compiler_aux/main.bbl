@@ -35,8 +35,8 @@
       \strng{authornamehash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhash}{d35dd08d6337cf9263d46d5e67f1855b}
       \strng{authorfullhashraw}{d35dd08d6337cf9263d46d5e67f1855b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-11-23}
@@ -68,8 +68,8 @@
       \strng{authornamehash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhash}{213891630c39237ea968f6619397e274}
       \strng{authorfullhashraw}{213891630c39237ea968f6619397e274}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{48th International Conference on Environmental Systems (ICES)}
@@ -367,8 +367,8 @@
       \strng{authornamehash}{66ae89359084503ae23d1e8b2b2f6e4e}
       \strng{authorfullhash}{66ae89359084503ae23d1e8b2b2f6e4e}
       \strng{authorfullhashraw}{66ae89359084503ae23d1e8b2b2f6e4e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Astronautica}
@@ -761,8 +761,8 @@
       \strng{authornamehash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authorfullhash}{a5288bde8e80165675c3d89505c99a96}
       \strng{authorfullhashraw}{a5288bde8e80165675c3d89505c99a96}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
@@ -893,8 +893,8 @@
       \strng{authornamehash}{0a042fe350b465245383945ea6192944}
       \strng{authorfullhash}{0a042fe350b465245383945ea6192944}
       \strng{authorfullhashraw}{0a042fe350b465245383945ea6192944}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.spaceacademy.net.au/watch/debris/atmosmod.htm}}

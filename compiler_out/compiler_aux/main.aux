@@ -15,7 +15,7 @@
 \@writefile{toc}{\contentsline {chapter}{Preface}{ii}{chapter*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{Contents}{iii}{chapter*.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{List of Figures}{vii}{chapter*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Tables}{viii}{chapter*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Tables}{ix}{chapter*.6}\protected@file@percent }
 \abx@aux@cite{0}{nasa_earthdata_gnss}
 \abx@aux@segm{0}{0}{nasa_earthdata_gnss}
 \abx@aux@cite{0}{jones2018launch_cost}
@@ -250,38 +250,56 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Simulation Experiments}{30}{subsection.4.3.3}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4.3.1}{\ignorespaces Overview of how the three experiments differs from each other in purpose, comparison method and configuration.}}{31}{table.caption.20}\protected@file@percent }
 \newlabel{tab:experiments_overview}{{4.3.1}{31}{Overview of how the three experiments differs from each other in purpose, comparison method and configuration}{table.caption.20}{}}
-\abx@aux@cite{0}{Zhong2013}
-\abx@aux@segm{0}{0}{Zhong2013}
-\abx@aux@cite{0}{Zhong2013}
-\abx@aux@segm{0}{0}{Zhong2013}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{33}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Simulation Parameters}{33}{section.5.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1.1}{\ignorespaces Physical constants and associated numerical value. $J$-terms courtesy of \blx@tocontentsinit {0}\cite {Zhong2013}.}}{33}{table.caption.21}\protected@file@percent }
-\newlabel{tab:sim_param}{{5.1.1}{33}{Physical constants and associated numerical value. $J$-terms courtesy of \cite {Zhong2013}}{table.caption.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Prelim results}{33}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Simulator output difference plots}{34}{subsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}R}{34}{subsection.5.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Benchmark Comparison}{34}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Earth-Relative Position Difference}{34}{subsection.5.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1.1}{\ignorespaces Projected ground track comparison for the leader satellite obtained using the Skyfield \gls {sgp4} propagator and the most accurate Basilisk configuration, shown over a selected time window near the end of the propagation interval at seven days.}}{34}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:ex1_groundtrack}{{5.1.1}{34}{Projected ground track comparison for the leader satellite obtained using the Skyfield \gls {sgp4} propagator and the most accurate Basilisk configuration, shown over a selected time window near the end of the propagation interval at seven days}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1.2}{\ignorespaces Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and the most accurate Basilisk configuration as a function of time.}}{34}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:ex1_eci_diff}{{5.1.2}{34}{Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and the most accurate Basilisk configuration as a function of time}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Formation-Relative Position Difference}{35}{subsection.5.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1.3}{\ignorespaces Sub-simulation difference in the relative position between the leader and follower satellites in the \gls {rtn} frame. The most accurate Basilisk configuration is compared against the Skyfield \gls {sgp4} baseline.}}{35}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:ex1_rtn_diff}{{5.1.3}{35}{Sub-simulation difference in the relative position between the leader and follower satellites in the \gls {rtn} frame. The most accurate Basilisk configuration is compared against the Skyfield \gls {sgp4} baseline}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Sensitivity to Perturbation Configurations}{35}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Perturbation Impact on Earth-Relative Position}{36}{subsection.5.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2.1}{\ignorespaces Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and selected Basilisk perturbation configurations, including spherical harmonic gravity models of order two, three, and four, as well as the configuration with all perturbations enabled.}}{36}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:ex2_eci_big}{{5.2.1}{36}{Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and selected Basilisk perturbation configurations, including spherical harmonic gravity models of order two, three, and four, as well as the configuration with all perturbations enabled}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2.2}{\ignorespaces Leader satellite \gls {eci} position difference magnitude relative to a fourth-order spherical harmonic Basilisk baseline, showing the isolated effects of atmospheric drag, solar radiation pressure, and third-body perturbations from the Sun and Moon.}}{37}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:ex2_eci_small}{{5.2.2}{37}{Leader satellite \gls {eci} position difference magnitude relative to a fourth-order spherical harmonic Basilisk baseline, showing the isolated effects of atmospheric drag, solar radiation pressure, and third-body perturbations from the Sun and Moon}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Perturbation Impact on Formation-Relative Position}{37}{subsection.5.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2.3}{\ignorespaces Sub-simulation differences in the relative position between the leader and follower satellites in \gls {rtn} frame. Multiple Basilisk configurations using spherical harmonic gravity models of different orders are compared against the Skyfield \gls {sgp4} baseline.}}{37}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:ex2_rtn_sh}{{5.2.3}{37}{Sub-simulation differences in the relative position between the leader and follower satellites in \gls {rtn} frame. Multiple Basilisk configurations using spherical harmonic gravity models of different orders are compared against the Skyfield \gls {sgp4} baseline}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2.4}{\ignorespaces Formation-relative position sub-simulation difference in the RTN frame relative to a fourth-order spherical harmonic Basilisk baseline, showing the isolated effects of atmospheric drag, solar radiation pressure, and third-body perturbations from the Sun and Moon. The radial component is omitted for clarity.}}{38}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:ex2_rtn_all}{{5.2.4}{38}{Formation-relative position sub-simulation difference in the RTN frame relative to a fourth-order spherical harmonic Basilisk baseline, showing the isolated effects of atmospheric drag, solar radiation pressure, and third-body perturbations from the Sun and Moon. The radial component is omitted for clarity}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Sensitivity to Numerical Integration Configuration}{38}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Numerical Impact on Earth-Relative Position}{38}{subsection.5.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3.1}{\ignorespaces Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and Basilisk configurations using the numerical integration methods RKF78, RKF45 and RK4, and fixed step sizes ranging between one and fifty seconds.}}{39}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:ex3_eci_num}{{5.3.1}{39}{Leader satellite \gls {eci} position difference magnitude between the Skyfield \gls {sgp4} baseline and Basilisk configurations using the numerical integration methods RKF78, RKF45 and RK4, and fixed step sizes ranging between one and fifty seconds}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Numerical Impact on Formation-Relative Position}{39}{subsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3.2}{\ignorespaces Sub-simulation difference in the relative position between the leader and follower satellites in the \gls {rtn} frame. Multiple Basilisk configurations using different numerical integration settings are compared against the Skyfield \gls {sgp4} baseline.}}{39}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:ex3_rtn_num}{{5.3.2}{39}{Sub-simulation difference in the relative position between the leader and follower satellites in the \gls {rtn} frame. Multiple Basilisk configurations using different numerical integration settings are compared against the Skyfield \gls {sgp4} baseline}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Concluding Remarks}{40}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{41}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future work}{35}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Methodological Limitations}{35}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{36}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future work}{41}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Methodological Limitations}{41}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{42}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}References}{37}{chapter.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendices:}{40}{chapter*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {}A - Github repository}{41}{appendix*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {}References}{43}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {}Appendices:}{46}{chapter*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {}A - Github repository}{47}{appendix*.32}\protected@file@percent }
 \abx@aux@cite{0}{Zhong2013}
 \abx@aux@segm{0}{0}{Zhong2013}
 \abx@aux@cite{0}{Zhong2013}
 \abx@aux@segm{0}{0}{Zhong2013}
-\@writefile{toc}{\contentsline {chapter}{\numberline {}B - Numerical Values}{42}{appendix*.27}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {.0.1}{\ignorespaces Physical constants and associated numerical value. $J$-terms courtesy of \blx@tocontentsinit {0}\cite {Zhong2013}.}}{42}{table.caption.29}\protected@file@percent }
-\newlabel{tab:phys_const}{{.0.1}{42}{Physical constants and associated numerical value. $J$-terms courtesy of \cite {Zhong2013}}{table.caption.29}{}}
-\abx@aux@read@bbl@mdfivesum{F881C3BF2C0FFBFD39F9EB7BFE0B4305}
+\@writefile{toc}{\contentsline {chapter}{\numberline {}B - Numerical Values}{48}{appendix*.35}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {.0.1}{\ignorespaces Physical constants and associated numerical value. $J$-terms courtesy of \blx@tocontentsinit {0}\cite {Zhong2013}.}}{48}{table.caption.37}\protected@file@percent }
+\newlabel{tab:phys_const}{{.0.1}{48}{Physical constants and associated numerical value. $J$-terms courtesy of \cite {Zhong2013}}{table.caption.37}{}}
+\abx@aux@read@bbl@mdfivesum{5BE420DA8BC40EC864001B8F0D2F6263}
 \abx@aux@defaultrefcontext{0}{nasa_earthdata_gnss}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{jones2018launch_cost}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{ffi_factsheet_2024}{none/global//global/global/global}
@@ -307,4 +325,4 @@
 \abx@aux@defaultrefcontext{0}{Zhong2013}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{SpaceAcademyAtmosMod}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{Quinci2021}{none/global//global/global/global}
-\gdef \@abspage@last{53}
+\gdef \@abspage@last{60}
